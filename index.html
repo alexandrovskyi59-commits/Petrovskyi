@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Олександр Петровський — живопис | художник, Одеса</title>
+<meta name="description" content="Олександр Петровський — художник з Одеси, член НСХУ. Живопис про людей, простір і памʼять: галерея робіт, виставки, придбання та замовлення картин.">
+<!-- TODO: замінити домен, якщо фінальний відрізняється -->
+<link rel="canonical" href="https://petrovskyi.art/">
+<link rel="alternate" hreflang="uk" href="https://petrovskyi.art/">
+<link rel="alternate" hreflang="en" href="https://petrovskyi.art/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Petrovskyi Studio">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Олександр Петровський — живопис">
+<meta property="og:description" content="Художник з Одеси, член НСХУ. Живопис про людей, світло і те, що ми памʼятаємо.">
+<meta property="og:url" content="https://petrovskyi.art/">
+<!-- TODO: og:image — підготувати JPG 1200×630 px (обкладинка з картиною та імʼям), завантажити і вставити повну https-URL -->
+<meta property="og:image" content="https://petrovskyi.art/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Олександр Петровський — живопис">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Олександр Петровський — живопис">
+<meta name="twitter:description" content="Художник з Одеси, член НСХУ. Живопис про людей, світло і те, що ми памʼятаємо.">
+<meta name="twitter:image" content="https://petrovskyi.art/og-image.jpg">
+<!-- TODO: фавіконки — покласти файли favicon.svg / favicon.ico (32×32) та apple-touch-icon.png (180×180) у корінь сайту -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#DEDEDB">
+<!-- GA4: вставити тег тут -->
+<!-- Meta Pixel: вставити тут -->
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#DEDEDB"/><rect x="30" y="36" width="40" height="7" fill="#111110"/><rect x="30" y="47" width="40" height="7" fill="#111110"/><rect x="30" y="58" width="26" height="7" fill="#FF4F2B"/></svg></template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#DEDEDB;color:#111110;font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{color:#FF4F2B}
+*{box-sizing:border-box}
+input,textarea,button{font-family:inherit}
+::placeholder{color:#8C8C88}
+@keyframes rip{from{transform:translate(-50%,-50%) scale(0);opacity:0.55}to{transform:translate(-50%,-50%) scale(1);opacity:0}}
+</style>
+</helmet>
+
+<!-- HEADER -->
+<header style="position:sticky;top:0;z-index:20;background:#DEDEDB;">
+  <div style="max-width:1440px;margin:0 auto;padding:16px clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;align-items:start;font-size:12px;line-height:1.35;">
+    <a href="#top" style="display:flex;gap:8px;align-items:flex-start;">
+      <span style="display:flex;flex-direction:column;gap:2px;padding-top:2px;"><span style="width:26px;height:3px;background:#111110;"></span><span style="width:26px;height:3px;background:#111110;"></span><span style="width:18px;height:3px;background:#111110;"></span></span>
+      <span style="font-weight:600;">Petrovskyi<br>Studio</span>
+    </a>
+    <span style="font-weight:500;">({{ t.tag1 }}<br>{{ t.tag2 }})</span>
+    <nav style="display:flex;flex-direction:column;gap:1px;font-weight:500;">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5"><a href="{{ n.href }}">{{ n.label }}</a></sc-for>
+    </nav>
+    <div style="display:flex;justify-content:flex-end;align-items:center;gap:12px;">
+      <div style="display:flex;gap:6px;font-weight:500;">
+        <sc-for list="{{ langs }}" as="l" hint-placeholder-count="2"><button onClick="{{ l.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;font-weight:500;color:{{ l.fg }};">{{ l.code }}</button></sc-for>
+      </div>
+      <a href="#contacts" style="background:#111110;color:#FFFFFF;padding:5px 9px;font-weight:500;display:flex;gap:6px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.write }} <span>↗</span></a>
+    </div>
+  </div>
+</header>
+
+<main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
+
+<!-- 01 HERO -->
+<section id="top" data-screen-label="01 Hero" style="min-height:calc(100vh - 80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:32px clamp(24px,4vw,64px);align-content:end;padding:clamp(120px,22vh,240px) 0 28px;">
+  <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:22px;max-width:420px;order:2;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <a href="#works" style="background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.viewWorks }} <span>↗</span></a>
+      <a href="#about" style="background:#C6C6C2;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;" style-hover="background:#111110;color:#FFFFFF;">{{ t.aboutBtn }} <span>↗</span></a>
+    </div>
+    <p style="margin:0;font-size:13px;line-height:1.45;color:#6E6E6A;">{{ t.heroBio }}</p>
+    <p style="margin:0;font-size:13px;line-height:1.45;color:#6E6E6A;"><span style="color:#111110;font-weight:500;">{{ t.quote }}</span> {{ t.heroLead }}</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px;order:3;">
+    <h1 style="margin:0;font-weight:500;font-size:clamp(38px,4.6vw,68px);line-height:0.98;letter-spacing:-0.035em;text-wrap:balance;"><span style="color:#8C8C88;">{{ t.heroH1a }}</span> {{ t.heroH1b }}</h1>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px;">
+      <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794224259/Mask_group2.png" alt="{{ t.heroAlt }}" width="1600" height="1000" fetchpriority="high" decoding="async" style="display:block;width:100%;height:auto;">
+      <figcaption style="font-size:12px;font-weight:500;color:#6E6E6A;">{{ t.keyCaption }}</figcaption>
+    </figure>
+  </div>
+  <div ref="{{ statsRef }}" style="order:4;grid-column:1/-1;font-variant-numeric:tabular-nums;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;padding-top:56px;">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:clamp(24px,2.2vw,32px);font-weight:500;letter-spacing:-0.03em;">{{ s.v }}</span><span style="font-size:12px;font-weight:500;">{{ s.l }}</span></div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- 02 WORKS -->
+<section id="works" data-screen-label="02 Works" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:48px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:32px clamp(24px,4vw,64px);align-items:end;">
+    <span style="font-size:12px;font-weight:500;">{{ t.s02 }}</span>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.worksH2a }}</span> {{ t.worksH2b }}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(18px,1.6vw,22px);letter-spacing:-0.02em;">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+          <span style="display:flex;gap:6px;"><button onClick="{{ f.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ f.fg }};">{{ f.label }}</button><span style="color:#AFAFAB;">{{ f.sep }}</span></span>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:48px 16px;">
+    <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
+      <a href="#" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:10px;cursor:zoom-in;" style-hover="color:#111110;opacity:0.85;">
+        <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;aspect-ratio:4/5;background:#C6C6C2;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-end;padding:10px;font-size:10px;transform:perspective(900px);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),box-shadow 0.5s;will-change:transform;">
+          <img src="{{ w.img }}" alt="{{ w.alt }}" width="800" height="1000" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:relative;background:#FFFFFF;color:#111110;padding:2px 6px;font-family:'Geist',sans-serif;font-weight:500;">{{ t.sold }}</span></sc-if>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;font-size:13px;">
+          <span style="font-weight:500;">{{ w.title }}</span><span style="color:#6E6E6A;">{{ w.year }}</span>
+          <span style="color:#6E6E6A;">{{ w.tech }}</span><span style="color:#6E6E6A;">{{ w.size }}</span>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+  <a href="#" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.gallery }} <span>↗</span></a>
+</section>
+</main>
+
+<sc-if value="{{ lb }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(12,12,11,0.94);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,32px);gap:12px;color:#FFFFFF;cursor:zoom-out;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;font-weight:500;">
+      <span style="color:#A6A6A2;">{{ lb.counter }}</span>
+      <button onClick="{{ lbClose }}" style="background:#FFFFFF;color:#111110;border:none;padding:5px 9px;font-size:12px;font-weight:500;cursor:pointer;">{{ lb.closeLabel }} ✕</button>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;grid-template-rows:minmax(0,1fr);align-items:center;gap:8px;">
+      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ lbPrev }}" style="height:48px;background:none;border:1px solid #4A4A47;color:#FFFFFF;font-size:18px;cursor:pointer;">←</button>
+      {{ lbImg }}
+      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ lbNext }}" style="height:48px;background:none;border:1px solid #4A4A47;color:#FFFFFF;font-size:18px;cursor:pointer;">→</button>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;">
+      <span style="font-weight:500;">{{ lb.title }}, {{ lb.year }}</span>
+      <span style="color:#A6A6A2;">{{ lb.tech }} · {{ lb.size }}</span>
+    </div>
+  </div>
+</sc-if>
+
+<!-- 03 ABOUT (dark) -->
+<section id="about" data-screen-label="03 About" style="background:#0C0C0B;color:#FFFFFF;">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
+      <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ t.s03 }}</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,64px);line-height:0.98;letter-spacing:-0.035em;max-width:620px;">{{ t.aboutH2 }}<br>{{ t.aboutH2b }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794225080/53814274_2312968365413280_5338401352563294208_n.jpg" alt="{{ t.studioPhoto }}" width="1200" height="800" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#2B2B29;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:13px;line-height:1.5;">
+        <p style="margin:0;color:#FFFFFF;font-weight:500;">{{ t.aboutP1 }}</p>
+        <p style="margin:0;color:#A6A6A2;">{{ t.aboutP2 }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ bioFacts }}" as="b" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid #2E2E2C;font-size:13px;line-height:1.45;">
+            <span style="font-weight:500;color:#FFFFFF;">{{ b.y }}</span>
+            <span style="color:#A6A6A2;">{{ b.t }}<sc-if value="{{ b.href }}" hint-placeholder-val="{{ false }}"><a href="{{ b.href }}" target="_blank" rel="noopener noreferrer" style="color:#FFFFFF;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6E6E6A;" style-hover="color:#FF4F2B;text-decoration-color:#FF4F2B;">{{ b.link }} ↗</a>{{ b.post }}</sc-if></span>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ bioOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px;padding-top:4px;font-size:14px;line-height:1.6;color:#C9C9C5;max-width:620px;">
+          <sc-for list="{{ bioText }}" as="p" hint-placeholder-count="5"><p style="margin:0;text-wrap:pretty;">{{ p.t }}</p></sc-for>
+        </div>
+      </sc-if>
+      <button type="button" onClick="{{ bioToggle }}" aria-expanded="{{ bioOpen }}" style="align-self:flex-start;background:#FFFFFF;color:#111110;border:none;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;cursor:pointer;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ bioLabel }} <span>{{ bioIcon }}</span></button>
+    </div>
+  </div>
+</section>
+
+<main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
+
+<!-- 04 SERIES -->
+<section id="series" data-screen-label="04 Series" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <span style="font-size:12px;font-weight:500;">{{ t.s04 }}</span>
+    <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,{{ activeSeries.a }} 0 1px,{{ activeSeries.b }} 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;color:#FFFFFF;margin-top:auto;">{{ t.seriesCover }}</div>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:400px;">{{ activeSeries.text }}</p>
+  </div>
+  <div style="display:flex;flex-direction:column;justify-content:flex-end;">
+    <sc-for list="{{ series }}" as="s" hint-placeholder-count="4">
+      <a href="#" onMouseEnter="{{ s.onEnter }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:16px 0;border-top:1px solid #BDBDB9;" style-hover="color:#111110;">
+        <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ s.n }}</span>
+        <span style="font-size:clamp(26px,2.8vw,40px);font-weight:500;letter-spacing:-0.035em;line-height:1.05;color:{{ s.color }};">{{ s.title }}</span>
+        <span style="font-size:12px;color:#6E6E6A;">{{ s.count }}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- NOW -->
+<section data-screen-label="Now" style="padding-bottom:clamp(64px,8vw,120px);">
+  <a href="#" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#0C0C0B;color:#FFFFFF;" style-hover="color:#FFFFFF;">
+    <div style="padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:280px;">
+      <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ t.nowLabel }}</span>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:clamp(30px,3.4vw,48px);font-weight:500;letter-spacing:-0.035em;line-height:1;">{{ t.nowTitle }}</span>
+        <span style="font-size:13px;line-height:1.5;color:#A6A6A2;max-width:380px;">{{ t.nowText }}</span>
+        <span style="align-self:flex-start;background:#FFFFFF;color:#111110;padding:5px 9px;font-size:12px;font-weight:500;">{{ t.more }}</span>
+      </div>
+    </div>
+    <div style="min-height:280px;background:repeating-linear-gradient(135deg,#3E63C9 0 1px,#4A6ED2 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;">{{ t.nowFrag }}</div>
+  </a>
+</section>
+
+<!-- STORY -->
+<section data-screen-label="Story" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+  <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:8px;align-items:end;">
+    <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#C98A2E 0 1px,#D49638 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;color:#FFFFFF;">{{ t.phPainting }}</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#B9B9B5 0 1px,#C6C6C2 1px 9px);display:flex;align-items:flex-end;padding:8px;font-family:'Geist Mono',monospace;font-size:9px;color:#4A4A47;">{{ t.phSketch }}</div>
+      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#6F8A5B 0 1px,#7B9666 1px 9px);display:flex;align-items:flex-end;padding:8px;font-family:'Geist Mono',monospace;font-size:9px;color:#FFFFFF;">{{ t.phDetail }}</div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
+    <span style="font-size:12px;font-weight:500;">{{ t.storyLabel }}</span>
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.storyH2a }}</span> {{ t.storyH2b }}</h2>
+      <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:420px;">{{ t.storyP }}</p>
+      <a href="#" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.readStory }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- 05 EXHIBITIONS -->
+<section id="exhibitions" data-screen-label="05 Exhibitions" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #BDBDB9;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+  <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
+    <span style="font-size:12px;font-weight:500;">{{ t.s05 }}</span>
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.exH2a }}</span> {{ t.exH2b }}</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="#" style="background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.cv }}</a>
+        <a href="#" style="background:#C6C6C2;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#111110;color:#FFFFFF;">{{ t.pdf }}</a>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:24px;min-width:0;">
+    <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(16px,1.4vw,20px);letter-spacing:-0.02em;">
+      <sc-for list="{{ exTabs }}" as="x" hint-placeholder-count="6">
+        <span style="display:flex;gap:6px;"><button type="button" onClick="{{ x.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ x.fg }};">{{ x.label }}<sup style="font-size:10px;font-weight:500;margin-left:2px;">{{ x.count }}</sup></button><span style="color:#AFAFAB;">{{ x.sep }}</span></span>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <sc-for list="{{ exhibitions }}" as="e" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid #BDBDB9;font-size:13px;">
+          <span style="font-weight:500;">{{ e.year }}</span>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:0;"><span style="font-weight:500;text-wrap:pretty;">{{ e.title }}</span><sc-if value="{{ e.place }}" hint-placeholder-val="{{ true }}"><span style="color:#6E6E6A;">{{ e.place }}</span></sc-if></div>
+          <span style="color:#6E6E6A;text-align:right;">{{ e.type }}</span>
+        </div>
+      </sc-for>
+      <sc-if value="{{ exHasMore }}" hint-placeholder-val="{{ true }}">
+        <button type="button" onClick="{{ exToggle }}" style="display:flex;justify-content:space-between;align-items:center;background:none;border:none;border-top:1px solid #111110;padding:14px 0 0;cursor:pointer;font-size:13px;font-weight:500;color:#111110;text-align:left;">{{ exMoreLabel }}<span>{{ exMoreIcon }}</span></button>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- 06 STUDIO -->
+<section id="studio" data-screen-label="06 Studio" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:40px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px clamp(24px,4vw,64px);align-items:end;">
+    <span style="font-size:12px;font-weight:500;">{{ t.s06 }}</span>
+    <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.stH2a }}</span> {{ t.stH2b }}</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px;">
+    <sc-for list="{{ studio }}" as="s" hint-placeholder-count="4">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px;">
+        <div style="position:relative;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,{{ s.a }} 0 1px,{{ s.b }} 1px 9px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;color:#FFFFFF;">
+          {{ s.ph }}
+          <sc-if value="{{ s.video }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;background:#FFFFFF;color:#111110;padding:3px 7px;font-family:'Geist',sans-serif;font-size:11px;font-weight:500;">▶ 0:48</span></sc-if>
+        </div>
+        <figcaption style="font-size:12px;font-weight:500;">{{ s.cap }}</figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<!-- 07 DIARY -->
+<section id="diary" data-screen-label="07 Diary" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:40px;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
+    <span style="font-size:12px;font-weight:500;">{{ t.s07 }}</span>
+    <a href="#" style="font-size:12px;font-weight:500;">{{ t.allPosts }}</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 16px;">
+    <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+      <a href="#" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#111110;opacity:0.8;">
+        <div style="aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);"></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:#6E6E6A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
+        <span style="font-size:22px;font-weight:500;letter-spacing:-0.03em;line-height:1.1;">{{ p.title }}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+</main>
+
+<!-- 08 BUY (white FAQ-style) -->
+<section id="buy" data-screen-label="08 Buy" style="background:#FFFFFF;">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
+      <span style="font-size:12px;font-weight:500;">{{ t.s08 }}</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;max-width:560px;">{{ t.buyH2 }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(18px,1.6vw,22px);letter-spacing:-0.02em;">
+        <sc-for list="{{ faqTabs }}" as="t" hint-placeholder-count="4">
+          <span style="display:flex;gap:6px;"><button onClick="{{ t.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ t.fg }};">{{ t.label }}</button><span style="color:#C6C6C2;">{{ t.sep }}</span></span>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ faq }}" as="q" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;background:{{ q.bg }};border-top:1px solid #E4E4E1;">
+            <button onClick="{{ q.onClick }}" style="display:flex;justify-content:space-between;gap:16px;background:none;border:none;padding:14px 12px;cursor:pointer;font-size:14px;font-weight:500;text-align:left;color:#111110;">{{ q.q }}<span style="color:#8C8C88;">{{ q.icon }}</span></button>
+            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 12px 16px;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:520px;">{{ q.a }}</p></sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:16px;align-items:end;padding-top:32px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <span style="font-size:15px;font-weight:500;line-height:1.3;">{{ t.commQ }}<br><span style="color:#8C8C88;">{{ t.commA }}</span></span>
+          <a href="#contacts" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.commBtn }}</a>
+        </div>
+        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#B9B9B5 0 1px,#C6C6C2 1px 9px);display:flex;align-items:flex-end;padding:6px;font-family:'Geist Mono',monospace;font-size:9px;color:#4A4A47;">{{ t.phPortrait }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 COLLAB (dark) -->
+<section id="collab" data-screen-label="09 Collaboration" style="background:#0C0C0B;color:#FFFFFF;">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+    <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ t.s09 }}</span>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,64px);line-height:0.98;letter-spacing:-0.035em;">{{ t.coH2a }} <span style="color:#6E6E6A;">{{ t.coH2b }}</span></h2>
+      <p style="margin:0;font-size:13px;line-height:1.5;color:#A6A6A2;max-width:440px;">{{ t.coP }}</p>
+      <a href="#contacts" style="align-self:flex-start;background:#FFFFFF;color:#111110;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.propose }}</a>
+    </div>
+  </div>
+</section>
+
+<main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
+<!-- 10 CONTACTS -->
+<section id="contacts" data-screen-label="10 Contacts" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+  <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
+    <span style="font-size:12px;font-weight:500;">{{ t.s10 }}</span>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <a href="mailto:studio@petrovskyi.art" style="font-size:clamp(32px,4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1;word-break:break-word;">studio@petrovskyi.art</a>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;font-size:13px;font-weight:500;"><!-- TODO: вставити реальні URL профілів --><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><span style="color:#6E6E6A;">{{ t.city }}</span></div>
+      <div style="display:flex;max-width:400px;border-bottom:1px solid #111110;margin-top:16px;">
+        <input type="email" name="newsletter_email" autocomplete="email" aria-label="{{ t.newsPh }}" placeholder="{{ t.newsPh }}" style="flex:1;min-width:0;background:transparent;border:none;padding:10px 0;font-size:14px;outline:none;color:#111110;">
+        <button onClick="{{ subscribe }}" style="background:none;border:none;font-size:13px;font-weight:500;cursor:pointer;color:#111110;">{{ subLabel }}</button>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px;justify-content:flex-end;">
+    <sc-for list="{{ fields }}" as="f" hint-placeholder-count="3">
+      <input type="{{ f.type }}" name="{{ f.name }}" autocomplete="{{ f.ac }}" aria-label="{{ f.ph }}" placeholder="{{ f.ph }}" style="background:transparent;border:none;border-bottom:1px solid #BDBDB9;padding:12px 0;font-size:16px;outline:none;color:#111110;" style-focus="border-bottom-color:#111110;">
+    </sc-for>
+    <textarea rows="3" name="message" aria-label="{{ t.msgPh }}" placeholder="{{ t.msgPh }}" style="background:transparent;border:none;border-bottom:1px solid #BDBDB9;padding:12px 0;font-size:16px;outline:none;resize:none;color:#111110;" style-focus="border-bottom-color:#111110;"></textarea>
+    <button onClick="{{ send }}" style="align-self:flex-start;background:#111110;color:#FFFFFF;border:none;padding:9px 14px;font-size:13px;font-weight:500;cursor:pointer;" style-hover="background:#FF4F2B;">{{ sendLabel }}</button>
+  </div>
+</section>
+
+<footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;padding:16px 0 28px;border-top:1px solid #BDBDB9;font-size:12px;font-weight:500;">
+  <span>Petrovskyi Studio</span><span style="color:#6E6E6A;">{{ t.copy }}</span><span style="color:#6E6E6A;">{{ t.member }}</span><a href="#top" style="justify-self:end;">{{ t.top }}</a>
+</footer>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: (typeof localStorage !== 'undefined' && localStorage.getItem('petrovskyi-lang')) || 'UA', filter: 'all', series: 0, faqTab: 0, faqOpen: 0, subbed: false, sent: false };
+  setLang(code) { try { localStorage.setItem('petrovskyi-lang', code); } catch (e) {} document.documentElement.lang = code === 'EN' ? 'en' : 'uk'; this.setState({ lang: code }); }
+  _statsRef = React.createRef();
+  _runCount() {
+    if (this._counted) return; this._counted = true;
+    const t0 = performance.now(), dur = 1600;
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      this.setState({ countP: 1 - Math.pow(1 - p, 3) });
+      if (p < 1) this._raf = requestAnimationFrame(tick);
+    };
+    this._raf = requestAnimationFrame(tick);
+  }
+  _ripple = e => {
+    const btn = e.target.closest && e.target.closest('a,button');
+    if (!btn) return;
+    const cs = getComputedStyle(btn), m = cs.backgroundColor.match(/[\d.]+/g);
+    if (!m || (m[3] !== undefined && +m[3] === 0)) return;
+    const lum = (0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2]) / 255;
+    const r = btn.getBoundingClientRect(), size = Math.hypot(r.width, r.height) * 2;
+    if (cs.position === 'static') btn.style.position = 'relative';
+    btn.style.overflow = 'hidden';
+    const s = document.createElement('span');
+    s.style.cssText = `position:absolute;left:${e.clientX - r.left}px;top:${e.clientY - r.top}px;width:${size}px;height:${size}px;border-radius:50%;pointer-events:none;background:${lum > 0.6 ? 'rgba(17,17,16,0.25)' : 'rgba(255,255,255,0.45)'};animation:rip 0.6s ease-out forwards;`;
+    btn.appendChild(s);
+    setTimeout(() => s.remove(), 650);
+  };
+  componentDidMount() {
+    document.addEventListener('pointerdown', this._ripple);
+    this.setState({ countP: 0 });
+    const el = this._statsRef.current;
+    if (el && 'IntersectionObserver' in window) {
+      this._io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { this._runCount(); this._io.disconnect(); } }, { threshold: 0.4 });
+      this._io.observe(el);
+    } else this._runCount();
+    this._onKey = e => {
+      if (this.state.lbIdx == null) return;
+      if (e.key === 'Escape') this.setState({ lbIdx: null });
+      if (e.key === 'ArrowRight') this._step(1);
+      if (e.key === 'ArrowLeft') this._step(-1);
+    };
+    window.addEventListener('keydown', this._onKey); document.documentElement.lang = this.state.lang === 'EN' ? 'en' : 'uk'; }
+  componentWillUnmount() { document.removeEventListener('pointerdown', this._ripple); cancelAnimationFrame(this._raf); this._io && this._io.disconnect(); window.removeEventListener('keydown', this._onKey); document.body.style.overflow = ''; }
+  _step(d) { const n = this._lbCount || 1; this.setState(s => ({ lbIdx: (s.lbIdx + d + n) % n })); }
+  renderVals() {
+    const s = this.state, EN = s.lang === 'EN', L = (u, e) => EN ? e : u;
+    const DICT = {"ua":{"tag1":"Живопис,","tag2":"Одеса — з 2009","heroBio":"Олександр Петровський — художник, педагог, член Національної спілки художників України.","heroH1b":"Олександр Петровський.","write":"Написати","viewWorks":"Дивитися роботи","aboutBtn":"Про художника","quote":"Я пишу не те, що бачу, а те, що лишається після погляду.","heroLead":"Людина, простір і памʼять — у тихих сценах повсякдення.","heroH1a":"Живопис про людей, світло і те, що ми памʼятаємо.","keyCaption":"«Вечір на Ланжероні», 2025","heroAlt":"Картина Олександра Петровського «Вечір на Ланжероні», 2025","prevLabel":"Попередня робота","nextLabel":"Наступна робота","keyPainting":"ключова картина","s02":"(02) Вибрані роботи","worksH2a":"Олія, полотно, картон.","worksH2b":"Роботи останніх років.","photo":"фото картини","sold":"Продано","gallery":"Повна галерея","s03":"(03) Про художника","aboutH2":"Пишу людей, простір","aboutH2b":"і тишу між ними.","studioPhoto":"авторське фото в майстерні","aboutP1":"Олександр Михайлович Петровський — український живописець, викладач. Член Національної спілки художників України з 2024 року.","aboutP2":"Викладає на художньо-графічному факультеті Університету Ушинського. Твори зберігаються в приватних колекціях України, Швейцарії та Німеччини.","bio":"Повна біографія","s04":"(04) Творчі серії","seriesCover":"обкладинка серії","nowLabel":"Зараз у творчості","nowTitle":"«Сіль і світло»","nowText":"Дванадцять полотен про узбережжя пізньої осені. Персональна виставка — березень 2027.","more":"Детальніше ↗","nowFrag":"нова серія — фрагмент","phPainting":"картина","phSketch":"ескіз","phDetail":"фрагмент","storyLabel":"Історія однієї картини","storyH2a":"«Я писав її три роки, бо щоразу памʼятав інше світло.»","storyH2b":"Мамина кухня, 1987.","storyP":"Задум, ескізи та рішення, що змінювали картину від першого шару до лаку.","readStory":"Читати історію ↗","s05":"(05) Виставки та досягнення","exH2a":"37 виставок в Україні та Європі.","exH2b":"Шлях без поспіху.","cv":"Повне CV ↗","pdf":"Портфоліо для кураторів · PDF ↗","s06":"(06) У майстерні","stH2a":"Ескізи, палітра, відео.","stH2b":"Процес без глянцю.","s07":"(07) Мистецький щоденник","allPosts":"Усі записи ↗","s08":"(08) Картини та замовлення","buyH2":"Що варто знати, перш ніж придбати картину.","commQ":"Хочете роботу на замовлення?","commA":"Обговоримо ескіз.","commBtn":"Обговорити замовлення ↗","phPortrait":"портрет","s09":"(09) Співпраця та проєкти","coH2a":"Для галерей, кураторів, колекціонерів","coH2b":"та інституцій.","coP":"Групові й персональні виставки, кураторські проєкти, резиденції, лекції, майстер-класи та освітні програми.","propose":"Запропонувати проєкт ↗","s10":"(10) Контакти","city":"Одеса, Україна","newsPh":"Email — новини про виставки","msgPh":"Повідомлення","copy":"© 2026, Одеса","member":"Член НСХУ","top":"Вгору ↑"},"en":{"tag1":"Painting,","tag2":"Odesa — since 2009","heroBio":"Oleksandr Petrovskyi — painter, teacher, member of the National Union of Artists of Ukraine.","heroH1b":"Oleksandr Petrovskyi.","write":"Get in touch","viewWorks":"View works","aboutBtn":"About the artist","quote":"I paint not what I see, but what remains after the gaze.","heroLead":"People, space and memory — in quiet scenes of everyday life.","heroH1a":"Paintings about people, light and what we remember.","keyCaption":"“Evening at Lanzheron”, 2025","heroAlt":"Painting by Oleksandr Petrovskyi, “Evening at Lanzheron”, 2025","prevLabel":"Previous work","nextLabel":"Next work","keyPainting":"key painting","s02":"(02) Selected works","worksH2a":"Oil, canvas, cardboard.","worksH2b":"Recent works.","photo":"painting photo","sold":"Sold","gallery":"Full gallery","s03":"(03) About the artist","aboutH2":"I paint people, space","aboutH2b":"and the silence between them.","studioPhoto":"portrait in the studio","aboutP1":"Oleksandr Mykhailovych Petrovskyi is a Ukrainian painter and teacher. Member of the National Union of Artists of Ukraine since 2024.","aboutP2":"Teaches at the Faculty of Fine Arts and Graphics, Ushynsky University. His works are held in private collections in Ukraine, Switzerland and Germany.","bio":"Full biography","s04":"(04) Series","seriesCover":"series cover","nowLabel":"Currently working on","nowTitle":"“Salt and Light”","nowText":"Twelve canvases about the late-autumn coast. Solo exhibition — March 2027.","more":"Learn more ↗","nowFrag":"new series — detail","phPainting":"painting","phSketch":"sketch","phDetail":"detail","storyLabel":"The story of one painting","storyH2a":"“It took me three years, because each time I remembered a different light.”","storyH2b":"Mother’s Kitchen, 1987.","storyP":"The idea, the sketches and the decisions that changed the painting from first layer to varnish.","readStory":"Read the story ↗","s05":"(05) Exhibitions & recognition","exH2a":"37 exhibitions in Ukraine and Europe.","exH2b":"A path without hurry.","cv":"Full CV ↗","pdf":"Portfolio for curators · PDF ↗","s06":"(06) In the studio","stH2a":"Sketches, palette, video.","stH2b":"The process, unpolished.","s07":"(07) Art journal","allPosts":"All entries ↗","s08":"(08) Buy & commission","buyH2":"What to know before you buy a painting.","commQ":"Want a commissioned piece?","commA":"Let’s discuss a sketch.","commBtn":"Discuss a commission ↗","phPortrait":"portrait","s09":"(09) Collaboration & projects","coH2a":"For galleries, curators, collectors","coH2b":"and institutions.","coP":"Group and solo exhibitions, curatorial projects, residencies, lectures, workshops and educational programmes.","propose":"Propose a project ↗","s10":"(10) Contacts","city":"Odesa, Ukraine","newsPh":"Email — exhibition news","msgPh":"Message","copy":"© 2026, Odesa","member":"Member of NUAU","top":"Back to top ↑"}};
+    const t = EN ? DICT.en : DICT.ua;
+    const seriesData = [
+      { key: 'portrait', title: L('Людина і портрет', 'People & portrait'), short: L('Портрет', 'Portrait'), count: '14', a: '#C9553A', b: '#D2603F', text: L('Портрети близьких і випадкових людей: погляд, руки, пауза перед словом.', 'Portraits of loved ones and strangers: a gaze, hands, the pause before a word.') },
+      { key: 'space', title: L('Простір і пейзаж', 'Space & landscape'), short: L('Простір', 'Landscape'), count: '22', a: '#3E63C9', b: '#4A6ED2', text: L('Одеські двори, узбережжя і степ — простір як стан, а не краєвид.', 'Odesa courtyards, the coast and the steppe — space as a state of mind, not a view.') },
+      { key: 'memory', title: L('Памʼять і повсякденність', 'Memory & the everyday'), short: L('Памʼять', 'Memory'), count: '11', a: '#C98A2E', b: '#D49638', text: L('Кухні, підвіконня, речі, що пережили своїх власників.', 'Kitchens, windowsills, objects that outlived their owners.') },
+      { key: 'mother', title: L('Материнство та дитинство', 'Motherhood & childhood'), short: L('Материнство', 'Motherhood'), count: '09', a: '#6F8A5B', b: '#7B9666', text: L('Тиха серія про турботу, ранок і перші спогади.', 'A quiet series about care, mornings and first memories.') },
+    ];
+    const tone = k => seriesData.find(x => x.key === k);
+    const C = 'https://res.cloudinary.com/qk9xhhqc/image/upload/';
+    const WORK_IMGS = [
+      C + 'v1794224620/438095629_7390386044378211_3247243416681214764_n.webp',
+      C + 'v1794224620/438093939_7410412392375576_4054389584301619454_n.webp',
+      C + 'v1794224620/420108423_7022089654541187_3864908357244060563_n.webp',
+      C + 'v1794224619/343727940_172958828665080_3445467431345351045_n.webp',
+      C + 'v1794224617/%D0%9D%D0%B0%D1%88%D0%B0_%D0%BD%D0%B0%D0%B4%D1%96%D1%8F.webp',
+      C + 'v1794224618/1047876_473419112741640_472816367_o.webp',
+    ];
+    const oil = L('Полотно, олія', 'Oil on canvas');
+    const allWorks = [
+      [L('Вечір на Ланжероні', 'Evening at Lanzheron'), 2025, oil, '100×80', 'space', false],
+      [L('Портрет батька', 'Portrait of My Father'), 2024, oil, '70×60', 'portrait', true],
+      [L('Підвіконня', 'Windowsill'), 2023, L('Картон, олія', 'Oil on cardboard'), '40×50', 'memory', false],
+      [L('Ранок', 'Morning'), 2024, oil, '90×120', 'mother', false],
+      [L('Степ після дощу', 'Steppe After Rain'), 2022, oil, '60×100', 'space', false],
+      [L('Дівчина в синьому', 'Girl in Blue'), 2025, L('Полотно, темпера', 'Tempera on canvas'), '80×60', 'portrait', false],
+    ].map(([title, year, tech, size, k, sold], i) => ({ title, year, tech, size, sold, k, img: WORK_IMGS[i], alt: L('Картина «', 'Painting “') + title + L('», ', '”, ') + tech.toLowerCase() + ', ' + year }));
+    const fList = [{ key: 'all', label: L('Усі', 'All') }, ...seriesData.map(x => ({ key: x.key, label: x.short }))];
+    const slash = (arr, activeIdx, onPick) => arr.map((label, i) => ({ label, sep: i < arr.length - 1 ? '/' : '', fg: i === activeIdx ? '#111110' : '#AFAFAB', onClick: () => onPick(i) }));
+    const faqData = EN ? [
+      { tab: 'Buying', items: [['How do I find out the price?', 'Prices of available works are listed in the gallery. For others, write to me and I will send details, extra photos and the price.'], ['Is there a certificate of authenticity?', 'Yes, every work comes with a signed certificate stating title, year, technique and size.'], ['Can I see a work in person?', 'Yes, in the studio in Odesa by appointment.']] },
+      { tab: 'Commissions', items: [['What can I commission?', 'A portrait, a memorable place or a scene from your story — in my own manner.'], ['How long does it take?', 'Usually 6–10 weeks, depending on size and complexity.'], ['How is the idea agreed?', 'First a conversation and a composition sketch, then a 30% deposit.']] },
+      { tab: 'Shipping', items: [['Where do you ship?', 'Across Ukraine and abroad, in museum-grade packaging.'], ['Who pays for shipping?', 'Shipping is calculated separately and agreed in advance.']] },
+      { tab: 'Payment', items: [['How can I pay?', 'Bank transfer or a contract for collectors and institutions.']] },
+    ] : [
+      { tab: 'Придбання', items: [['Як дізнатися ціну роботи?', 'Ціни доступних робіт вказані в галереї. Для решти — напишіть, і я надішлю деталі, додаткові фото та вартість.'], ['Чи є сертифікат автентичності?', 'Так, кожна робота має підписаний сертифікат із назвою, роком, технікою та розміром.'], ['Можна побачити роботу наживо?', 'Так, у майстерні в Одесі за попереднім записом.']] },
+      { tab: 'Замовлення', items: [['Що можна замовити?', 'Портрет, памʼятне місце чи сюжет із вашої історії — у моїй манері.'], ['Скільки триває робота?', 'Зазвичай 6–10 тижнів, залежно від розміру й складності.'], ['Як погоджується задум?', 'Спершу розмова і композиційний ескіз, потім передоплата 30%.']] },
+      { tab: 'Доставка', items: [['Куди ви доставляєте?', 'По Україні та за кордон, з музейним пакуванням.'], ['Хто оплачує доставку?', 'Вартість розраховується окремо й узгоджується заздалегідь.']] },
+      { tab: 'Оплата', items: [['Які способи оплати?', 'Банківський переказ або договір для колекціонерів та установ.']] },
+    ];
+    const tab = faqData[s.faqTab];
+    return {
+      t,
+      nav: [[L('Живопис', 'Paintings'), '#works'], [L('Про мене', 'About'), '#about'], [L('Виставки', 'Exhibitions'), '#exhibitions'], [L('Щоденник', 'Journal'), '#diary'], [L('Придбати', 'Buy'), '#buy']].map(([label, href]) => ({ label, href })),
+      langs: ['UA', 'EN'].map(code => ({ code, fg: s.lang === code ? '#111110' : '#8C8C88', onClick: () => this.setLang(code) })),
+      tiltMove: e => {
+        const el = e.currentTarget, r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s';
+        el.style.transform = `perspective(900px) rotateX(${-py * 10}deg) rotateY(${px * 12}deg) scale(1.02)`;
+        el.style.boxShadow = `${-px * 24}px ${24 - py * 12}px 48px rgba(17,17,16,0.22)`;
+      },
+      tiltLeave: e => {
+        const el = e.currentTarget;
+        el.style.transition = '';
+        el.style.transform = 'perspective(900px)';
+        el.style.boxShadow = '';
+      },
+      bioFacts: [
+        { y: '1990', t: L('Народився 7 жовтня в селі ', 'Born on 7 October in the village of '), link: L('Чернове (Андрієво-Іванівка)', 'Chernove (Andriievo-Ivanivka)'), href: 'https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B5_(%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)', post: L(', Березівський район, Одеська область', ', Berezivka district, Odesa region') },
+        { y: '2008–2013', t: '', link: L('Художньо-графічний факультет Університету Ушинського', 'Faculty of Fine Arts and Graphics, Ushynsky University'), href: 'https://pdpu.edu.ua/pro-khudozhno-grafichnij-fakultet/', post: L(', викладач образотворчого мистецтва', ' — qualified as a fine arts teacher') },
+        { y: '2009', t: L('Перші виставки, ще за часів навчання', 'First exhibitions, while still a student') },
+        { y: '2023', t: L('Викладає на рідному факультеті, навчається в аспірантурі', 'Teaching at his alma mater, postgraduate studies') },
+        { y: '2024', t: L('Член Національної спілки художників України', 'Member of the National Union of Artists of Ukraine') },
+      ],
+      bioText: (EN ? [
+        'Oleksandr Mykhailovych Petrovskyi is a Ukrainian painter and teacher.',
+        'He was born on 7 October 1990 in the village of Chernove (Andriievo-Ivanivka), Berezivka district, Odesa region.',
+        'From 2008 to 2013 he studied at the Faculty of Fine Arts and Graphics of the South Ukrainian National Pedagogical University named after K. D. Ushynsky, qualifying as a teacher of fine arts. His teachers were the renowned educators and artists P. P. Bashkatov, O. I. Pismichenko, V. V. Filipenko and S. V. Lozovskyi.',
+        'Since 2023 he has taught at his alma mater, the Faculty of Fine Arts and Graphics, while pursuing postgraduate studies at the university. Since 2024 he has been a member of the National Union of Artists of Ukraine.',
+        'He has taken part in exhibitions since 2009, from his student years, and has participated in regional, national and international art projects. His works are held in private collections in Ukraine and abroad, including Switzerland and Germany.',
+      ] : [
+        'Олександр Михайлович Петровський — український живописець, викладач.',
+        'Народився 7 жовтня 1990 року в селі Чернове (Андрієво-Іванівка) Березівського району Одеської області.',
+        'У 2008–2013 роках навчався на художньо-графічному факультеті Південноукраїнського національного педагогічного університету імені К. Д. Ушинського й здобув кваліфікацію викладача образотворчого мистецтва. Його вчителями були відомі педагоги й митці П. П. Башкатов, О. І. Пісьміченко, В. В. Філіпенко та С. В. Лозовський.',
+        'Від 2023 року викладає на рідному художньо-графічному факультеті й навчається в аспірантурі університету. Від 2024 року — член Національної спілки художників України.',
+        'У виставках бере участь від 2009 року, ще з часів навчання. Учасник обласних, всеукраїнських і міжнародних мистецьких проєктів. Твори художника зберігаються в приватних колекціях України та за кордоном, зокрема у Швейцарії й Німеччині.',
+      ]).map(t => ({ t })),
+      bioOpen: !!s.bioOpen,
+      bioLabel: s.bioOpen ? L('Згорнути біографію', 'Hide biography') : t.bio,
+      bioIcon: s.bioOpen ? '−' : '+',
+      bioToggle: () => this.setState({ bioOpen: !s.bioOpen }),
+      statsRef: this._statsRef,
+      stats: [{ to: 15, suf: '+', l: L('Років практики', 'Years of practice') }, { to: 37, suf: '', l: L('Виставок', 'Exhibitions') }, { to: 120, suf: '+', l: L('Робіт у колекціях', 'Works in collections') }, { v: L('НСХУ', 'NUAU'), l: L('Член спілки', 'Union member') }]
+        .map(x => x.to == null ? x : { ...x, v: Math.round(x.to * (s.countP ?? 0)) + x.suf }),
+      filters: slash(fList.map(f => f.label), fList.findIndex(f => f.key === s.filter), i => this.setState({ filter: fList[i].key, lbIdx: null })),
+      ...(() => {
+        const list = allWorks.filter(w => s.filter === 'all' || w.k === s.filter);
+        this._lbCount = list.length;
+        const cur = s.lbIdx != null ? list[s.lbIdx] : null;
+        if (typeof document !== 'undefined') document.body.style.overflow = cur ? 'hidden' : '';
+        return {
+          works: list.map((w, i) => ({ ...w, open: e => { e.preventDefault(); this.setState({ lbIdx: i }); } })),
+          lb: cur ? { ...cur, counter: (s.lbIdx + 1) + ' / ' + list.length, closeLabel: L('Закрити', 'Close') } : null,
+          lbImg: cur ? React.createElement('img', { src: cur.img, alt: cur.alt, decoding: 'async', onClick: e => e.stopPropagation(), style: { maxWidth: '100%', maxHeight: 'calc(100vh - 120px)', minHeight: 0, width: 'auto', height: 'auto', objectFit: 'contain', justifySelf: 'center', alignSelf: 'center', cursor: 'default', display: 'block' } }) : null,
+          lbClose: () => this.setState({ lbIdx: null }),
+          lbStop: e => e.stopPropagation(),
+          lbPrev: e => { e.stopPropagation(); this._step(-1); },
+          lbNext: e => { e.stopPropagation(); this._step(1); },
+        };
+      })(),
+      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), color: s.series === i ? '#111110' : '#8C8C88', onEnter: () => this.setState({ series: i }) })),
+      activeSeries: seriesData[s.series],
+      ...(() => {
+        // [year, type, ua, en, uaNote, enNote]
+        const EX = [
+          [2024, 'nat', 'Всеукраїнський культурно-мистецький проєкт до Дня художника', 'All-Ukrainian art project for Artist’s Day', 'Робота «Renaissance»', 'Work: “Renaissance”'],
+          [2024, 'nat', 'Всеукраїнська виставка «Барви Дніпра»', 'All-Ukrainian exhibition “Colours of the Dnipro”', 'Робота «Сколошканий комиш»', 'Work: “Tousled Reeds”'],
+          [2024, 'nat', 'Всеукраїнський культурно-мистецький проєкт до Дня незалежності', 'All-Ukrainian art project for Independence Day', 'Робота «Наша надія»', 'Work: “Our Hope”'],
+          [2024, 'nat', 'Всеукраїнський проєкт до 210-ї річниці від дня народження Тараса Шевченка', 'All-Ukrainian project for the 210th anniversary of Taras Shevchenko', 'Робота «Андрієво-Іванівська круча»', 'Work: “Andriievo-Ivanivska Cliff”'],
+          [2024, 'reg', 'Обласна молодіжна виставка', 'Regional youth exhibition', '', ''],
+          [2024, 'grp', '«ХУДГРАФ FOREVER»', '“KHUDGRAF FOREVER”', '', ''],
+          [2024, 'grp', '«Життя триває»', '“Life Goes On”', '', ''],
+          [2024, 'grp', '«ХУДГРАФ. 60 років»', '“KHUDGRAF. 60 Years”', '', ''],
+          [2024, 'grp', 'Мистецький проєкт «Кров — життя»', 'Art project “Blood Is Life”', '', ''],
+          [2024, 'grp', '«ХУДГРАФ — успішний»', '“KHUDGRAF Is Successful”', '', ''],
+          [2024, 'grp', '«Художньо-графічний факультет — 60 років»', '“Faculty of Fine Arts and Graphics — 60 Years”', '', ''],
+          [2023, 'nat', 'Всеукраїнська різдвяна виставка', 'All-Ukrainian Christmas exhibition', 'Робота «Парк перемоги»', 'Work: “Victory Park”'],
+          [2023, 'reg', 'Обласна виставка до Дня художника України', 'Regional exhibition for Ukrainian Artist’s Day', '', ''],
+          [2023, 'reg', 'Обласна виставка «Пленери-2023»', 'Regional exhibition “Plein Airs 2023”', '', ''],
+          [2023, 'reg', 'Обласна виставка «Портрет та автопортрет»', 'Regional exhibition “Portrait and Self-Portrait”', '', ''],
+          [2021, 'reg', 'Обласна різдвяна виставка', 'Regional Christmas exhibition', '', ''],
+          [2021, 'grp', '«Кішки Одеси»', '“Cats of Odesa”', '', ''],
+          [2021, 'grp', '«Образ людини: портрет»', '“The Human Image: Portrait”', '', ''],
+          [2020, 'solo', '«Farby i Svit»', '“Farby i Svit”', 'Музей образотворчих мистецтв імені О. Білого', 'O. Bilyi Museum of Fine Arts'],
+          [2020, 'solo', '«Фарби і світ»', '“Paints and the World”', 'Галерея «Сади перемоги»', '“Victory Gardens” Gallery'],
+          [2019, 'nat', 'Всеукраїнська художня виставка до Дня незалежності', 'All-Ukrainian art exhibition for Independence Day', 'Робота «Солома»', 'Work: “Straw”'],
+          [2018, 'reg', 'Обласна виставка до Дня незалежності України', 'Regional exhibition for Ukrainian Independence Day', '', ''],
+          [2016, 'solo', '«Люди»', '“People”', 'Галерея MoreMusic', 'MoreMusic Gallery'],
+          [2016, 'grp', 'Молодіжний арт-конкурс «Рожевий бульдозер»', 'Youth art contest “Pink Bulldozer”', '', ''],
+          [2016, 'grp', '«Крила»', '“Wings”', '', ''],
+          [2016, 'grp', '«Час літати»', '“Time to Fly”', '', ''],
+          [2015, 'grp', '«Мистецтво — це брехня»', '“Art Is a Lie”', '', ''],
+          [2015, 'grp', '«Чорне і біле»', '“Black and White”', '', ''],
+          [2015, 'grp', 'Молодіжний арт-конкурс «Рожевий бульдозер»', 'Youth art contest “Pink Bulldozer”', '', ''],
+          [2015, 'grp', 'Молодіжний арт-конкурс «Рожевий бульдозер»', 'Youth art contest “Pink Bulldozer”', '', ''],
+          [2014, 'int', '«SFgroup»', '“SFgroup”', 'Женева, Швейцарія', 'Geneva, Switzerland'],
+          [2014, 'int', '«Новий день»', '“A New Day”', 'Берлін, Німеччина', 'Berlin, Germany'],
+          [2014, 'grp', 'Молодіжний арт-конкурс «Рожевий бульдозер»', 'Youth art contest “Pink Bulldozer”', '', ''],
+          [2013, 'reg', 'Обласна виставка молодих художників', 'Regional exhibition of young artists', '', ''],
+          [2013, 'grp', 'Молодіжний арт-конкурс «Рожевий бульдозер»', 'Youth art contest “Pink Bulldozer”', '', ''],
+          [2012, 'nat', 'Всеукраїнська художня виставка «Український натюрморт»', 'All-Ukrainian art exhibition “Ukrainian Still Life”', 'Робота «Рожевий настрій»', 'Work: “Pink Mood”'],
+          [2010, 'grp', '«Море і кораблики»', '“The Sea and Little Ships”', '', ''],
+        ];
+        const TYPES = [
+          ['all', L('Усі', 'All')], ['solo', L('Персональні', 'Solo')], ['int', L('Міжнародні', 'International')],
+          ['nat', L('Всеукраїнські', 'National')], ['reg', L('Обласні', 'Regional')], ['grp', L('Групові та конкурси', 'Group & contests')],
+        ];
+        const typeName = { solo: L('Персональна', 'Solo'), int: L('Міжнародна', 'International'), nat: L('Всеукраїнська', 'National'), reg: L('Обласна', 'Regional'), grp: L('Групова', 'Group') };
+        const cur = s.exType || 'all';
+        const list = EX.filter(e => cur === 'all' || e[1] === cur);
+        const LIMIT = 8, open = !!s.exAll;
+        return {
+          exTabs: TYPES.map(([key, label], i) => ({ label, count: key === 'all' ? EX.length : EX.filter(e => e[1] === key).length, sep: i < TYPES.length - 1 ? '/' : '', fg: key === cur ? '#111110' : '#AFAFAB', onClick: () => this.setState({ exType: key, exAll: false }) })),
+          exhibitions: (open ? list : list.slice(0, LIMIT)).map(e => ({ year: String(e[0]), type: typeName[e[1]], title: EN ? e[3] : e[2], place: EN ? e[5] : e[4] })),
+          exHasMore: list.length > LIMIT,
+          exMoreLabel: open ? L('Згорнути', 'Show less') : L('Показати всі', 'Show all') + ' (' + list.length + ')',
+          exMoreIcon: open ? '−' : '+',
+          exToggle: () => this.setState({ exAll: !open }),
+        };
+      })(),
+      studio: [
+        { ph: L('ескіз вугіллям', 'charcoal sketch'), cap: L('Ескіз', 'Sketch'), a: '#9A9A96', b: '#A6A6A2', video: false },
+        { ph: L('палітра', 'palette'), cap: L('Палітра', 'Palette'), a: '#C9553A', b: '#D2603F', video: false },
+        { ph: L('відео процесу', 'process video'), cap: L('Відео з майстерні', 'Studio video'), a: '#1E1E1C', b: '#2A2A28', video: true },
+        { ph: L('фрагмент полотна', 'canvas detail'), cap: L('Фрагмент', 'Detail'), a: '#3E63C9', b: '#4A6ED2', video: false },
+      ],
+      posts: [
+        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#C98A2E', b: '#D49638' },
+        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#3E63C9', b: '#4A6ED2' },
+        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F8A5B', b: '#7B9666' },
+      ],
+      faqTabs: slash(faqData.map(f => f.tab), s.faqTab, i => this.setState({ faqTab: i, faqOpen: 0 })),
+      faq: tab.items.map(([q, a], i) => ({ q, a, open: s.faqOpen === i, icon: s.faqOpen === i ? '−' : '+', bg: s.faqOpen === i ? '#F2F2F0' : 'transparent', onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
+      fields: [{ ph: L('Імʼя', 'Name'), type: 'text', name: 'name', ac: 'name' }, { ph: 'Email', type: 'email', name: 'email', ac: 'email' }, { ph: L('Тема — придбання, замовлення, співпраця', 'Subject — purchase, commission, collaboration'), type: 'text', name: 'subject', ac: 'off' }],
+      subLabel: s.subbed ? L('Готово ✓', 'Done ✓') : L('Підписатись ↗', 'Subscribe ↗'),
+      subscribe: () => this.setState({ subbed: true }),
+      sendLabel: s.sent ? L('Надіслано — дякую', 'Sent — thank you') : L('Надіслати ↗', 'Send ↗'),
+      send: () => this.setState({ sent: true }),
+    };
+  }
+}
+</script>
+</body>
+</html>
