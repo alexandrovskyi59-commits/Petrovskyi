@@ -293,10 +293,15 @@ input,textarea,button{font-family:inherit}
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 16px;">
     <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
-      <a href="#" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#111110;opacity:0.8;">
-        <div style="aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);"></div>
-        <div style="display:flex;justify-content:space-between;font-size:12px;color:#6E6E6A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
-        <span style="font-size:22px;font-weight:500;letter-spacing:-0.03em;line-height:1.1;">{{ p.title }}</span>
+      <a href="{{ p.href }}" target="{{ p.target }}" rel="{{ p.rel }}" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#111110;opacity:0.8;">
+        <div style="position:relative;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#FFFFFF;">
+          <sc-if value="{{ p.journal }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:12px;font-weight:500;color:#A6A6A2;">{{ p.journal }}</span>
+            <span style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;"><span style="font-size:22px;font-weight:500;letter-spacing:-0.03em;line-height:1;">{{ p.pages }}</span><span style="background:#FFFFFF;color:#111110;padding:3px 7px;font-size:11px;font-weight:500;">{{ p.badge }}</span></span>
+          </sc-if>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#6E6E6A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
+        <span style="font-size:22px;font-weight:500;letter-spacing:-0.03em;line-height:1.1;text-wrap:pretty;">{{ p.title }}</span>
       </a>
     </sc-for>
   </div>
@@ -591,9 +596,12 @@ class Component extends DCLogic {
         { ph: L('фрагмент полотна', 'canvas detail'), cap: L('Фрагмент', 'Detail'), a: '#3E63C9', b: '#4A6ED2', video: false },
       ],
       posts: [
-        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#C98A2E', b: '#D49638' },
-        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#3E63C9', b: '#4A6ED2' },
-        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F8A5B', b: '#7B9666' },
+        { rubric: L('Преса', 'Press'), date: '19.02.2026', title: L('Коли простір стає переживанням… — про персональну виставку «Місця мої»', 'When space becomes experience… — on the solo exhibition “My Places”'), journal: L('«Чорноморські новини», № 6 (22582)', '“Chornomorski Novyny”, No. 6 (22582)'), pages: L('Вероніка Стягайло', 'Veronika Stiahailo'), badge: L('Читати ↗', 'Read ↗'), href: 'https://chornomorka.com/archive/22582/a-171993.html', target: '_blank', rel: 'noopener noreferrer', a: '#FF4F2B', b: '#FF5E3D' },
+        { rubric: L('Наукові публікації', 'Research papers'), date: '14.10.2025', title: L('Тематичні пленери в освітньому процесі: їх значення у формуванні художньо-проєктної компетентності майбутніх магістрів образотворчого мистецтва', 'Thematic plein airs in the educational process: their importance in the formation of artistic and project competence of future masters of fine arts'), journal: L('«Південноукраїнські мистецькі студії», № 3 (2025)', '“South Ukrainian Art Studies”, No. 3 (2025)'), pages: L('с. 82–90', 'pp. 82–90'), badge: 'PDF ↗', href: 'http://artstudies.pdpu.edu.ua/index.php/artstudies/article/view/204/190', target: '_blank', rel: 'noopener noreferrer', a: '#2F45FF', b: '#3A50FF' },
+        { rubric: L('Наукові публікації', 'Research papers'), date: L('Мистецтво та освіта', 'Art and Education'), title: L('Художньо-проєктна підготовка у вищій мистецькій освіті Європи: розвиток класичних методик і сучасних підходів', 'Art and design project training in European higher art education: classical methods and modern approaches'), journal: L('Журнал «Мистецтво та освіта»', 'Journal “Art and Education”'), pages: L('с. 17–22', 'pp. 17–22'), badge: 'PDF ↗', href: 'https://artedu.com.ua/index.php/adm/article/view/318/316', target: '_blank', rel: 'noopener noreferrer', a: '#111110', b: '#1C1C1A' },
+        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#C98A2E', b: '#D49638', href: '#', target: '_self', rel: '' },
+        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#3E63C9', b: '#4A6ED2', href: '#', target: '_self', rel: '' },
+        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F8A5B', b: '#7B9666', href: '#', target: '_self', rel: '' },
       ],
       faqTabs: slash(faqData.map(f => f.tab), s.faqTab, i => this.setState({ faqTab: i, faqOpen: 0 })),
       faq: tab.items.map(([q, a], i) => ({ q, a, open: s.faqOpen === i, icon: s.faqOpen === i ? '−' : '+', bg: s.faqOpen === i ? '#F2F2F0' : 'transparent', onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
