@@ -29,11 +29,11 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#DEDEDB">
+<meta name="theme-color" content="#EEEAE2">
 <!-- GA4: вставити тег тут -->
 <!-- Meta Pixel: вставити тут -->
 <script src="./support.js"></script>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#DEDEDB"/><rect x="30" y="36" width="40" height="7" fill="#111110"/><rect x="30" y="47" width="40" height="7" fill="#111110"/><rect x="30" y="58" width="26" height="7" fill="#FF4F2B"/></svg></template>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EEEAE2"/><rect x="30" y="36" width="40" height="7" fill="#201D18"/><rect x="30" y="47" width="40" height="7" fill="#201D18"/><rect x="30" y="58" width="26" height="7" fill="#7E3420"/></svg></template>
 </head>
 <body>
 <x-dc>
@@ -41,34 +41,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#DEDEDB;color:#111110;font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}a:hover{color:#FF4F2B}
+body{margin:0;background:#EEEAE2;color:#201D18;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Cormorant Garamond','EB Garamond',Georgia,'Times New Roman',serif;font-variant-numeric:lining-nums}
+a{color:inherit;text-decoration:none}a:hover{color:#7E3420}
 *{box-sizing:border-box}
 input,textarea,button{font-family:inherit}
-::placeholder{color:#8C8C88}
+::placeholder{color:#8C8477}
+::selection{background:#201D18;color:#EEEAE2}
+:focus-visible{outline:1px solid #7E3420;outline-offset:3px}
 @keyframes rip{from{transform:translate(-50%,-50%) scale(0);opacity:0.55}to{transform:translate(-50%,-50%) scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
 
 <!-- HEADER -->
-<header style="position:sticky;top:0;z-index:20;background:#DEDEDB;">
-  <div style="max-width:1440px;margin:0 auto;padding:16px clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;align-items:start;font-size:12px;line-height:1.35;">
-    <a href="#top" style="display:flex;gap:8px;align-items:flex-start;">
-      <span style="display:flex;flex-direction:column;gap:2px;padding-top:2px;"><span style="width:26px;height:3px;background:#111110;"></span><span style="width:26px;height:3px;background:#111110;"></span><span style="width:18px;height:3px;background:#111110;"></span></span>
-      <span style="font-weight:600;">Petrovskyi<br>Studio</span>
+<header style="position:sticky;top:0;z-index:20;background:#EEEAE2;border-bottom:1px solid #D2CABB;">
+  <div style="max-width:1440px;margin:0 auto;padding:14px clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;align-items:start;font-size:12px;line-height:1.35;">
+    <a href="#top" aria-label="Petrovskyi Studio — на початок" style="display:flex;align-items:center;gap:10px;">
+      <img src="./logo.svg" alt="" aria-hidden="true" width="62" height="42" style="display:block;width:62px;height:auto;">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:500;line-height:0.92;letter-spacing:-0.01em;">Petrovskyi<br><em style="font-style:italic;font-weight:400;">Studio</em></span>
     </a>
-    <span style="font-weight:500;">({{ t.tag1 }}<br>{{ t.tag2 }})</span>
-    <nav style="display:flex;flex-direction:column;gap:1px;font-weight:500;">
+    <span style="color:#6D655A;">({{ t.tag1 }}<br>{{ t.tag2 }})</span>
+    <nav style="display:flex;flex-direction:column;gap:1px;font-size:13px;text-transform:lowercase;">
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5"><a href="{{ n.href }}">{{ n.label }}</a></sc-for>
     </nav>
-    <div style="display:flex;justify-content:flex-end;align-items:center;gap:12px;">
-      <div style="display:flex;gap:6px;font-weight:500;">
+    <div style="display:flex;justify-content:flex-end;align-items:center;gap:14px;">
+      <div style="display:flex;gap:8px;">
         <sc-for list="{{ langs }}" as="l" hint-placeholder-count="2"><button onClick="{{ l.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;font-weight:500;color:{{ l.fg }};">{{ l.code }}</button></sc-for>
       </div>
-      <a href="#contacts" style="background:#111110;color:#FFFFFF;padding:5px 9px;font-weight:500;display:flex;gap:6px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.write }} <span>↗</span></a>
+      <a href="#contacts" style="background:#201D18;color:#EEEAE2;padding:7px 12px;font-size:12px;text-transform:lowercase;display:flex;gap:6px;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.write }} <span>↗</span></a>
     </div>
   </div>
 </header>
@@ -77,104 +81,104 @@ input,textarea,button{font-family:inherit}
 
 <!-- 01 HERO -->
 <section id="top" data-screen-label="01 Hero" style="min-height:calc(100vh - 80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:32px clamp(24px,4vw,64px);align-content:end;padding:clamp(120px,22vh,240px) 0 28px;">
-  <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:22px;max-width:420px;order:2;">
+  <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:24px;max-width:420px;order:2;">
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <a href="#works" style="background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.viewWorks }} <span>↗</span></a>
-      <a href="#about" style="background:#C6C6C2;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;" style-hover="background:#111110;color:#FFFFFF;">{{ t.aboutBtn }} <span>↗</span></a>
+      <a href="#works" style="background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;display:flex;gap:8px;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.viewWorks }} <span>↗</span></a>
+      <a href="#about" style="border:1px solid #201D18;padding:8px 13px;font-size:13px;text-transform:lowercase;display:flex;gap:8px;" style-hover="background:#201D18;color:#EEEAE2;">{{ t.aboutBtn }} <span>↗</span></a>
     </div>
-    <p style="margin:0;font-size:13px;line-height:1.45;color:#6E6E6A;">{{ t.heroBio }}</p>
-    <p style="margin:0;font-size:13px;line-height:1.45;color:#6E6E6A;"><span style="color:#111110;font-weight:500;">{{ t.quote }}</span> {{ t.heroLead }}</p>
+    <p style="margin:0;font-size:13px;line-height:1.55;color:#6D655A;">{{ t.heroBio }}</p>
+    <p style="margin:0;font-size:13px;line-height:1.55;color:#6D655A;"><span style="display:block;margin-bottom:10px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:24px;line-height:1.2;color:#201D18;">{{ t.quote }}</span> {{ t.heroLead }}</p>
   </div>
-  <div style="display:flex;flex-direction:column;gap:20px;order:3;">
-    <h1 style="margin:0;font-weight:500;font-size:clamp(38px,4.6vw,68px);line-height:0.98;letter-spacing:-0.035em;text-wrap:balance;"><span style="color:#8C8C88;">{{ t.heroH1a }}</span> {{ t.heroH1b }}</h1>
-    <figure style="margin:0;display:flex;flex-direction:column;gap:8px;">
+  <div style="display:flex;flex-direction:column;gap:22px;order:3;">
+    <h1 style="margin:0;font-weight:400;font-size:clamp(44px,5.6vw,88px);line-height:0.98;letter-spacing:-0.02em;text-wrap:balance;"><span style="font-style:italic;color:#8C8477;">{{ t.heroH1a }}</span> {{ t.heroH1b }}</h1>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:10px;">
       <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794224259/Mask_group2.png" alt="{{ t.heroAlt }}" width="1600" height="1000" fetchpriority="high" decoding="async" style="display:block;width:100%;height:auto;">
-      <figcaption style="font-size:12px;font-weight:500;color:#6E6E6A;">{{ t.keyCaption }}</figcaption>
+      <figcaption style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:16px;color:#6D655A;">{{ t.keyCaption }}</figcaption>
     </figure>
   </div>
-  <div ref="{{ statsRef }}" style="order:4;grid-column:1/-1;font-variant-numeric:tabular-nums;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;padding-top:56px;">
+  <div ref="{{ statsRef }}" style="order:4;grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;margin-top:40px;padding-top:24px;border-top:1px solid #D2CABB;">
     <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
-      <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:clamp(24px,2.2vw,32px);font-weight:500;letter-spacing:-0.03em;">{{ s.v }}</span><span style="font-size:12px;font-weight:500;">{{ s.l }}</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-family:'Cormorant Garamond',Georgia,serif;font-variant-numeric:lining-nums tabular-nums;font-size:clamp(36px,3.4vw,52px);font-weight:400;line-height:1;letter-spacing:-0.01em;">{{ s.v }}</span><span style="font-size:12px;color:#6D655A;">{{ s.l }}</span></div>
     </sc-for>
   </div>
 </section>
 
 <!-- 02 WORKS -->
-<section id="works" data-screen-label="02 Works" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:48px;">
+<section id="works" data-screen-label="02 Works" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #D2CABB;display:flex;flex-direction:column;gap:56px;">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:32px clamp(24px,4vw,64px);align-items:end;">
-    <span style="font-size:12px;font-weight:500;">{{ t.s02 }}</span>
+    <span style="font-size:12px;color:#6D655A;">{{ t.s02 }}</span>
     <div style="display:flex;flex-direction:column;gap:28px;">
-      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.worksH2a }}</span> {{ t.worksH2b }}</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(18px,1.6vw,22px);letter-spacing:-0.02em;">
+      <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.worksH2a }}</span> {{ t.worksH2b }}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:4px 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,1.9vw,28px);">
         <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
-          <span style="display:flex;gap:6px;"><button onClick="{{ f.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ f.fg }};">{{ f.label }}</button><span style="color:#AFAFAB;">{{ f.sep }}</span></span>
+          <span style="display:flex;gap:8px;"><button onClick="{{ f.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;font-family:inherit;font-weight:500;color:{{ f.fg }};">{{ f.label }}</button><span style="color:#B3AB9D;">{{ f.sep }}</span></span>
         </sc-for>
       </div>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:48px 16px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:56px 20px;">
     <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
-      <a href="#" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:10px;cursor:zoom-in;" style-hover="color:#111110;opacity:0.85;">
-        <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;aspect-ratio:4/5;background:#C6C6C2;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-end;padding:10px;font-size:10px;transform:perspective(900px);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),box-shadow 0.5s;will-change:transform;">
+      <a href="#" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:12px;cursor:zoom-in;" style-hover="color:#201D18;opacity:0.85;">
+        <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;aspect-ratio:4/5;background:#E2DCD0;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-end;padding:10px;font-size:10px;transform:perspective(900px);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),box-shadow 0.5s;will-change:transform;">
           <img src="{{ w.img }}" alt="{{ w.alt }}" width="800" height="1000" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
-          <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:relative;background:#FFFFFF;color:#111110;padding:2px 6px;font-family:'Geist',sans-serif;font-weight:500;">{{ t.sold }}</span></sc-if>
+          <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:relative;background:#EEEAE2;color:#201D18;padding:3px 8px;font-family:'Inter',sans-serif;font-size:11px;text-transform:lowercase;">{{ t.sold }}</span></sc-if>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;font-size:13px;">
-          <span style="font-weight:500;">{{ w.title }}</span><span style="color:#6E6E6A;">{{ w.year }}</span>
-          <span style="color:#6E6E6A;">{{ w.tech }}</span><span style="color:#6E6E6A;">{{ w.size }}</span>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;font-size:12px;align-items:baseline;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;font-weight:500;line-height:1.15;">{{ w.title }}</span><span style="color:#6D655A;">{{ w.year }}</span>
+          <span style="color:#6D655A;">{{ w.tech }}</span><span style="color:#6D655A;">{{ w.size }}</span>
         </div>
       </a>
     </sc-for>
   </div>
-  <a href="#" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.gallery }} <span>↗</span></a>
+  <a href="#" style="align-self:flex-start;background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;display:flex;gap:8px;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.gallery }} <span>↗</span></a>
 </section>
 </main>
 
 <sc-if value="{{ lb }}" hint-placeholder-val="{{ false }}">
-  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(12,12,11,0.94);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,32px);gap:12px;color:#FFFFFF;cursor:zoom-out;">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;font-weight:500;">
-      <span style="color:#A6A6A2;">{{ lb.counter }}</span>
-      <button onClick="{{ lbClose }}" style="background:#FFFFFF;color:#111110;border:none;padding:5px 9px;font-size:12px;font-weight:500;cursor:pointer;">{{ lb.closeLabel }} ✕</button>
+  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(32,29,24,0.96);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,32px);gap:12px;color:#EEEAE2;cursor:zoom-out;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;">
+      <span style="color:#A39B8C;">{{ lb.counter }}</span>
+      <button onClick="{{ lbClose }}" style="background:#EEEAE2;color:#201D18;border:none;padding:6px 11px;font-size:12px;text-transform:lowercase;cursor:pointer;">{{ lb.closeLabel }} ✕</button>
     </div>
     <div style="flex:1;min-height:0;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;grid-template-rows:minmax(0,1fr);align-items:center;gap:8px;">
-      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ lbPrev }}" style="height:48px;background:none;border:1px solid #4A4A47;color:#FFFFFF;font-size:18px;cursor:pointer;">←</button>
+      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ lbPrev }}" style="height:48px;background:none;border:1px solid #4F493F;color:#EEEAE2;font-size:18px;cursor:pointer;">←</button>
       {{ lbImg }}
-      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ lbNext }}" style="height:48px;background:none;border:1px solid #4A4A47;color:#FFFFFF;font-size:18px;cursor:pointer;">→</button>
+      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ lbNext }}" style="height:48px;background:none;border:1px solid #4F493F;color:#EEEAE2;font-size:18px;cursor:pointer;">→</button>
     </div>
-    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;">
-      <span style="font-weight:500;">{{ lb.title }}, {{ lb.year }}</span>
-      <span style="color:#A6A6A2;">{{ lb.tech }} · {{ lb.size }}</span>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:13px;">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;">{{ lb.title }}, {{ lb.year }}</span>
+      <span style="color:#A39B8C;">{{ lb.tech }}, {{ lb.size }}</span>
     </div>
   </div>
 </sc-if>
 
 <!-- 03 ABOUT (dark) -->
-<section id="about" data-screen-label="03 About" style="background:#0C0C0B;color:#FFFFFF;">
+<section id="about" data-screen-label="03 About" style="background:#24201B;color:#EEEAE2;">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
     <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
-      <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ t.s03 }}</span>
-      <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,64px);line-height:0.98;letter-spacing:-0.035em;max-width:620px;">{{ t.aboutH2 }}<br>{{ t.aboutH2b }}</h2>
+      <span style="font-size:12px;color:#A39B8C;">{{ t.s03 }}</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(42px,5vw,76px);line-height:0.98;letter-spacing:-0.015em;max-width:640px;">{{ t.aboutH2 }}<br><em style="font-style:italic;color:#A39B8C;">{{ t.aboutH2b }}</em></h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:28px;">
-      <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794225080/53814274_2312968365413280_5338401352563294208_n.jpg" alt="{{ t.studioPhoto }}" width="1200" height="800" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#2B2B29;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:13px;line-height:1.5;">
-        <p style="margin:0;color:#FFFFFF;font-weight:500;">{{ t.aboutP1 }}</p>
-        <p style="margin:0;color:#A6A6A2;">{{ t.aboutP2 }}</p>
+      <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794225080/53814274_2312968365413280_5338401352563294208_n.jpg" alt="{{ t.studioPhoto }}" width="1200" height="800" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#3B362F;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:13px;line-height:1.55;">
+        <p style="margin:0;color:#EEEAE2;font-weight:500;">{{ t.aboutP1 }}</p>
+        <p style="margin:0;color:#A39B8C;">{{ t.aboutP2 }}</p>
       </div>
       <div style="display:flex;flex-direction:column;">
         <sc-for list="{{ bioFacts }}" as="b" hint-placeholder-count="5">
-          <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid #2E2E2C;font-size:13px;line-height:1.45;">
-            <span style="font-weight:500;color:#FFFFFF;">{{ b.y }}</span>
-            <span style="color:#A6A6A2;">{{ b.t }}<sc-if value="{{ b.href }}" hint-placeholder-val="{{ false }}"><a href="{{ b.href }}" target="_blank" rel="noopener noreferrer" style="color:#FFFFFF;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6E6E6A;" style-hover="color:#FF4F2B;text-decoration-color:#FF4F2B;">{{ b.link }} ↗</a>{{ b.post }}</sc-if></span>
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid #3B362F;font-size:13px;line-height:1.5;">
+            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#EEEAE2;">{{ b.y }}</span>
+            <span style="color:#A39B8C;">{{ b.t }}<sc-if value="{{ b.href }}" hint-placeholder-val="{{ false }}"><a href="{{ b.href }}" target="_blank" rel="noopener noreferrer" style="color:#EEEAE2;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6D655A;" style-hover="color:#C98F78;text-decoration-color:#C98F78;">{{ b.link }} ↗</a>{{ b.post }}</sc-if></span>
           </div>
         </sc-for>
       </div>
       <sc-if value="{{ bioOpen }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex;flex-direction:column;gap:14px;padding-top:4px;font-size:14px;line-height:1.6;color:#C9C9C5;max-width:620px;">
+        <div style="display:flex;flex-direction:column;gap:16px;padding-top:4px;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.5;color:#D3CBBC;max-width:640px;">
           <sc-for list="{{ bioText }}" as="p" hint-placeholder-count="5"><p style="margin:0;text-wrap:pretty;">{{ p.t }}</p></sc-for>
         </div>
       </sc-if>
-      <button type="button" onClick="{{ bioToggle }}" aria-expanded="{{ bioOpen }}" style="align-self:flex-start;background:#FFFFFF;color:#111110;border:none;padding:7px 11px;font-size:13px;font-weight:500;display:flex;gap:8px;cursor:pointer;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ bioLabel }} <span>{{ bioIcon }}</span></button>
+      <button type="button" onClick="{{ bioToggle }}" aria-expanded="{{ bioOpen }}" style="align-self:flex-start;background:#EEEAE2;color:#201D18;border:none;padding:9px 14px;font-size:13px;text-transform:lowercase;display:flex;gap:8px;cursor:pointer;" style-hover="background:#7E3420;color:#EEEAE2;">{{ bioLabel }} <span>{{ bioIcon }}</span></button>
     </div>
   </div>
 </section>
@@ -184,16 +188,16 @@ input,textarea,button{font-family:inherit}
 <!-- 04 SERIES -->
 <section id="series" data-screen-label="04 Series" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:flex;flex-direction:column;gap:20px;">
-    <span style="font-size:12px;font-weight:500;">{{ t.s04 }}</span>
-    <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,{{ activeSeries.a }} 0 1px,{{ activeSeries.b }} 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;color:#FFFFFF;margin-top:auto;">{{ t.seriesCover }}</div>
-    <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:400px;">{{ activeSeries.text }}</p>
+    <span style="font-size:12px;color:#6D655A;">{{ t.s04 }}</span>
+    <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,{{ activeSeries.a }} 0 1px,{{ activeSeries.b }} 1px 10px);display:flex;align-items:flex-end;padding:10px;font-size:11px;color:#EEEAE2;margin-top:auto;">{{ t.seriesCover }}</div>
+    <p style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:20px;line-height:1.35;color:#6D655A;max-width:420px;">{{ activeSeries.text }}</p>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:flex-end;">
     <sc-for list="{{ series }}" as="s" hint-placeholder-count="4">
-      <a href="#" onMouseEnter="{{ s.onEnter }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:16px 0;border-top:1px solid #BDBDB9;" style-hover="color:#111110;">
-        <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ s.n }}</span>
-        <span style="font-size:clamp(26px,2.8vw,40px);font-weight:500;letter-spacing:-0.035em;line-height:1.05;color:{{ s.color }};">{{ s.title }}</span>
-        <span style="font-size:12px;color:#6E6E6A;">{{ s.count }}</span>
+      <a href="#" onMouseEnter="{{ s.onEnter }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:18px 0;border-top:1px solid #D2CABB;" style-hover="color:#201D18;">
+        <span style="font-size:12px;color:#8C8477;">{{ s.n }}</span>
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,3.4vw,52px);font-weight:400;letter-spacing:-0.01em;line-height:1.02;color:{{ s.color }};">{{ s.title }}</span>
+        <span style="font-size:12px;color:#6D655A;">{{ s.count }}</span>
       </a>
     </sc-for>
   </div>
@@ -201,153 +205,153 @@ input,textarea,button{font-family:inherit}
 
 <!-- NOW -->
 <section data-screen-label="Now" style="padding-bottom:clamp(64px,8vw,120px);">
-  <a href="#" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#0C0C0B;color:#FFFFFF;" style-hover="color:#FFFFFF;">
-    <div style="padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:280px;">
-      <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ t.nowLabel }}</span>
-      <div style="display:flex;flex-direction:column;gap:14px;">
-        <span style="font-size:clamp(30px,3.4vw,48px);font-weight:500;letter-spacing:-0.035em;line-height:1;">{{ t.nowTitle }}</span>
-        <span style="font-size:13px;line-height:1.5;color:#A6A6A2;max-width:380px;">{{ t.nowText }}</span>
-        <span style="align-self:flex-start;background:#FFFFFF;color:#111110;padding:5px 9px;font-size:12px;font-weight:500;">{{ t.more }}</span>
+  <a href="#" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#24201B;color:#EEEAE2;" style-hover="color:#EEEAE2;">
+    <div style="padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:300px;">
+      <span style="font-size:12px;color:#A39B8C;">{{ t.nowLabel }}</span>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(36px,4vw,60px);font-weight:400;letter-spacing:-0.01em;line-height:1;">{{ t.nowTitle }}</span>
+        <span style="font-size:13px;line-height:1.55;color:#A39B8C;max-width:380px;">{{ t.nowText }}</span>
+        <span style="align-self:flex-start;background:#EEEAE2;color:#201D18;padding:6px 11px;font-size:12px;text-transform:lowercase;">{{ t.more }}</span>
       </div>
     </div>
-    <div style="min-height:280px;background:repeating-linear-gradient(135deg,#3E63C9 0 1px,#4A6ED2 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;">{{ t.nowFrag }}</div>
+    <div style="min-height:300px;background:repeating-linear-gradient(135deg,#4F6A80 0 1px,#587389 1px 10px);display:flex;align-items:flex-end;padding:10px;font-size:11px;">{{ t.nowFrag }}</div>
   </a>
 </section>
 
 <!-- STORY -->
-<section data-screen-label="Story" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+<section data-screen-label="Story" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #D2CABB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:8px;align-items:end;">
-    <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#C98A2E 0 1px,#D49638 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;color:#FFFFFF;">{{ t.phPainting }}</div>
+    <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#A9844C 0 1px,#B48E56 1px 10px);display:flex;align-items:flex-end;padding:10px;font-size:11px;color:#EEEAE2;">{{ t.phPainting }}</div>
     <div style="display:flex;flex-direction:column;gap:8px;">
-      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#B9B9B5 0 1px,#C6C6C2 1px 9px);display:flex;align-items:flex-end;padding:8px;font-family:'Geist Mono',monospace;font-size:9px;color:#4A4A47;">{{ t.phSketch }}</div>
-      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#6F8A5B 0 1px,#7B9666 1px 9px);display:flex;align-items:flex-end;padding:8px;font-family:'Geist Mono',monospace;font-size:9px;color:#FFFFFF;">{{ t.phDetail }}</div>
+      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#D2CABB 0 1px,#DDD6C9 1px 9px);display:flex;align-items:flex-end;padding:8px;font-size:10px;color:#4F493F;">{{ t.phSketch }}</div>
+      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#6F7F58 0 1px,#788961 1px 9px);display:flex;align-items:flex-end;padding:8px;font-size:10px;color:#EEEAE2;">{{ t.phDetail }}</div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
-    <span style="font-size:12px;font-weight:500;">{{ t.storyLabel }}</span>
-    <div style="display:flex;flex-direction:column;gap:22px;">
-      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.storyH2a }}</span> {{ t.storyH2b }}</h2>
-      <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:420px;">{{ t.storyP }}</p>
-      <a href="#" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.readStory }}</a>
+    <span style="font-size:12px;color:#6D655A;">{{ t.storyLabel }}</span>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <h2 style="margin:0;font-weight:400;font-size:clamp(36px,4vw,60px);line-height:1.02;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.storyH2a }}</span> {{ t.storyH2b }}</h2>
+      <p style="margin:0;font-size:13px;line-height:1.55;color:#6D655A;max-width:420px;">{{ t.storyP }}</p>
+      <a href="#" style="align-self:flex-start;background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.readStory }}</a>
     </div>
   </div>
 </section>
 
 <!-- 05 EXHIBITIONS -->
-<section id="exhibitions" data-screen-label="05 Exhibitions" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #BDBDB9;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+<section id="exhibitions" data-screen-label="05 Exhibitions" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #D2CABB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
-    <span style="font-size:12px;font-weight:500;">{{ t.s05 }}</span>
-    <div style="display:flex;flex-direction:column;gap:22px;">
-      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.exH2a }}</span> {{ t.exH2b }}</h2>
+    <span style="font-size:12px;color:#6D655A;">{{ t.s05 }}</span>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.exH2a }}</span> {{ t.exH2b }}</h2>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="#" style="background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.cv }}</a>
-        <a href="#" style="background:#C6C6C2;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#111110;color:#FFFFFF;">{{ t.pdf }}</a>
+        <a href="#" style="background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.cv }}</a>
+        <a href="#" style="border:1px solid #201D18;padding:8px 13px;font-size:13px;text-transform:lowercase;" style-hover="background:#201D18;color:#EEEAE2;">{{ t.pdf }}</a>
       </div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:24px;min-width:0;">
-    <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(16px,1.4vw,20px);letter-spacing:-0.02em;">
+    <div style="display:flex;flex-wrap:wrap;gap:4px 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(19px,1.6vw,24px);">
       <sc-for list="{{ exTabs }}" as="x" hint-placeholder-count="6">
-        <span style="display:flex;gap:6px;"><button type="button" onClick="{{ x.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ x.fg }};">{{ x.label }}<sup style="font-size:10px;font-weight:500;margin-left:2px;">{{ x.count }}</sup></button><span style="color:#AFAFAB;">{{ x.sep }}</span></span>
+        <span style="display:flex;gap:8px;"><button type="button" onClick="{{ x.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;font-family:inherit;font-weight:500;color:{{ x.fg }};">{{ x.label }}<sup style="font-family:'Inter',sans-serif;font-size:10px;font-weight:400;margin-left:2px;">{{ x.count }}</sup></button><span style="color:#B3AB9D;">{{ x.sep }}</span></span>
       </sc-for>
     </div>
     <div style="display:flex;flex-direction:column;">
       <sc-for list="{{ exhibitions }}" as="e" hint-placeholder-count="8">
-        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid #BDBDB9;font-size:13px;">
-          <span style="font-weight:500;">{{ e.year }}</span>
-          <div style="display:flex;flex-direction:column;gap:1px;min-width:0;"><span style="font-weight:500;text-wrap:pretty;">{{ e.title }}</span><sc-if value="{{ e.place }}" hint-placeholder-val="{{ true }}"><span style="color:#6E6E6A;">{{ e.place }}</span></sc-if></div>
-          <span style="color:#6E6E6A;text-align:right;">{{ e.type }}</span>
+        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:13px 0;border-top:1px solid #D2CABB;font-size:13px;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;">{{ e.year }}</span>
+          <div style="display:flex;flex-direction:column;gap:2px;min-width:0;"><span style="font-weight:500;text-wrap:pretty;">{{ e.title }}</span><sc-if value="{{ e.place }}" hint-placeholder-val="{{ true }}"><span style="color:#6D655A;">{{ e.place }}</span></sc-if></div>
+          <span style="color:#6D655A;text-align:right;">{{ e.type }}</span>
         </div>
       </sc-for>
       <sc-if value="{{ exHasMore }}" hint-placeholder-val="{{ true }}">
-        <button type="button" onClick="{{ exToggle }}" style="display:flex;justify-content:space-between;align-items:center;background:none;border:none;border-top:1px solid #111110;padding:14px 0 0;cursor:pointer;font-size:13px;font-weight:500;color:#111110;text-align:left;">{{ exMoreLabel }}<span>{{ exMoreIcon }}</span></button>
+        <button type="button" onClick="{{ exToggle }}" style="display:flex;justify-content:space-between;align-items:center;background:none;border:none;border-top:1px solid #201D18;padding:14px 0 0;cursor:pointer;font-size:13px;text-transform:lowercase;color:#201D18;text-align:left;">{{ exMoreLabel }}<span>{{ exMoreIcon }}</span></button>
       </sc-if>
     </div>
   </div>
 </section>
 
 <!-- 06 STUDIO -->
-<section id="studio" data-screen-label="06 Studio" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:40px;">
+<section id="studio" data-screen-label="06 Studio" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #D2CABB;display:flex;flex-direction:column;gap:40px;">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px clamp(24px,4vw,64px);align-items:end;">
-    <span style="font-size:12px;font-weight:500;">{{ t.s06 }}</span>
-    <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;"><span style="color:#8C8C88;">{{ t.stH2a }}</span> {{ t.stH2b }}</h2>
+    <span style="font-size:12px;color:#6D655A;">{{ t.s06 }}</span>
+    <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.stH2a }}</span> {{ t.stH2b }}</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;">
     <sc-for list="{{ studio }}" as="s" hint-placeholder-count="4">
-      <figure style="margin:0;display:flex;flex-direction:column;gap:8px;">
-        <div style="position:relative;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,{{ s.a }} 0 1px,{{ s.b }} 1px 9px);display:flex;align-items:flex-end;padding:10px;font-family:'Geist Mono',monospace;font-size:10px;color:#FFFFFF;">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:10px;">
+        <div style="position:relative;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,{{ s.a }} 0 1px,{{ s.b }} 1px 9px);display:flex;align-items:flex-end;padding:10px;font-size:11px;color:#EEEAE2;">
           {{ s.ph }}
-          <sc-if value="{{ s.video }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;background:#FFFFFF;color:#111110;padding:3px 7px;font-family:'Geist',sans-serif;font-size:11px;font-weight:500;">▶ 0:48</span></sc-if>
+          <sc-if value="{{ s.video }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;background:#EEEAE2;color:#201D18;padding:3px 8px;font-family:'Inter',sans-serif;font-size:11px;">▶ 0:48</span></sc-if>
         </div>
-        <figcaption style="font-size:12px;font-weight:500;">{{ s.cap }}</figcaption>
+        <figcaption style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:17px;">{{ s.cap }}</figcaption>
       </figure>
     </sc-for>
   </div>
 </section>
 
 <!-- 07 DIARY -->
-<section id="diary" data-screen-label="07 Diary" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:40px;">
+<section id="diary" data-screen-label="07 Diary" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #D2CABB;display:flex;flex-direction:column;gap:40px;">
   <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
-    <span style="font-size:12px;font-weight:500;">{{ t.s07 }}</span>
-    <a href="#" style="font-size:12px;font-weight:500;">{{ t.allPosts }}</a>
+    <span style="font-size:12px;color:#6D655A;">{{ t.s07 }}</span>
+    <a href="#" style="font-size:12px;text-transform:lowercase;text-decoration:underline;text-underline-offset:3px;">{{ t.allPosts }}</a>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 16px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:48px 20px;">
     <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
-      <a href="{{ p.href }}" target="{{ p.target }}" rel="{{ p.rel }}" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#111110;opacity:0.8;">
-        <div style="position:relative;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#FFFFFF;">
+      <a href="{{ p.href }}" target="{{ p.target }}" rel="{{ p.rel }}" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#201D18;opacity:0.8;">
+        <div style="position:relative;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#EEEAE2;">
           <sc-if value="{{ p.journal }}" hint-placeholder-val="{{ false }}">
-            <span style="font-size:12px;font-weight:500;color:#A6A6A2;">{{ p.journal }}</span>
-            <span style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;"><span style="font-size:22px;font-weight:500;letter-spacing:-0.03em;line-height:1;">{{ p.pages }}</span><span style="background:#FFFFFF;color:#111110;padding:3px 7px;font-size:11px;font-weight:500;">{{ p.badge }}</span></span>
+            <span style="font-size:12px;color:#D3CBBC;">{{ p.journal }}</span>
+            <span style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;"><span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:26px;line-height:1;">{{ p.pages }}</span><span style="background:#EEEAE2;color:#201D18;padding:3px 8px;font-size:11px;">{{ p.badge }}</span></span>
           </sc-if>
         </div>
-        <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#6E6E6A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
-        <span style="font-size:22px;font-weight:500;letter-spacing:-0.03em;line-height:1.1;text-wrap:pretty;">{{ p.title }}</span>
+        <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#6D655A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;line-height:1.1;text-wrap:pretty;">{{ p.title }}</span>
       </a>
     </sc-for>
   </div>
 </section>
 </main>
 
-<!-- 08 BUY (white FAQ-style) -->
-<section id="buy" data-screen-label="08 Buy" style="background:#FFFFFF;">
+<!-- 08 BUY (light FAQ-style) -->
+<section id="buy" data-screen-label="08 Buy" style="background:#F7F4EE;">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
     <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
-      <span style="font-size:12px;font-weight:500;">{{ t.s08 }}</span>
-      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.035em;max-width:560px;">{{ t.buyH2 }}</h2>
+      <span style="font-size:12px;color:#6D655A;">{{ t.s08 }}</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;max-width:600px;">{{ t.buyH2 }}</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:24px;">
-      <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(18px,1.6vw,22px);letter-spacing:-0.02em;">
+      <div style="display:flex;flex-wrap:wrap;gap:4px 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,1.9vw,28px);">
         <sc-for list="{{ faqTabs }}" as="t" hint-placeholder-count="4">
-          <span style="display:flex;gap:6px;"><button onClick="{{ t.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ t.fg }};">{{ t.label }}</button><span style="color:#C6C6C2;">{{ t.sep }}</span></span>
+          <span style="display:flex;gap:8px;"><button onClick="{{ t.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;font-family:inherit;font-weight:500;color:{{ t.fg }};">{{ t.label }}</button><span style="color:#D2CABB;">{{ t.sep }}</span></span>
         </sc-for>
       </div>
       <div style="display:flex;flex-direction:column;">
         <sc-for list="{{ faq }}" as="q" hint-placeholder-count="3">
-          <div style="display:flex;flex-direction:column;background:{{ q.bg }};border-top:1px solid #E4E4E1;">
-            <button onClick="{{ q.onClick }}" style="display:flex;justify-content:space-between;gap:16px;background:none;border:none;padding:14px 12px;cursor:pointer;font-size:14px;font-weight:500;text-align:left;color:#111110;">{{ q.q }}<span style="color:#8C8C88;">{{ q.icon }}</span></button>
-            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 12px 16px;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:520px;">{{ q.a }}</p></sc-if>
+          <div style="display:flex;flex-direction:column;background:{{ q.bg }};border-top:1px solid #E2DCD0;">
+            <button onClick="{{ q.onClick }}" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;background:none;border:none;padding:16px 12px;cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;font-weight:500;line-height:1.2;text-align:left;color:#201D18;">{{ q.q }}<span style="font-family:'Inter',sans-serif;font-size:14px;color:#8C8477;">{{ q.icon }}</span></button>
+            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 12px 18px;font-size:13px;line-height:1.6;color:#6D655A;max-width:520px;">{{ q.a }}</p></sc-if>
           </div>
         </sc-for>
       </div>
       <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:16px;align-items:end;padding-top:32px;">
-        <div style="display:flex;flex-direction:column;gap:14px;">
-          <span style="font-size:15px;font-weight:500;line-height:1.3;">{{ t.commQ }}<br><span style="color:#8C8C88;">{{ t.commA }}</span></span>
-          <a href="#contacts" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.commBtn }}</a>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;line-height:1.15;">{{ t.commQ }}<br><em style="font-style:italic;font-weight:400;color:#8C8477;">{{ t.commA }}</em></span>
+          <a href="#contacts" style="align-self:flex-start;background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.commBtn }}</a>
         </div>
-        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#B9B9B5 0 1px,#C6C6C2 1px 9px);display:flex;align-items:flex-end;padding:6px;font-family:'Geist Mono',monospace;font-size:9px;color:#4A4A47;">{{ t.phPortrait }}</div>
+        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#D2CABB 0 1px,#DDD6C9 1px 9px);display:flex;align-items:flex-end;padding:6px;font-size:10px;color:#4F493F;">{{ t.phPortrait }}</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 09 COLLAB (dark) -->
-<section id="collab" data-screen-label="09 Collaboration" style="background:#0C0C0B;color:#FFFFFF;">
+<section id="collab" data-screen-label="09 Collaboration" style="background:#24201B;color:#EEEAE2;">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
-    <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ t.s09 }}</span>
+    <span style="font-size:12px;color:#A39B8C;">{{ t.s09 }}</span>
     <div style="display:flex;flex-direction:column;gap:28px;">
-      <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,64px);line-height:0.98;letter-spacing:-0.035em;">{{ t.coH2a }} <span style="color:#6E6E6A;">{{ t.coH2b }}</span></h2>
-      <p style="margin:0;font-size:13px;line-height:1.5;color:#A6A6A2;max-width:440px;">{{ t.coP }}</p>
-      <a href="#contacts" style="align-self:flex-start;background:#FFFFFF;color:#111110;padding:7px 11px;font-size:13px;font-weight:500;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.propose }}</a>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(42px,5vw,76px);line-height:0.98;letter-spacing:-0.015em;">{{ t.coH2a }} <em style="font-style:italic;color:#A39B8C;">{{ t.coH2b }}</em></h2>
+      <p style="margin:0;font-size:13px;line-height:1.55;color:#A39B8C;max-width:440px;">{{ t.coP }}</p>
+      <a href="#contacts" style="align-self:flex-start;background:#EEEAE2;color:#201D18;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.propose }}</a>
     </div>
   </div>
 </section>
@@ -356,27 +360,27 @@ input,textarea,button{font-family:inherit}
 <!-- 10 CONTACTS -->
 <section id="contacts" data-screen-label="10 Contacts" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
-    <span style="font-size:12px;font-weight:500;">{{ t.s10 }}</span>
+    <span style="font-size:12px;color:#6D655A;">{{ t.s10 }}</span>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <a href="mailto:studio@petrovskyi.art" style="font-size:clamp(32px,4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1;word-break:break-word;">studio@petrovskyi.art</a>
-      <div style="display:flex;gap:32px;flex-wrap:wrap;font-size:13px;font-weight:500;"><!-- TODO: вставити реальні URL профілів --><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><span style="color:#6E6E6A;">{{ t.city }}</span></div>
-      <div style="display:flex;max-width:400px;border-bottom:1px solid #111110;margin-top:16px;">
-        <input type="email" name="newsletter_email" autocomplete="email" aria-label="{{ t.newsPh }}" placeholder="{{ t.newsPh }}" style="flex:1;min-width:0;background:transparent;border:none;padding:10px 0;font-size:14px;outline:none;color:#111110;">
-        <button onClick="{{ subscribe }}" style="background:none;border:none;font-size:13px;font-weight:500;cursor:pointer;color:#111110;">{{ subLabel }}</button>
+      <a href="mailto:studio@petrovskyi.art" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(36px,4.6vw,72px);font-weight:400;letter-spacing:-0.01em;line-height:1;word-break:break-word;">studio@petrovskyi.art</a>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;font-size:13px;"><!-- TODO: вставити реальні URL профілів --><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><span style="color:#6D655A;">{{ t.city }}</span></div>
+      <div style="display:flex;max-width:400px;border-bottom:1px solid #201D18;margin-top:16px;">
+        <input type="email" name="newsletter_email" autocomplete="email" aria-label="{{ t.newsPh }}" placeholder="{{ t.newsPh }}" style="flex:1;min-width:0;background:transparent;border:none;padding:10px 0;font-size:14px;outline:none;color:#201D18;">
+        <button onClick="{{ subscribe }}" style="background:none;border:none;font-size:13px;text-transform:lowercase;cursor:pointer;color:#201D18;">{{ subLabel }}</button>
       </div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:20px;justify-content:flex-end;">
     <sc-for list="{{ fields }}" as="f" hint-placeholder-count="3">
-      <input type="{{ f.type }}" name="{{ f.name }}" autocomplete="{{ f.ac }}" aria-label="{{ f.ph }}" placeholder="{{ f.ph }}" style="background:transparent;border:none;border-bottom:1px solid #BDBDB9;padding:12px 0;font-size:16px;outline:none;color:#111110;" style-focus="border-bottom-color:#111110;">
+      <input type="{{ f.type }}" name="{{ f.name }}" autocomplete="{{ f.ac }}" aria-label="{{ f.ph }}" placeholder="{{ f.ph }}" style="background:transparent;border:none;border-bottom:1px solid #D2CABB;padding:12px 0;font-size:16px;outline:none;color:#201D18;" style-focus="border-bottom-color:#201D18;">
     </sc-for>
-    <textarea rows="3" name="message" aria-label="{{ t.msgPh }}" placeholder="{{ t.msgPh }}" style="background:transparent;border:none;border-bottom:1px solid #BDBDB9;padding:12px 0;font-size:16px;outline:none;resize:none;color:#111110;" style-focus="border-bottom-color:#111110;"></textarea>
-    <button onClick="{{ send }}" style="align-self:flex-start;background:#111110;color:#FFFFFF;border:none;padding:9px 14px;font-size:13px;font-weight:500;cursor:pointer;" style-hover="background:#FF4F2B;">{{ sendLabel }}</button>
+    <textarea rows="3" name="message" aria-label="{{ t.msgPh }}" placeholder="{{ t.msgPh }}" style="background:transparent;border:none;border-bottom:1px solid #D2CABB;padding:12px 0;font-size:16px;outline:none;resize:none;color:#201D18;" style-focus="border-bottom-color:#201D18;"></textarea>
+    <button onClick="{{ send }}" style="align-self:flex-start;background:#201D18;color:#EEEAE2;border:none;padding:10px 16px;font-size:13px;text-transform:lowercase;cursor:pointer;" style-hover="background:#7E3420;">{{ sendLabel }}</button>
   </div>
 </section>
 
-<footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;padding:16px 0 28px;border-top:1px solid #BDBDB9;font-size:12px;font-weight:500;">
-  <span>Petrovskyi Studio</span><span style="color:#6E6E6A;">{{ t.copy }}</span><span style="color:#6E6E6A;">{{ t.member }}</span><a href="#top" style="justify-self:end;">{{ t.top }}</a>
+<footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;align-items:baseline;padding:18px 0 28px;border-top:1px solid #D2CABB;font-size:12px;">
+  <span style="display:flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:500;"><img src="./logo.svg" alt="" aria-hidden="true" width="32" height="22" style="display:block;width:32px;height:auto;">Petrovskyi <em style="font-weight:400;">Studio</em></span><span style="color:#6D655A;">{{ t.copy }}</span><span style="color:#6D655A;">{{ t.member }}</span><a href="#top" style="justify-self:end;text-transform:lowercase;">{{ t.top }}</a>
 </footer>
 </main>
 </x-dc>
@@ -405,7 +409,7 @@ class Component extends DCLogic {
     if (cs.position === 'static') btn.style.position = 'relative';
     btn.style.overflow = 'hidden';
     const s = document.createElement('span');
-    s.style.cssText = `position:absolute;left:${e.clientX - r.left}px;top:${e.clientY - r.top}px;width:${size}px;height:${size}px;border-radius:50%;pointer-events:none;background:${lum > 0.6 ? 'rgba(17,17,16,0.25)' : 'rgba(255,255,255,0.45)'};animation:rip 0.6s ease-out forwards;`;
+    s.style.cssText = `position:absolute;left:${e.clientX - r.left}px;top:${e.clientY - r.top}px;width:${size}px;height:${size}px;border-radius:50%;pointer-events:none;background:${lum > 0.6 ? 'rgba(32,29,24,0.22)' : 'rgba(238,234,226,0.4)'};animation:rip 0.6s ease-out forwards;`;
     btn.appendChild(s);
     setTimeout(() => s.remove(), 650);
   };
@@ -428,13 +432,14 @@ class Component extends DCLogic {
   _step(d) { const n = this._lbCount || 1; this.setState(s => ({ lbIdx: (s.lbIdx + d + n) % n })); }
   renderVals() {
     const s = this.state, EN = s.lang === 'EN', L = (u, e) => EN ? e : u;
+    const INK = '#201D18', MUTED = '#8C8477', SEP = '#B3AB9D';
     const DICT = {"ua":{"tag1":"Живопис,","tag2":"Одеса — з 2009","heroBio":"Олександр Петровський — художник, педагог, член Національної спілки художників України.","heroH1b":"Олександр Петровський.","write":"Написати","viewWorks":"Дивитися роботи","aboutBtn":"Про художника","quote":"Я пишу не те, що бачу, а те, що лишається після погляду.","heroLead":"Людина, простір і памʼять — у тихих сценах повсякдення.","heroH1a":"Живопис про людей, світло і те, що ми памʼятаємо.","keyCaption":"«Вечір на Ланжероні», 2025","heroAlt":"Картина Олександра Петровського «Вечір на Ланжероні», 2025","prevLabel":"Попередня робота","nextLabel":"Наступна робота","keyPainting":"ключова картина","s02":"(02) Вибрані роботи","worksH2a":"Олія, полотно, картон.","worksH2b":"Роботи останніх років.","photo":"фото картини","sold":"Продано","gallery":"Повна галерея","s03":"(03) Про художника","aboutH2":"Пишу людей, простір","aboutH2b":"і тишу між ними.","studioPhoto":"авторське фото в майстерні","aboutP1":"Олександр Михайлович Петровський — український живописець, викладач. Член Національної спілки художників України з 2024 року.","aboutP2":"Викладає на художньо-графічному факультеті Університету Ушинського. Твори зберігаються в приватних колекціях України, Швейцарії та Німеччини.","bio":"Повна біографія","s04":"(04) Творчі серії","seriesCover":"обкладинка серії","nowLabel":"Зараз у творчості","nowTitle":"«Сіль і світло»","nowText":"Дванадцять полотен про узбережжя пізньої осені. Персональна виставка — березень 2027.","more":"Детальніше ↗","nowFrag":"нова серія — фрагмент","phPainting":"картина","phSketch":"ескіз","phDetail":"фрагмент","storyLabel":"Історія однієї картини","storyH2a":"«Я писав її три роки, бо щоразу памʼятав інше світло.»","storyH2b":"Мамина кухня, 1987.","storyP":"Задум, ескізи та рішення, що змінювали картину від першого шару до лаку.","readStory":"Читати історію ↗","s05":"(05) Виставки та досягнення","exH2a":"37 виставок в Україні та Європі.","exH2b":"Шлях без поспіху.","cv":"Повне CV ↗","pdf":"Портфоліо для кураторів · PDF ↗","s06":"(06) У майстерні","stH2a":"Ескізи, палітра, відео.","stH2b":"Процес без глянцю.","s07":"(07) Мистецький щоденник","allPosts":"Усі записи ↗","s08":"(08) Картини та замовлення","buyH2":"Що варто знати, перш ніж придбати картину.","commQ":"Хочете роботу на замовлення?","commA":"Обговоримо ескіз.","commBtn":"Обговорити замовлення ↗","phPortrait":"портрет","s09":"(09) Співпраця та проєкти","coH2a":"Для галерей, кураторів, колекціонерів","coH2b":"та інституцій.","coP":"Групові й персональні виставки, кураторські проєкти, резиденції, лекції, майстер-класи та освітні програми.","propose":"Запропонувати проєкт ↗","s10":"(10) Контакти","city":"Одеса, Україна","newsPh":"Email — новини про виставки","msgPh":"Повідомлення","copy":"© 2026, Одеса","member":"Член НСХУ","top":"Вгору ↑"},"en":{"tag1":"Painting,","tag2":"Odesa — since 2009","heroBio":"Oleksandr Petrovskyi — painter, teacher, member of the National Union of Artists of Ukraine.","heroH1b":"Oleksandr Petrovskyi.","write":"Get in touch","viewWorks":"View works","aboutBtn":"About the artist","quote":"I paint not what I see, but what remains after the gaze.","heroLead":"People, space and memory — in quiet scenes of everyday life.","heroH1a":"Paintings about people, light and what we remember.","keyCaption":"“Evening at Lanzheron”, 2025","heroAlt":"Painting by Oleksandr Petrovskyi, “Evening at Lanzheron”, 2025","prevLabel":"Previous work","nextLabel":"Next work","keyPainting":"key painting","s02":"(02) Selected works","worksH2a":"Oil, canvas, cardboard.","worksH2b":"Recent works.","photo":"painting photo","sold":"Sold","gallery":"Full gallery","s03":"(03) About the artist","aboutH2":"I paint people, space","aboutH2b":"and the silence between them.","studioPhoto":"portrait in the studio","aboutP1":"Oleksandr Mykhailovych Petrovskyi is a Ukrainian painter and teacher. Member of the National Union of Artists of Ukraine since 2024.","aboutP2":"Teaches at the Faculty of Fine Arts and Graphics, Ushynsky University. His works are held in private collections in Ukraine, Switzerland and Germany.","bio":"Full biography","s04":"(04) Series","seriesCover":"series cover","nowLabel":"Currently working on","nowTitle":"“Salt and Light”","nowText":"Twelve canvases about the late-autumn coast. Solo exhibition — March 2027.","more":"Learn more ↗","nowFrag":"new series — detail","phPainting":"painting","phSketch":"sketch","phDetail":"detail","storyLabel":"The story of one painting","storyH2a":"“It took me three years, because each time I remembered a different light.”","storyH2b":"Mother’s Kitchen, 1987.","storyP":"The idea, the sketches and the decisions that changed the painting from first layer to varnish.","readStory":"Read the story ↗","s05":"(05) Exhibitions & recognition","exH2a":"37 exhibitions in Ukraine and Europe.","exH2b":"A path without hurry.","cv":"Full CV ↗","pdf":"Portfolio for curators · PDF ↗","s06":"(06) In the studio","stH2a":"Sketches, palette, video.","stH2b":"The process, unpolished.","s07":"(07) Art journal","allPosts":"All entries ↗","s08":"(08) Buy & commission","buyH2":"What to know before you buy a painting.","commQ":"Want a commissioned piece?","commA":"Let’s discuss a sketch.","commBtn":"Discuss a commission ↗","phPortrait":"portrait","s09":"(09) Collaboration & projects","coH2a":"For galleries, curators, collectors","coH2b":"and institutions.","coP":"Group and solo exhibitions, curatorial projects, residencies, lectures, workshops and educational programmes.","propose":"Propose a project ↗","s10":"(10) Contacts","city":"Odesa, Ukraine","newsPh":"Email — exhibition news","msgPh":"Message","copy":"© 2026, Odesa","member":"Member of NUAU","top":"Back to top ↑"}};
     const t = EN ? DICT.en : DICT.ua;
     const seriesData = [
-      { key: 'portrait', title: L('Людина і портрет', 'People & portrait'), short: L('Портрет', 'Portrait'), count: '14', a: '#C9553A', b: '#D2603F', text: L('Портрети близьких і випадкових людей: погляд, руки, пауза перед словом.', 'Portraits of loved ones and strangers: a gaze, hands, the pause before a word.') },
-      { key: 'space', title: L('Простір і пейзаж', 'Space & landscape'), short: L('Простір', 'Landscape'), count: '22', a: '#3E63C9', b: '#4A6ED2', text: L('Одеські двори, узбережжя і степ — простір як стан, а не краєвид.', 'Odesa courtyards, the coast and the steppe — space as a state of mind, not a view.') },
-      { key: 'memory', title: L('Памʼять і повсякденність', 'Memory & the everyday'), short: L('Памʼять', 'Memory'), count: '11', a: '#C98A2E', b: '#D49638', text: L('Кухні, підвіконня, речі, що пережили своїх власників.', 'Kitchens, windowsills, objects that outlived their owners.') },
-      { key: 'mother', title: L('Материнство та дитинство', 'Motherhood & childhood'), short: L('Материнство', 'Motherhood'), count: '09', a: '#6F8A5B', b: '#7B9666', text: L('Тиха серія про турботу, ранок і перші спогади.', 'A quiet series about care, mornings and first memories.') },
+      { key: 'portrait', title: L('Людина і портрет', 'People & portrait'), short: L('Портрет', 'Portrait'), count: '14', a: '#9C4E36', b: '#A6583F', text: L('Портрети близьких і випадкових людей: погляд, руки, пауза перед словом.', 'Portraits of loved ones and strangers: a gaze, hands, the pause before a word.') },
+      { key: 'space', title: L('Простір і пейзаж', 'Space & landscape'), short: L('Простір', 'Landscape'), count: '22', a: '#4F6A80', b: '#587389', text: L('Одеські двори, узбережжя і степ — простір як стан, а не краєвид.', 'Odesa courtyards, the coast and the steppe — space as a state of mind, not a view.') },
+      { key: 'memory', title: L('Памʼять і повсякденність', 'Memory & the everyday'), short: L('Памʼять', 'Memory'), count: '11', a: '#A9844C', b: '#B48E56', text: L('Кухні, підвіконня, речі, що пережили своїх власників.', 'Kitchens, windowsills, objects that outlived their owners.') },
+      { key: 'mother', title: L('Материнство та дитинство', 'Motherhood & childhood'), short: L('Материнство', 'Motherhood'), count: '09', a: '#6F7F58', b: '#788961', text: L('Тиха серія про турботу, ранок і перші спогади.', 'A quiet series about care, mornings and first memories.') },
     ];
     const tone = k => seriesData.find(x => x.key === k);
     const C = 'https://res.cloudinary.com/qk9xhhqc/image/upload/';
@@ -456,7 +461,7 @@ class Component extends DCLogic {
       [L('Дівчина в синьому', 'Girl in Blue'), 2025, L('Полотно, темпера', 'Tempera on canvas'), '80×60', 'portrait', false],
     ].map(([title, year, tech, size, k, sold], i) => ({ title, year, tech, size, sold, k, img: WORK_IMGS[i], alt: L('Картина «', 'Painting “') + title + L('», ', '”, ') + tech.toLowerCase() + ', ' + year }));
     const fList = [{ key: 'all', label: L('Усі', 'All') }, ...seriesData.map(x => ({ key: x.key, label: x.short }))];
-    const slash = (arr, activeIdx, onPick) => arr.map((label, i) => ({ label, sep: i < arr.length - 1 ? '/' : '', fg: i === activeIdx ? '#111110' : '#AFAFAB', onClick: () => onPick(i) }));
+    const slash = (arr, activeIdx, onPick) => arr.map((label, i) => ({ label, sep: i < arr.length - 1 ? '/' : '', fg: i === activeIdx ? INK : SEP, onClick: () => onPick(i) }));
     const faqData = EN ? [
       { tab: 'Buying', items: [['How do I find out the price?', 'Prices of available works are listed in the gallery. For others, write to me and I will send details, extra photos and the price.'], ['Is there a certificate of authenticity?', 'Yes, every work comes with a signed certificate stating title, year, technique and size.'], ['Can I see a work in person?', 'Yes, in the studio in Odesa by appointment.']] },
       { tab: 'Commissions', items: [['What can I commission?', 'A portrait, a memorable place or a scene from your story — in my own manner.'], ['How long does it take?', 'Usually 6–10 weeks, depending on size and complexity.'], ['How is the idea agreed?', 'First a conversation and a composition sketch, then a 30% deposit.']] },
@@ -472,13 +477,13 @@ class Component extends DCLogic {
     return {
       t,
       nav: [[L('Живопис', 'Paintings'), '#works'], [L('Про мене', 'About'), '#about'], [L('Виставки', 'Exhibitions'), '#exhibitions'], [L('Щоденник', 'Journal'), '#diary'], [L('Придбати', 'Buy'), '#buy']].map(([label, href]) => ({ label, href })),
-      langs: ['UA', 'EN'].map(code => ({ code, fg: s.lang === code ? '#111110' : '#8C8C88', onClick: () => this.setLang(code) })),
+      langs: ['UA', 'EN'].map(code => ({ code, fg: s.lang === code ? INK : MUTED, onClick: () => this.setLang(code) })),
       tiltMove: e => {
         const el = e.currentTarget, r = el.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
         el.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s';
         el.style.transform = `perspective(900px) rotateX(${-py * 10}deg) rotateY(${px * 12}deg) scale(1.02)`;
-        el.style.boxShadow = `${-px * 24}px ${24 - py * 12}px 48px rgba(17,17,16,0.22)`;
+        el.style.boxShadow = `${-px * 24}px ${24 - py * 12}px 48px rgba(32,29,24,0.2)`;
       },
       tiltLeave: e => {
         const el = e.currentTarget;
@@ -529,7 +534,7 @@ class Component extends DCLogic {
           lbNext: e => { e.stopPropagation(); this._step(1); },
         };
       })(),
-      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), color: s.series === i ? '#111110' : '#8C8C88', onEnter: () => this.setState({ series: i }) })),
+      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), color: s.series === i ? INK : MUTED, onEnter: () => this.setState({ series: i }) })),
       activeSeries: seriesData[s.series],
       ...(() => {
         // [year, type, ua, en, uaNote, enNote]
@@ -581,7 +586,7 @@ class Component extends DCLogic {
         const list = EX.filter(e => cur === 'all' || e[1] === cur);
         const LIMIT = 8, open = !!s.exAll;
         return {
-          exTabs: TYPES.map(([key, label], i) => ({ label, count: key === 'all' ? EX.length : EX.filter(e => e[1] === key).length, sep: i < TYPES.length - 1 ? '/' : '', fg: key === cur ? '#111110' : '#AFAFAB', onClick: () => this.setState({ exType: key, exAll: false }) })),
+          exTabs: TYPES.map(([key, label], i) => ({ label, count: key === 'all' ? EX.length : EX.filter(e => e[1] === key).length, sep: i < TYPES.length - 1 ? '/' : '', fg: key === cur ? INK : SEP, onClick: () => this.setState({ exType: key, exAll: false }) })),
           exhibitions: (open ? list : list.slice(0, LIMIT)).map(e => ({ year: String(e[0]), type: typeName[e[1]], title: EN ? e[3] : e[2], place: EN ? e[5] : e[4] })),
           exHasMore: list.length > LIMIT,
           exMoreLabel: open ? L('Згорнути', 'Show less') : L('Показати всі', 'Show all') + ' (' + list.length + ')',
@@ -590,21 +595,21 @@ class Component extends DCLogic {
         };
       })(),
       studio: [
-        { ph: L('ескіз вугіллям', 'charcoal sketch'), cap: L('Ескіз', 'Sketch'), a: '#9A9A96', b: '#A6A6A2', video: false },
-        { ph: L('палітра', 'palette'), cap: L('Палітра', 'Palette'), a: '#C9553A', b: '#D2603F', video: false },
-        { ph: L('відео процесу', 'process video'), cap: L('Відео з майстерні', 'Studio video'), a: '#1E1E1C', b: '#2A2A28', video: true },
-        { ph: L('фрагмент полотна', 'canvas detail'), cap: L('Фрагмент', 'Detail'), a: '#3E63C9', b: '#4A6ED2', video: false },
+        { ph: L('ескіз вугіллям', 'charcoal sketch'), cap: L('Ескіз', 'Sketch'), a: '#9D968A', b: '#A7A094', video: false },
+        { ph: L('палітра', 'palette'), cap: L('Палітра', 'Palette'), a: '#9C4E36', b: '#A6583F', video: false },
+        { ph: L('відео процесу', 'process video'), cap: L('Відео з майстерні', 'Studio video'), a: '#2A2620', b: '#332E27', video: true },
+        { ph: L('фрагмент полотна', 'canvas detail'), cap: L('Фрагмент', 'Detail'), a: '#4F6A80', b: '#587389', video: false },
       ],
       posts: [
-        { rubric: L('Преса', 'Press'), date: '19.02.2026', title: L('Коли простір стає переживанням… — про персональну виставку «Місця мої»', 'When space becomes experience… — on the solo exhibition “My Places”'), journal: L('«Чорноморські новини», № 6 (22582)', '“Chornomorski Novyny”, No. 6 (22582)'), pages: L('Вероніка Стягайло', 'Veronika Stiahailo'), badge: L('Читати ↗', 'Read ↗'), href: 'https://chornomorka.com/archive/22582/a-171993.html', target: '_blank', rel: 'noopener noreferrer', a: '#FF4F2B', b: '#FF5E3D' },
-        { rubric: L('Наукові публікації', 'Research papers'), date: '14.10.2025', title: L('Тематичні пленери в освітньому процесі: їх значення у формуванні художньо-проєктної компетентності майбутніх магістрів образотворчого мистецтва', 'Thematic plein airs in the educational process: their importance in the formation of artistic and project competence of future masters of fine arts'), journal: L('«Південноукраїнські мистецькі студії», № 3 (2025)', '“South Ukrainian Art Studies”, No. 3 (2025)'), pages: L('с. 82–90', 'pp. 82–90'), badge: 'PDF ↗', href: 'http://artstudies.pdpu.edu.ua/index.php/artstudies/article/view/204/190', target: '_blank', rel: 'noopener noreferrer', a: '#2F45FF', b: '#3A50FF' },
-        { rubric: L('Наукові публікації', 'Research papers'), date: L('Мистецтво та освіта', 'Art and Education'), title: L('Художньо-проєктна підготовка у вищій мистецькій освіті Європи: розвиток класичних методик і сучасних підходів', 'Art and design project training in European higher art education: classical methods and modern approaches'), journal: L('Журнал «Мистецтво та освіта»', 'Journal “Art and Education”'), pages: L('с. 17–22', 'pp. 17–22'), badge: 'PDF ↗', href: 'https://artedu.com.ua/index.php/adm/article/view/318/316', target: '_blank', rel: 'noopener noreferrer', a: '#111110', b: '#1C1C1A' },
-        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#C98A2E', b: '#D49638', href: '#', target: '_self', rel: '' },
-        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#3E63C9', b: '#4A6ED2', href: '#', target: '_self', rel: '' },
-        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F8A5B', b: '#7B9666', href: '#', target: '_self', rel: '' },
+        { rubric: L('Преса', 'Press'), date: '19.02.2026', title: L('Коли простір стає переживанням… — про персональну виставку «Місця мої»', 'When space becomes experience… — on the solo exhibition “My Places”'), journal: L('«Чорноморські новини», № 6 (22582)', '“Chornomorski Novyny”, No. 6 (22582)'), pages: L('Вероніка Стягайло', 'Veronika Stiahailo'), badge: L('Читати ↗', 'Read ↗'), href: 'https://chornomorka.com/archive/22582/a-171993.html', target: '_blank', rel: 'noopener noreferrer', a: '#7E3420', b: '#883C27' },
+        { rubric: L('Наукові публікації', 'Research papers'), date: '14.10.2025', title: L('Тематичні пленери в освітньому процесі: їх значення у формуванні художньо-проєктної компетентності майбутніх магістрів образотворчого мистецтва', 'Thematic plein airs in the educational process: their importance in the formation of artistic and project competence of future masters of fine arts'), journal: L('«Південноукраїнські мистецькі студії», № 3 (2025)', '“South Ukrainian Art Studies”, No. 3 (2025)'), pages: L('с. 82–90', 'pp. 82–90'), badge: 'PDF ↗', href: 'http://artstudies.pdpu.edu.ua/index.php/artstudies/article/view/204/190', target: '_blank', rel: 'noopener noreferrer', a: '#3E5468', b: '#465D72' },
+        { rubric: L('Наукові публікації', 'Research papers'), date: L('Мистецтво та освіта', 'Art and Education'), title: L('Художньо-проєктна підготовка у вищій мистецькій освіті Європи: розвиток класичних методик і сучасних підходів', 'Art and design project training in European higher art education: classical methods and modern approaches'), journal: L('Журнал «Мистецтво та освіта»', 'Journal “Art and Education”'), pages: L('с. 17–22', 'pp. 17–22'), badge: 'PDF ↗', href: 'https://artedu.com.ua/index.php/adm/article/view/318/316', target: '_blank', rel: 'noopener noreferrer', a: '#24201B', b: '#2E2923' },
+        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#A9844C', b: '#B48E56', href: '#', target: '_self', rel: '' },
+        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#4F6A80', b: '#587389', href: '#', target: '_self', rel: '' },
+        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F7F58', b: '#788961', href: '#', target: '_self', rel: '' },
       ],
       faqTabs: slash(faqData.map(f => f.tab), s.faqTab, i => this.setState({ faqTab: i, faqOpen: 0 })),
-      faq: tab.items.map(([q, a], i) => ({ q, a, open: s.faqOpen === i, icon: s.faqOpen === i ? '−' : '+', bg: s.faqOpen === i ? '#F2F2F0' : 'transparent', onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
+      faq: tab.items.map(([q, a], i) => ({ q, a, open: s.faqOpen === i, icon: s.faqOpen === i ? '−' : '+', bg: s.faqOpen === i ? '#EEEAE2' : 'transparent', onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
       fields: [{ ph: L('Імʼя', 'Name'), type: 'text', name: 'name', ac: 'name' }, { ph: 'Email', type: 'email', name: 'email', ac: 'email' }, { ph: L('Тема — придбання, замовлення, співпраця', 'Subject — purchase, commission, collaboration'), type: 'text', name: 'subject', ac: 'off' }],
       subLabel: s.subbed ? L('Готово ✓', 'Done ✓') : L('Підписатись ↗', 'Subscribe ↗'),
       subscribe: () => this.setState({ subbed: true }),
