@@ -29,11 +29,11 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#EEEAE2">
+<meta name="theme-color" content="#DEDEDB">
 <!-- GA4: вставити тег тут -->
 <!-- Meta Pixel: вставити тут -->
 <script src="./support.js"></script>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#EEEAE2"/><rect x="30" y="36" width="40" height="7" fill="#201D18"/><rect x="30" y="47" width="40" height="7" fill="#201D18"/><rect x="30" y="58" width="26" height="7" fill="#7E3420"/></svg></template>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#DEDEDB"/><rect x="30" y="36" width="40" height="7" fill="#111110"/><rect x="30" y="47" width="40" height="7" fill="#111110"/><rect x="30" y="58" width="26" height="7" fill="#FF4F2B"/></svg></template>
 </head>
 <body>
 <x-dc>
@@ -41,353 +41,400 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..600;1,7..72,400..500&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Unicase:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#EEEAE2;color:#201D18;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:'Cormorant Garamond','EB Garamond',Georgia,'Times New Roman',serif;font-variant-numeric:lining-nums}
-a{color:inherit;text-decoration:none}a:hover{color:#7E3420}
+body{margin:0;background:#DEDEDB;color:#111110;font-family:'Literata',serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{color:#FF4F2B}
 *{box-sizing:border-box}
-@font-face{font-family:'Masha';src:url('./Masha.ttf') format('truetype');font-display:swap}
-section[id]{scroll-margin-top:96px}
 input,textarea,button{font-family:inherit}
-::placeholder{color:#8C8477}
-::selection{background:#201D18;color:#EEEAE2}
-:focus-visible{outline:1px solid #7E3420;outline-offset:3px}
+::placeholder{color:#8C8C88}
 @keyframes rip{from{transform:translate(-50%,-50%) scale(0);opacity:0.55}to{transform:translate(-50%,-50%) scale(1);opacity:0}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
-
-<header style="position:fixed;top:0;left:0;right:0;z-index:20;background:{{ hdr.bg }};color:{{ hdr.fg }};border-bottom:1px solid {{ hdr.line }};transition:background 0.35s,color 0.35s,border-color 0.35s;">
-  <div style="max-width:1440px;margin:0 auto;padding:12px clamp(16px,3vw,32px);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:start;font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;font-size:12px;line-height:1.55;">
-    <nav style="display:flex;flex-wrap:wrap;gap:4px clamp(14px,3vw,48px);padding-top:8px;">
-      <sc-for list="{{ navL }}" as="n" hint-placeholder-count="3"><a href="{{ n.href }}" style="color:inherit;" style-hover="opacity:0.6;color:inherit;">{{ n.label }}</a></sc-for>
+ 
+<!-- HEADER -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:20;background:{{ hd.bg }};color:{{ hd.fg }};transition:background 0.35s,color 0.35s;">
+  <div style="max-width:1440px;margin:0 auto;padding:16px clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;align-items:start;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.45;text-transform:uppercase;letter-spacing:0.08em;">
+    <a href="#top" style="display:flex;gap:10px;align-items:flex-start;">
+      <svg viewBox="0 0 2116 1443" role="img" aria-label="Petrovskyi" style="height:36px;width:auto;display:block;margin-top:-6px;" fill="currentColor"><path fill-rule="evenodd" d="M2075.0 361.0Q2074.0 357.0 2071.5 355.0Q2069.0 353.0 2064.5 353.5Q2060.0 354.0 2052.5 357.5Q2045.0 361.0 2030.0 371.0Q2015.0 381.0 1999.0 389.5Q1983.0 398.0 1960.5 407.0Q1938.0 416.0 1917.0 421.5Q1896.0 427.0 1870.0 431.0Q1844.0 435.0 1794.5 439.0Q1745.0 443.0 1710.5 443.5Q1676.0 444.0 1673.5 441.0Q1671.0 438.0 1670.0 428.0Q1669.0 418.0 1667.5 414.5Q1666.0 411.0 1666.0 405.0Q1666.0 399.0 1661.0 385.0Q1656.0 371.0 1655.5 367.0Q1655.0 363.0 1650.5 355.5Q1646.0 348.0 1640.5 335.5Q1635.0 323.0 1630.5 316.0Q1626.0 309.0 1623.5 303.0Q1621.0 297.0 1617.0 292.0Q1613.0 287.0 1611.5 283.0Q1610.0 279.0 1589.5 252.5Q1569.0 226.0 1555.5 212.5Q1542.0 199.0 1524.0 183.5Q1506.0 168.0 1477.0 147.5Q1448.0 127.0 1431.5 118.0Q1415.0 109.0 1391.5 99.0Q1368.0 89.0 1348.5 83.0Q1329.0 77.0 1326.0 77.0Q1323.0 77.0 1311.0 72.0Q1299.0 67.0 1280.0 63.5Q1261.0 60.0 1253.5 57.5Q1246.0 55.0 1237.0 54.5Q1228.0 54.0 1215.5 51.5Q1203.0 49.0 1197.5 49.0Q1192.0 49.0 1177.0 46.0Q1162.0 43.0 1125.0 41.5Q1088.0 40.0 1055.5 40.0Q1023.0 40.0 1021.5 41.0Q1020.0 42.0 1009.5 41.5Q999.0 41.0 996.5 42.0Q994.0 43.0 977.5 44.0Q961.0 45.0 947.5 47.0Q934.0 49.0 930.0 51.0Q926.0 53.0 916.0 53.5Q906.0 54.0 895.0 57.5Q884.0 61.0 871.0 63.0Q858.0 65.0 853.0 68.0Q848.0 71.0 843.5 71.0Q839.0 71.0 834.0 72.5Q829.0 74.0 825.0 76.5Q821.0 79.0 817.0 79.0Q813.0 79.0 808.0 82.0Q803.0 85.0 800.5 85.0Q798.0 85.0 794.0 87.5Q790.0 90.0 786.0 90.5Q782.0 91.0 778.0 94.0Q774.0 97.0 765.0 100.0Q756.0 103.0 743.0 110.0Q730.0 117.0 724.5 119.0Q719.0 121.0 706.0 129.0Q693.0 137.0 688.0 138.5Q683.0 140.0 675.5 145.5Q668.0 151.0 665.0 152.0Q662.0 153.0 653.0 160.5Q644.0 168.0 637.5 171.5Q631.0 175.0 622.0 183.5Q613.0 192.0 611.0 192.5Q609.0 193.0 603.5 198.0Q598.0 203.0 595.0 207.5Q592.0 212.0 587.5 214.0Q583.0 216.0 576.5 223.5Q570.0 231.0 560.0 240.0Q550.0 249.0 540.5 248.5Q531.0 248.0 525.5 246.0Q520.0 244.0 497.0 240.5Q474.0 237.0 472.5 235.5Q471.0 234.0 471.5 231.0Q472.0 228.0 480.5 218.0Q489.0 208.0 502.0 195.0Q515.0 182.0 531.5 168.5Q548.0 155.0 565.5 144.0Q583.0 133.0 596.0 127.5Q609.0 122.0 617.0 117.5Q625.0 113.0 628.0 110.0Q631.0 107.0 636.0 105.5Q641.0 104.0 643.5 102.0Q646.0 100.0 657.5 95.0Q669.0 90.0 669.0 88.5Q669.0 87.0 661.5 87.5Q654.0 88.0 653.0 87.0Q652.0 86.0 652.5 82.5Q653.0 79.0 649.5 77.5Q646.0 76.0 635.5 80.0Q625.0 84.0 619.5 84.5Q614.0 85.0 596.5 90.0Q579.0 95.0 567.5 100.5Q556.0 106.0 543.0 114.5Q530.0 123.0 511.0 138.5Q492.0 154.0 477.5 169.0Q463.0 184.0 446.0 207.0Q429.0 230.0 403.5 228.0Q378.0 226.0 361.0 227.0Q344.0 228.0 336.5 227.5Q329.0 227.0 304.5 230.0Q280.0 233.0 274.0 235.0Q268.0 237.0 264.0 237.0Q260.0 237.0 253.5 239.5Q247.0 242.0 237.5 243.0Q228.0 244.0 195.5 254.5Q163.0 265.0 141.0 275.0Q119.0 285.0 99.0 297.5Q79.0 310.0 66.5 323.5Q54.0 337.0 49.5 344.0Q45.0 351.0 42.5 358.5Q40.0 366.0 40.0 371.0Q40.0 376.0 47.0 383.0Q54.0 390.0 59.0 391.5Q64.0 393.0 67.0 392.0Q70.0 391.0 75.5 385.5Q81.0 380.0 85.5 372.5Q90.0 365.0 95.5 358.5Q101.0 352.0 111.5 343.0Q122.0 334.0 141.5 322.5Q161.0 311.0 176.5 304.5Q192.0 298.0 214.5 291.0Q237.0 284.0 270.0 276.5Q303.0 269.0 311.0 269.0Q319.0 269.0 330.0 267.0Q341.0 265.0 354.0 264.5Q367.0 264.0 384.0 264.5Q401.0 265.0 402.0 266.0Q403.0 267.0 403.0 269.5Q403.0 272.0 384.0 305.0Q365.0 338.0 355.0 359.5Q345.0 381.0 342.0 390.5Q339.0 400.0 332.5 414.0Q326.0 428.0 314.5 462.5Q303.0 497.0 302.5 501.5Q302.0 506.0 296.0 527.5Q290.0 549.0 289.0 557.5Q288.0 566.0 283.5 585.5Q279.0 605.0 274.5 640.0Q270.0 675.0 269.0 708.5Q268.0 742.0 266.5 759.0Q265.0 776.0 267.0 814.5Q269.0 853.0 270.0 856.0Q271.0 859.0 271.5 867.5Q272.0 876.0 276.0 894.0Q280.0 912.0 279.5 919.0Q279.0 926.0 272.5 929.5Q266.0 933.0 243.0 941.5Q220.0 950.0 200.5 952.5Q181.0 955.0 168.5 953.5Q156.0 952.0 147.0 947.5Q138.0 943.0 128.0 931.5Q118.0 920.0 108.5 900.5Q99.0 881.0 95.0 865.0Q91.0 849.0 91.0 838.0Q91.0 827.0 89.5 825.0Q88.0 823.0 80.0 822.0Q72.0 821.0 67.0 823.0Q62.0 825.0 60.0 829.5Q58.0 834.0 59.5 849.0Q61.0 864.0 68.0 884.5Q75.0 905.0 79.5 911.0Q84.0 917.0 90.5 929.0Q97.0 941.0 106.5 951.0Q116.0 961.0 130.5 969.0Q145.0 977.0 156.0 980.0Q167.0 983.0 185.0 983.5Q203.0 984.0 223.0 980.5Q243.0 977.0 262.0 969.5Q281.0 962.0 282.5 962.0Q284.0 962.0 285.5 963.5Q287.0 965.0 288.0 973.0Q289.0 981.0 295.0 1007.0Q301.0 1033.0 306.5 1051.0Q312.0 1069.0 320.5 1089.0Q329.0 1109.0 333.5 1141.5Q338.0 1174.0 340.5 1184.5Q343.0 1195.0 347.0 1205.0Q351.0 1215.0 351.0 1217.0Q351.0 1219.0 354.0 1223.5Q357.0 1228.0 360.5 1238.0Q364.0 1248.0 371.5 1261.0Q379.0 1274.0 387.5 1285.0Q396.0 1296.0 409.0 1309.0Q422.0 1322.0 436.5 1332.5Q451.0 1343.0 469.0 1353.5Q487.0 1364.0 498.5 1369.0Q510.0 1374.0 512.0 1374.0Q514.0 1374.0 528.5 1379.5Q543.0 1385.0 550.5 1386.0Q558.0 1387.0 564.0 1389.5Q570.0 1392.0 580.0 1393.5Q590.0 1395.0 596.0 1397.0Q602.0 1399.0 612.5 1399.5Q623.0 1400.0 630.0 1401.5Q637.0 1403.0 648.5 1402.5Q660.0 1402.0 663.0 1401.0Q666.0 1400.0 666.5 1399.0Q667.0 1398.0 665.5 1396.5Q664.0 1395.0 640.5 1391.0Q617.0 1387.0 580.0 1377.0Q543.0 1367.0 519.0 1357.5Q495.0 1348.0 473.0 1335.0Q451.0 1322.0 442.5 1315.0Q434.0 1308.0 423.0 1297.0Q412.0 1286.0 398.0 1265.0Q384.0 1244.0 375.5 1222.5Q367.0 1201.0 364.5 1192.0Q362.0 1183.0 362.0 1180.0Q362.0 1177.0 363.0 1176.0Q364.0 1175.0 367.5 1177.5Q371.0 1180.0 377.0 1188.5Q383.0 1197.0 393.5 1208.5Q404.0 1220.0 416.5 1232.0Q429.0 1244.0 446.5 1257.0Q464.0 1270.0 469.0 1272.0Q474.0 1274.0 489.5 1283.5Q505.0 1293.0 523.0 1300.5Q541.0 1308.0 558.0 1313.0Q575.0 1318.0 600.0 1323.0Q625.0 1328.0 634.5 1328.0Q644.0 1328.0 650.0 1329.5Q656.0 1331.0 667.0 1332.0Q678.0 1333.0 703.0 1332.0Q728.0 1331.0 731.0 1329.5Q734.0 1328.0 741.5 1328.0Q749.0 1328.0 760.5 1325.5Q772.0 1323.0 777.5 1323.0Q783.0 1323.0 787.5 1321.0Q792.0 1319.0 820.0 1312.0Q848.0 1305.0 855.0 1302.0Q862.0 1299.0 876.0 1295.0Q890.0 1291.0 897.0 1287.5Q904.0 1284.0 929.5 1274.5Q955.0 1265.0 1003.0 1242.0Q1051.0 1219.0 1084.5 1200.5Q1118.0 1182.0 1141.5 1167.0Q1165.0 1152.0 1168.0 1152.5Q1171.0 1153.0 1185.5 1163.5Q1200.0 1174.0 1221.0 1184.5Q1242.0 1195.0 1258.0 1200.5Q1274.0 1206.0 1287.5 1209.0Q1301.0 1212.0 1320.0 1213.5Q1339.0 1215.0 1359.5 1215.0Q1380.0 1215.0 1400.0 1212.5Q1420.0 1210.0 1435.0 1207.0Q1450.0 1204.0 1457.0 1201.5Q1464.0 1199.0 1468.5 1199.0Q1473.0 1199.0 1476.5 1197.0Q1480.0 1195.0 1484.5 1195.0Q1489.0 1195.0 1494.0 1193.0Q1499.0 1191.0 1501.5 1191.0Q1504.0 1191.0 1507.0 1189.0Q1510.0 1187.0 1516.5 1186.0Q1523.0 1185.0 1525.5 1183.5Q1528.0 1182.0 1543.5 1177.0Q1559.0 1172.0 1562.0 1168.0Q1565.0 1164.0 1569.0 1163.5Q1573.0 1163.0 1577.0 1161.0Q1581.0 1159.0 1581.5 1154.0Q1582.0 1149.0 1579.5 1148.5Q1577.0 1148.0 1548.0 1156.5Q1519.0 1165.0 1480.5 1174.0Q1442.0 1183.0 1413.5 1186.5Q1385.0 1190.0 1367.0 1190.0Q1349.0 1190.0 1329.5 1188.0Q1310.0 1186.0 1288.5 1181.0Q1267.0 1176.0 1253.5 1170.5Q1240.0 1165.0 1227.5 1158.5Q1215.0 1152.0 1207.0 1146.0Q1199.0 1140.0 1197.5 1137.0Q1196.0 1134.0 1201.5 1128.5Q1207.0 1123.0 1212.0 1120.5Q1217.0 1118.0 1239.0 1102.0Q1261.0 1086.0 1269.5 1078.5Q1278.0 1071.0 1282.5 1068.5Q1287.0 1066.0 1297.5 1057.5Q1308.0 1049.0 1322.0 1035.0Q1336.0 1021.0 1342.5 1016.5Q1349.0 1012.0 1358.5 1002.5Q1368.0 993.0 1369.0 991.0Q1370.0 989.0 1382.0 978.5Q1394.0 968.0 1416.0 945.5Q1438.0 923.0 1462.5 894.5Q1487.0 866.0 1497.5 851.5Q1508.0 837.0 1525.5 816.5Q1543.0 796.0 1568.0 755.0Q1593.0 714.0 1594.5 709.5Q1596.0 705.0 1608.0 685.0Q1620.0 665.0 1621.5 659.5Q1623.0 654.0 1629.0 643.5Q1635.0 633.0 1646.0 606.0Q1657.0 579.0 1661.5 564.0Q1666.0 549.0 1669.5 529.5Q1673.0 510.0 1673.5 497.0Q1674.0 484.0 1675.0 482.5Q1676.0 481.0 1690.5 480.5Q1705.0 480.0 1715.5 478.5Q1726.0 477.0 1762.0 476.0Q1798.0 475.0 1802.0 473.5Q1806.0 472.0 1821.0 471.0Q1836.0 470.0 1840.0 468.5Q1844.0 467.0 1870.5 463.5Q1897.0 460.0 1911.0 456.0Q1925.0 452.0 1934.0 450.5Q1943.0 449.0 1947.5 447.5Q1952.0 446.0 1957.5 442.5Q1963.0 439.0 1966.0 438.5Q1969.0 438.0 1974.5 435.0Q1980.0 432.0 1982.0 432.0Q1984.0 432.0 1987.5 429.0Q1991.0 426.0 1997.0 424.5Q2003.0 423.0 2006.5 421.0Q2010.0 419.0 2013.0 415.5Q2016.0 412.0 2027.5 405.0Q2039.0 398.0 2043.0 394.0Q2047.0 390.0 2050.5 388.5Q2054.0 387.0 2060.0 381.5Q2066.0 376.0 2068.5 375.0Q2071.0 374.0 2073.5 369.5Q2076.0 365.0 2075.0 361.0ZM316.5 947.0Q320.0 944.0 322.5 945.0Q325.0 946.0 325.0 953.0Q325.0 960.0 326.5 962.5Q328.0 965.0 328.0 967.0Q328.0 969.0 326.5 971.5Q325.0 974.0 325.5 982.5Q326.0 991.0 325.0 992.0Q324.0 993.0 323.0 993.0Q322.0 993.0 320.5 990.5Q319.0 988.0 316.0 973.5Q313.0 959.0 313.0 954.5Q313.0 950.0 316.5 947.0ZM348.5 996.0Q349.0 932.0 351.5 929.0Q354.0 926.0 375.0 915.0Q396.0 904.0 405.5 897.5Q415.0 891.0 419.5 889.0Q424.0 887.0 451.0 869.0Q478.0 851.0 494.0 839.0Q510.0 827.0 525.5 812.5Q541.0 798.0 544.5 796.0Q548.0 794.0 564.5 778.0Q581.0 762.0 591.0 751.0Q601.0 740.0 606.0 732.5Q611.0 725.0 621.0 713.0Q631.0 701.0 634.0 699.5Q637.0 698.0 638.5 699.5Q640.0 701.0 645.5 717.0Q651.0 733.0 658.5 748.0Q666.0 763.0 671.0 771.0Q676.0 779.0 684.0 788.5Q692.0 798.0 703.0 808.5Q714.0 819.0 725.0 827.0Q736.0 835.0 749.5 842.0Q763.0 849.0 783.0 856.5Q803.0 864.0 818.0 867.0Q833.0 870.0 844.0 871.0Q855.0 872.0 874.5 872.5Q894.0 873.0 914.5 870.5Q935.0 868.0 962.0 861.5Q989.0 855.0 1004.5 850.0Q1020.0 845.0 1056.0 829.5Q1092.0 814.0 1093.0 815.0Q1094.0 816.0 1094.0 819.5Q1094.0 823.0 1090.5 840.0Q1087.0 857.0 1084.5 863.5Q1082.0 870.0 1080.5 889.0Q1079.0 908.0 1077.5 915.0Q1076.0 922.0 1076.0 938.0Q1076.0 954.0 1077.5 970.5Q1079.0 987.0 1085.0 1010.5Q1091.0 1034.0 1097.0 1049.5Q1103.0 1065.0 1112.0 1081.0Q1121.0 1097.0 1132.5 1112.0Q1144.0 1127.0 1144.0 1129.0Q1144.0 1131.0 1143.0 1132.5Q1142.0 1134.0 1117.5 1149.0Q1093.0 1164.0 1039.5 1192.0Q986.0 1220.0 981.0 1221.5Q976.0 1223.0 951.0 1234.5Q926.0 1246.0 901.0 1255.5Q876.0 1265.0 831.5 1278.5Q787.0 1292.0 757.5 1296.5Q728.0 1301.0 701.0 1302.0Q674.0 1303.0 646.0 1300.0Q618.0 1297.0 597.5 1292.5Q577.0 1288.0 552.0 1279.5Q527.0 1271.0 508.5 1261.5Q490.0 1252.0 475.0 1242.0Q460.0 1232.0 451.0 1224.5Q442.0 1217.0 425.5 1200.0Q409.0 1183.0 407.0 1179.0Q405.0 1175.0 391.0 1156.5Q377.0 1138.0 367.0 1117.5Q357.0 1097.0 355.5 1095.5Q354.0 1094.0 352.0 1087.0Q350.0 1080.0 350.0 1073.5Q350.0 1067.0 349.0 1063.5Q348.0 1060.0 348.5 996.0ZM1581.5 481.0Q1640.0 482.0 1641.0 483.5Q1642.0 485.0 1642.0 495.5Q1642.0 506.0 1640.5 515.0Q1639.0 524.0 1636.5 531.5Q1634.0 539.0 1632.0 549.5Q1630.0 560.0 1622.5 580.0Q1615.0 600.0 1604.5 621.5Q1594.0 643.0 1591.5 650.0Q1589.0 657.0 1580.0 674.0Q1571.0 691.0 1568.5 694.0Q1566.0 697.0 1557.5 713.0Q1549.0 729.0 1528.5 759.5Q1508.0 790.0 1479.5 826.5Q1451.0 863.0 1426.5 890.5Q1402.0 918.0 1372.5 948.0Q1343.0 978.0 1302.0 1014.5Q1261.0 1051.0 1218.0 1082.0Q1175.0 1113.0 1172.0 1112.5Q1169.0 1112.0 1160.5 1101.0Q1152.0 1090.0 1141.0 1069.5Q1130.0 1049.0 1124.5 1032.5Q1119.0 1016.0 1114.5 992.5Q1110.0 969.0 1109.5 944.0Q1109.0 919.0 1110.0 915.5Q1111.0 912.0 1111.5 900.5Q1112.0 889.0 1115.0 877.5Q1118.0 866.0 1119.5 854.0Q1121.0 842.0 1128.5 817.5Q1136.0 793.0 1139.5 789.5Q1143.0 786.0 1159.5 776.0Q1176.0 766.0 1199.0 749.0Q1222.0 732.0 1240.0 715.5Q1258.0 699.0 1276.5 679.5Q1295.0 660.0 1310.5 641.5Q1326.0 623.0 1328.5 618.5Q1331.0 614.0 1342.0 600.0Q1353.0 586.0 1357.5 579.0Q1362.0 572.0 1363.5 567.5Q1365.0 563.0 1368.0 560.0Q1371.0 557.0 1374.5 550.0Q1378.0 543.0 1381.5 539.0Q1385.0 535.0 1401.0 505.0Q1417.0 475.0 1419.0 474.0Q1421.0 473.0 1427.5 473.0Q1434.0 473.0 1438.0 474.0Q1442.0 475.0 1464.5 475.5Q1487.0 476.0 1505.0 478.0Q1523.0 480.0 1581.5 481.0ZM1361.5 467.0Q1375.0 468.0 1376.5 469.5Q1378.0 471.0 1378.0 473.0Q1378.0 475.0 1375.0 479.0Q1372.0 483.0 1366.5 494.0Q1361.0 505.0 1333.5 546.5Q1306.0 588.0 1289.5 609.0Q1273.0 630.0 1243.5 660.0Q1214.0 690.0 1187.5 711.5Q1161.0 733.0 1158.5 733.5Q1156.0 734.0 1155.0 733.0Q1154.0 732.0 1155.5 724.5Q1157.0 717.0 1159.5 712.0Q1162.0 707.0 1168.0 685.5Q1174.0 664.0 1182.0 643.5Q1190.0 623.0 1191.0 617.0Q1192.0 611.0 1210.0 563.0Q1228.0 515.0 1241.0 485.5Q1254.0 456.0 1255.5 455.0Q1257.0 454.0 1292.5 459.0Q1328.0 464.0 1335.5 464.0Q1343.0 464.0 1345.5 465.0Q1348.0 466.0 1361.5 467.0ZM1182.5 441.5Q1220.0 448.0 1221.0 449.0Q1222.0 450.0 1222.0 452.0Q1222.0 454.0 1220.0 457.0Q1218.0 460.0 1217.5 464.0Q1217.0 468.0 1206.0 491.5Q1195.0 515.0 1192.0 527.0Q1189.0 539.0 1187.5 541.0Q1186.0 543.0 1183.5 551.5Q1181.0 560.0 1178.5 564.0Q1176.0 568.0 1173.5 578.0Q1171.0 588.0 1168.5 592.5Q1166.0 597.0 1165.5 600.5Q1165.0 604.0 1163.0 606.5Q1161.0 609.0 1159.5 616.5Q1158.0 624.0 1156.0 627.0Q1154.0 630.0 1154.0 633.5Q1154.0 637.0 1152.5 639.5Q1151.0 642.0 1148.5 652.5Q1146.0 663.0 1142.0 672.0Q1138.0 681.0 1135.0 693.5Q1132.0 706.0 1130.5 707.5Q1129.0 709.0 1127.5 715.0Q1126.0 721.0 1124.5 723.0Q1123.0 725.0 1120.0 737.5Q1117.0 750.0 1115.5 752.0Q1114.0 754.0 1113.0 758.0Q1112.0 762.0 1110.0 764.0Q1108.0 766.0 1072.0 783.5Q1036.0 801.0 1003.5 813.0Q971.0 825.0 934.0 832.5Q897.0 840.0 863.5 839.5Q830.0 839.0 811.5 834.5Q793.0 830.0 775.0 822.0Q757.0 814.0 740.5 802.0Q724.0 790.0 714.5 780.0Q705.0 770.0 699.0 761.0Q693.0 752.0 683.5 732.0Q674.0 712.0 670.5 701.0Q667.0 690.0 664.5 675.0Q662.0 660.0 683.0 629.0Q704.0 598.0 708.0 590.5Q712.0 583.0 715.0 579.5Q718.0 576.0 719.5 572.0Q721.0 568.0 724.0 565.0Q727.0 562.0 736.5 546.0Q746.0 530.0 760.0 510.0Q774.0 490.0 776.5 484.5Q779.0 479.0 786.5 469.5Q794.0 460.0 798.5 451.5Q803.0 443.0 806.0 440.0Q809.0 437.0 810.5 433.5Q812.0 430.0 820.0 419.5Q828.0 409.0 833.5 399.5Q839.0 390.0 842.5 386.5Q846.0 383.0 849.5 376.5Q853.0 370.0 856.0 367.0Q859.0 364.0 868.5 365.0Q878.0 366.0 888.5 370.0Q899.0 374.0 906.5 375.0Q914.0 376.0 935.5 383.0Q957.0 390.0 969.5 392.5Q982.0 395.0 984.5 396.5Q987.0 398.0 994.0 399.0Q1001.0 400.0 1006.5 402.0Q1012.0 404.0 1015.0 404.0Q1018.0 404.0 1042.5 411.0Q1067.0 418.0 1082.5 420.5Q1098.0 423.0 1105.0 425.5Q1112.0 428.0 1120.5 429.0Q1129.0 430.0 1137.0 432.5Q1145.0 435.0 1182.5 441.5ZM778.0 339.0Q815.0 349.0 816.5 351.0Q818.0 353.0 818.0 355.0Q818.0 357.0 816.0 361.0Q814.0 365.0 808.5 370.5Q803.0 376.0 797.5 386.0Q792.0 396.0 782.0 409.0Q772.0 422.0 769.5 427.5Q767.0 433.0 763.5 437.0Q760.0 441.0 745.0 463.5Q730.0 486.0 729.5 488.0Q729.0 490.0 724.0 496.0Q719.0 502.0 714.5 510.5Q710.0 519.0 705.5 524.5Q701.0 530.0 698.5 536.0Q696.0 542.0 690.0 549.5Q684.0 557.0 681.0 563.5Q678.0 570.0 670.5 580.0Q663.0 590.0 660.0 592.0Q657.0 594.0 655.5 591.5Q654.0 589.0 655.5 556.0Q657.0 523.0 658.5 519.0Q660.0 515.0 660.5 508.5Q661.0 502.0 670.0 464.0Q679.0 426.0 681.5 420.5Q684.0 415.0 686.5 405.5Q689.0 396.0 700.0 368.5Q711.0 341.0 714.5 335.0Q718.0 329.0 719.5 328.0Q721.0 327.0 731.0 328.0Q741.0 329.0 778.0 339.0ZM672.0 313.5Q677.0 314.0 678.5 315.5Q680.0 317.0 680.0 319.5Q680.0 322.0 677.0 328.0Q674.0 334.0 668.5 351.0Q663.0 368.0 659.0 377.0Q655.0 386.0 650.0 403.0Q645.0 420.0 640.0 441.0Q635.0 462.0 635.0 468.0Q635.0 474.0 633.5 477.0Q632.0 480.0 630.5 487.0Q629.0 494.0 628.5 503.5Q628.0 513.0 626.0 519.0Q624.0 525.0 624.0 534.5Q624.0 544.0 623.0 547.0Q622.0 550.0 622.0 571.0Q622.0 592.0 623.0 598.0Q624.0 604.0 624.0 617.5Q624.0 631.0 625.0 634.5Q626.0 638.0 625.5 643.0Q625.0 648.0 599.5 680.5Q574.0 713.0 562.0 726.5Q550.0 740.0 530.5 759.5Q511.0 779.0 472.5 808.5Q434.0 838.0 397.5 860.5Q361.0 883.0 358.5 883.5Q356.0 884.0 354.5 882.5Q353.0 881.0 354.0 866.0Q355.0 851.0 358.5 827.5Q362.0 804.0 363.5 786.0Q365.0 768.0 377.0 705.5Q389.0 643.0 392.5 633.0Q396.0 623.0 404.5 591.0Q413.0 559.0 421.5 535.5Q430.0 512.0 444.0 478.5Q458.0 445.0 479.0 406.5Q500.0 368.0 511.5 351.5Q523.0 335.0 530.0 327.5Q537.0 320.0 542.0 312.5Q547.0 305.0 555.0 298.0Q563.0 291.0 568.0 291.0Q573.0 291.0 586.5 294.0Q600.0 297.0 604.0 297.0Q608.0 297.0 613.5 299.5Q619.0 302.0 631.5 303.5Q644.0 305.0 655.5 309.0Q667.0 313.0 672.0 313.5ZM1425.0 289.5Q1430.0 293.0 1434.0 300.0Q1438.0 307.0 1438.0 317.5Q1438.0 328.0 1436.0 338.0Q1434.0 348.0 1425.5 371.0Q1417.0 394.0 1410.5 406.5Q1404.0 419.0 1402.0 425.0Q1400.0 431.0 1398.0 433.0Q1396.0 435.0 1391.5 435.5Q1387.0 436.0 1349.5 431.0Q1312.0 426.0 1305.0 426.0Q1298.0 426.0 1291.0 425.0Q1284.0 424.0 1280.0 421.5Q1276.0 419.0 1276.0 417.0Q1276.0 415.0 1278.5 410.5Q1281.0 406.0 1297.0 383.0Q1313.0 360.0 1323.0 348.5Q1333.0 337.0 1350.0 321.5Q1367.0 306.0 1376.0 300.0Q1385.0 294.0 1394.5 290.5Q1404.0 287.0 1412.0 286.5Q1420.0 286.0 1425.0 289.5ZM509.0 278.5Q516.0 279.0 517.5 280.5Q519.0 282.0 518.0 285.5Q517.0 289.0 513.0 292.5Q509.0 296.0 504.5 304.0Q500.0 312.0 492.5 320.5Q485.0 329.0 484.0 332.0Q483.0 335.0 479.5 338.0Q476.0 341.0 474.5 344.0Q473.0 347.0 472.5 351.0Q472.0 355.0 465.0 364.0Q458.0 373.0 453.0 383.5Q448.0 394.0 445.5 397.0Q443.0 400.0 442.0 404.0Q441.0 408.0 438.5 411.5Q436.0 415.0 435.5 418.0Q435.0 421.0 433.0 423.0Q431.0 425.0 426.5 437.0Q422.0 449.0 418.0 456.0Q414.0 463.0 406.5 486.0Q399.0 509.0 396.0 515.0Q393.0 521.0 392.0 528.0Q391.0 535.0 386.5 545.5Q382.0 556.0 381.5 560.5Q381.0 565.0 378.0 572.5Q375.0 580.0 369.5 600.5Q364.0 621.0 360.0 642.0Q356.0 663.0 353.5 670.5Q351.0 678.0 350.0 689.0Q349.0 700.0 345.5 713.0Q342.0 726.0 339.5 753.5Q337.0 781.0 336.0 783.0Q335.0 785.0 335.0 792.5Q335.0 800.0 333.5 804.0Q332.0 808.0 331.0 816.5Q330.0 825.0 331.0 837.0Q332.0 849.0 330.0 859.0Q328.0 869.0 328.0 883.5Q328.0 898.0 324.5 901.5Q321.0 905.0 315.5 908.0Q310.0 911.0 308.0 911.0Q306.0 911.0 304.0 908.0Q302.0 905.0 297.5 873.5Q293.0 842.0 291.5 813.5Q290.0 785.0 290.5 748.5Q291.0 712.0 292.0 708.5Q293.0 705.0 293.0 696.5Q293.0 688.0 294.5 680.5Q296.0 673.0 297.5 655.0Q299.0 637.0 300.5 632.0Q302.0 627.0 303.5 614.5Q305.0 602.0 311.0 574.5Q317.0 547.0 325.5 517.5Q334.0 488.0 348.5 449.0Q363.0 410.0 375.0 383.5Q387.0 357.0 395.0 342.0Q403.0 327.0 421.0 300.0Q439.0 273.0 441.5 271.0Q444.0 269.0 449.5 269.0Q455.0 269.0 471.5 271.5Q488.0 274.0 495.0 276.0Q502.0 278.0 509.0 278.5ZM938.0 121.0Q942.0 124.0 943.5 127.0Q945.0 130.0 944.5 138.5Q944.0 147.0 940.5 157.0Q937.0 167.0 930.5 180.0Q924.0 193.0 900.5 231.5Q877.0 270.0 859.5 295.0Q842.0 320.0 839.0 320.5Q836.0 321.0 824.5 318.5Q813.0 316.0 803.5 312.5Q794.0 309.0 788.0 308.5Q782.0 308.0 776.0 305.5Q770.0 303.0 757.5 300.5Q745.0 298.0 742.0 296.5Q739.0 295.0 738.5 292.5Q738.0 290.0 740.0 286.0Q742.0 282.0 754.0 264.0Q766.0 246.0 776.5 234.0Q787.0 222.0 793.0 213.5Q799.0 205.0 815.5 189.0Q832.0 173.0 850.0 159.0Q868.0 145.0 885.5 135.5Q903.0 126.0 914.0 122.0Q925.0 118.0 929.5 118.0Q934.0 118.0 938.0 121.0ZM874.0 98.0Q875.0 99.0 873.5 101.5Q872.0 104.0 868.5 105.0Q865.0 106.0 855.0 111.5Q845.0 117.0 824.0 133.0Q803.0 149.0 780.0 173.0Q757.0 197.0 741.0 217.5Q725.0 238.0 712.0 260.0Q699.0 282.0 694.0 282.5Q689.0 283.0 680.5 280.5Q672.0 278.0 661.0 276.5Q650.0 275.0 636.0 270.5Q622.0 266.0 610.0 264.0Q598.0 262.0 595.5 260.0Q593.0 258.0 593.5 256.0Q594.0 254.0 597.5 250.5Q601.0 247.0 604.5 245.0Q608.0 243.0 616.0 234.5Q624.0 226.0 633.5 218.5Q643.0 211.0 655.0 203.0Q667.0 195.0 670.5 191.5Q674.0 188.0 698.0 174.5Q722.0 161.0 728.0 156.5Q734.0 152.0 760.0 139.0Q786.0 126.0 807.5 117.5Q829.0 109.0 836.5 107.0Q844.0 105.0 852.0 101.5Q860.0 98.0 866.5 97.5Q873.0 97.0 874.0 98.0ZM916.0 90.0Q915.0 88.0 920.0 85.0Q925.0 82.0 930.0 81.0Q935.0 80.0 942.5 80.0Q950.0 80.0 988.5 75.0Q1027.0 70.0 1069.5 69.5Q1112.0 69.0 1144.0 71.0Q1176.0 73.0 1192.0 76.0Q1208.0 79.0 1216.5 79.5Q1225.0 80.0 1231.0 82.0Q1237.0 84.0 1246.0 85.0Q1255.0 86.0 1266.5 89.5Q1278.0 93.0 1286.5 94.0Q1295.0 95.0 1316.0 101.5Q1337.0 108.0 1368.5 120.5Q1400.0 133.0 1421.0 144.5Q1442.0 156.0 1470.0 176.0Q1498.0 196.0 1517.5 214.0Q1537.0 232.0 1552.5 250.5Q1568.0 269.0 1583.0 291.0Q1598.0 313.0 1602.5 322.5Q1607.0 332.0 1614.0 343.5Q1621.0 355.0 1628.5 379.0Q1636.0 403.0 1638.0 413.0Q1640.0 423.0 1640.5 432.5Q1641.0 442.0 1639.5 443.5Q1638.0 445.0 1625.5 445.5Q1613.0 446.0 1587.5 445.0Q1562.0 444.0 1546.0 444.5Q1530.0 445.0 1526.5 444.0Q1523.0 443.0 1481.5 441.0Q1440.0 439.0 1439.0 436.0Q1438.0 433.0 1448.5 411.5Q1459.0 390.0 1459.0 386.5Q1459.0 383.0 1462.0 378.5Q1465.0 374.0 1467.0 368.5Q1469.0 363.0 1471.0 349.0Q1473.0 335.0 1472.5 320.0Q1472.0 305.0 1465.5 293.5Q1459.0 282.0 1450.5 273.5Q1442.0 265.0 1432.5 260.0Q1423.0 255.0 1415.0 253.5Q1407.0 252.0 1397.5 253.0Q1388.0 254.0 1373.5 260.5Q1359.0 267.0 1352.0 271.5Q1345.0 276.0 1330.0 289.0Q1315.0 302.0 1297.0 323.0Q1279.0 344.0 1264.5 366.0Q1250.0 388.0 1245.0 399.5Q1240.0 411.0 1237.5 413.0Q1235.0 415.0 1230.0 415.0Q1225.0 415.0 1193.5 408.5Q1162.0 402.0 1150.0 400.5Q1138.0 399.0 1125.0 395.5Q1112.0 392.0 1106.5 391.5Q1101.0 391.0 1090.0 387.5Q1079.0 384.0 1063.5 381.5Q1048.0 379.0 1040.0 376.0Q1032.0 373.0 1017.5 370.5Q1003.0 368.0 997.0 365.5Q991.0 363.0 978.5 360.5Q966.0 358.0 927.5 347.0Q889.0 336.0 886.5 334.5Q884.0 333.0 884.0 329.5Q884.0 326.0 888.0 321.5Q892.0 317.0 898.5 306.0Q905.0 295.0 910.0 289.0Q915.0 283.0 922.5 269.0Q930.0 255.0 933.5 252.0Q937.0 249.0 940.5 242.0Q944.0 235.0 950.0 226.5Q956.0 218.0 959.5 209.5Q963.0 201.0 969.5 190.0Q976.0 179.0 980.0 164.5Q984.0 150.0 984.0 141.5Q984.0 133.0 983.0 130.0Q982.0 127.0 973.5 116.5Q965.0 106.0 957.0 101.5Q949.0 97.0 933.0 94.5Q917.0 92.0 916.0 90.0Z"/></svg>
+      <span style="font-family:'Great Vibes',cursive;font-size:30px;line-height:0.8;text-transform:none;letter-spacing:0;white-space:nowrap;">Petrovskyi Studio</span>
+    </a>
+    <nav style="display:flex;flex-direction:row;flex-wrap:wrap;gap:4px 20px;font-weight:500;">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="3"><a href="{{ n.href }}">{{ n.label }}</a></sc-for>
     </nav>
-    <a href="#top" aria-label="Petrovskyi Studio" style="display:block;justify-self:center;"><img src="./logo.svg" alt="Petrovskyi Studio" width="88" height="60" style="display:block;width:clamp(60px,6vw,88px);height:auto;filter:{{ hdr.logo }};transition:filter 0.35s;"></a>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;padding-top:8px;">
-      <div style="display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px clamp(14px,3vw,48px);"><sc-for list="{{ navR }}" as="n" hint-placeholder-count="2"><a href="{{ n.href }}" style="color:inherit;" style-hover="opacity:0.6;color:inherit;">{{ n.label }}</a></sc-for><a href="#contacts" style="color:inherit;" style-hover="opacity:0.6;color:inherit;">{{ t.write }}</a></div>
-      <div style="display:flex;gap:10px;"><sc-for list="{{ langs }}" as="l" hint-placeholder-count="2"><button type="button" onClick="{{ l.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font:inherit;letter-spacing:inherit;color:inherit;opacity:{{ l.op }};">{{ l.code }}</button></sc-for></div>
+    <div style="display:flex;justify-content:flex-end;align-items:center;gap:12px;">
+      <div style="display:flex;gap:6px;font-weight:500;">
+        <sc-for list="{{ langs }}" as="l" hint-placeholder-count="2"><button onClick="{{ l.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:12px;font-weight:500;color:{{ l.fg }};">{{ l.code }}</button></sc-for>
+      </div>
+      <a href="#contacts" style="background:{{ hd.btnBg }};color:{{ hd.btnFg }};padding:5px 9px;font-weight:500;display:flex;gap:6px;transition:background 0.35s,color 0.35s;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.write }} <span>↗</span></a>
     </div>
   </div>
 </header>
-
-<!-- 01 HERO: дві половини, слайдшоу, великий напис -->
-<section id="top" data-screen-label="01 Hero" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));overflow:hidden;color:#FFFFFF;background:#2A2620;">
-  <div onMouseEnter="{{ pauseSlides }}" onMouseLeave="{{ resumeSlides }}" style="position:relative;min-height:max(100vh,680px);display:flex;align-items:center;justify-content:center;padding:120px clamp(24px,5vw,72px) 170px;overflow:hidden;">
-    <img src="{{ heroBgL }}" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.8);transform-origin:30% 40%;">
-    <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(20,18,15,0.12);"></div>
-    <div style="position:relative;width:min(100%,560px);height:min(68vh,640px);">
-      <sc-for list="{{ slides }}" as="sl" hint-placeholder-count="1">
-        <figure aria-hidden="{{ sl.hidden }}" style="position:absolute;inset:0;margin:0;display:flex;align-items:center;justify-content:center;opacity:{{ sl.op }};transition:opacity 1.1s ease;">
-          <div style="position:relative;max-width:100%;max-height:100%;display:flex;">
-            <img src="{{ sl.img }}" alt="{{ sl.alt }}" decoding="async" loading="{{ sl.loading }}" style="display:block;max-width:100%;max-height:min(68vh,640px);width:auto;height:auto;box-shadow:0 30px 60px rgba(0,0,0,0.25);">
-            <figcaption style="position:absolute;top:14px;right:16px;left:16px;text-align:right;font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;font-size:12px;color:#FFFFFF;text-shadow:0 1px 8px rgba(0,0,0,0.45);">{{ sl.cap }}</figcaption>
-          </div>
-        </figure>
-      </sc-for>
-      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ slidePrev }}" style="position:absolute;left:0;top:0;bottom:0;width:50%;background:none;border:none;cursor:w-resize;"></button>
-      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ slideNext }}" style="position:absolute;right:0;top:0;bottom:0;width:50%;background:none;border:none;cursor:e-resize;"></button>
+ 
+<!-- 01 HERO -->
+<section id="top" data-screen-label="01 Hero" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));min-height:max(100svh,640px);overflow:hidden;background:#1A1A18;color:#FFFFFF;">
+  <div onMouseMove="{{ heroMove }}" style="position:relative;min-height:max(86svh,560px);overflow:hidden;container-type:inline-size;">
+    <sc-for list="{{ heroSlides }}" as="sl" hint-placeholder-count="0">
+      <div aria-hidden="{{ sl.hidden }}" style="position:absolute;inset:0;display:grid;place-items:center;opacity:{{ sl.o }};z-index:{{ sl.z }};pointer-events:{{ sl.pe }};transition:opacity 0.7s ease;">
+        <img src="{{ sl.bg }}" alt="" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ sl.bgScale }});transform-origin:{{ sl.origin }};transition:transform 7s cubic-bezier(0.2,0.7,0.2,1);">
+        <a href="#works" style="position:relative;display:block;aspect-ratio:{{ sl.ar }};width:min(76cqw, calc(68svh * {{ sl.ar }}));box-shadow:0 30px 70px rgba(0,0,0,0.28);transform:translateY({{ sl.y }});transition:transform 1s cubic-bezier(0.2,0.8,0.2,1);">
+          <img src="{{ sl.img }}" alt="{{ sl.alt }}" decoding="async" fetchpriority="{{ sl.prio }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <span style="position:absolute;top:14px;left:14px;right:14px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:clamp(10px,0.8vw,13px);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#FFFFFF;text-shadow:0 1px 10px rgba(0,0,0,0.45);">{{ sl.label }}</span>
+        </a>
+      </div>
+    </sc-for>
+  </div>
+  <div style="position:relative;min-height:max(70svh,480px);overflow:hidden;display:grid;place-items:center;padding:120px clamp(24px,5vw,80px) clamp(150px,17vw,280px);">
+    <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794224259/Mask_group2.png" alt="" width="1600" height="1000" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale({{ heroR.scale }});transform-origin:62% 38%;transition:transform 14s cubic-bezier(0.2,0.7,0.2,1);">
+    <div style="position:absolute;inset:0;background:rgba(17,17,16,0.22);"></div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,36px);text-align:center;opacity:{{ heroR.o }};transform:translateY({{ heroR.y }});transition:opacity 1s ease 0.5s,transform 1.2s cubic-bezier(0.2,0.8,0.2,1) 0.5s;">
+      <h1 style="margin:0;font-family:'Literata',serif;font-weight:400;font-size:clamp(32px,3.4vw,62px);line-height:1.08;letter-spacing:-0.01em;max-width:12em;text-wrap:balance;"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">{{ t.heroH1b }} </span>{{ t.heroH1a }}</h1>
+      <a href="#works" style="font-family:'Literata',serif;font-style:italic;font-weight:500;font-size:clamp(19px,1.6vw,28px);color:#FFFFFF;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;" style-hover="color:#FFFFFF;text-decoration-color:#FF4F2B;">{{ heroLink }}</a>
     </div>
   </div>
-  <div style="position:relative;min-height:max(100vh,680px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(28px,2.8vw,44px);padding:clamp(110px,12vh,150px) clamp(32px,6vw,96px) calc(11vw + 64px);text-align:center;overflow:hidden;">
-    <img src="{{ heroBgR }}" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(2.4);transform-origin:60% 50%;">
-    <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(20,18,15,0.2);"></div>
-    <h1 style="position:relative;margin:0;max-width:8.5em;font-family:'Masha','Comic Sans MS',cursive;font-weight:400;font-size:clamp(46px,4.8vw,88px);line-height:1.12;letter-spacing:0.015em;text-transform:lowercase;text-wrap:balance;text-shadow:0 2px 24px rgba(0,0,0,0.25);">{{ t.heroH1a }}<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;"> {{ t.heroH1b }}</span></h1>
-    <a href="#works" style="position:relative;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(20px,1.6vw,24px);line-height:1;padding:10px 6px;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px;color:#FFFFFF;" style-hover="opacity:0.75;color:#FFFFFF;">{{ ui.heroCta }}</a>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:clamp(6px,1.2vw,22px);display:flex;justify-content:center;pointer-events:none;z-index:3;">
+    <span ref="{{ nameRef }}" style="display:inline-flex;font-family:'Cormorant Unicase',serif;font-weight:300;font-size:12vw;line-height:0.82;white-space:nowrap;color:#FFFFFF;">
+      <sc-for list="{{ nameLetters }}" as="c" hint-placeholder-count="0"><span style="display:inline-block;overflow:hidden;padding:0.04em 0 0.06em;"><span style="display:inline-block;transform:translateY({{ c.y }});transition:transform 1.3s cubic-bezier(0.2,0.8,0.2,1) {{ c.d }};">{{ c.ch }}</span></span></sc-for>
+    </span>
   </div>
-  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-0.08em;text-align:center;pointer-events:none;font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(52px,13.4vw,260px);line-height:1;letter-spacing:0.03em;text-transform:uppercase;white-space:nowrap;color:#FFFFFF;">Petrovskyi</div>
 </section>
-
-<!-- 02 WORKS: стрічка робіт -->
-<section id="works" data-screen-label="02 Works" style="background:#F7F5F0;color:#201D18;">
-  <div style="max-width:1440px;margin:0 auto;padding:clamp(120px,12vw,180px) clamp(16px,3vw,32px) clamp(80px,9vw,140px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:14px 32px;flex-wrap:wrap;font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;font-size:12px;">
-      <h2 style="margin:0;font:inherit;letter-spacing:inherit;">{{ ui.newH2 }}</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:4px 22px;">
-        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5"><button type="button" onClick="{{ f.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;color:{{ f.fg }};">{{ f.label }}</button></sc-for>
+ 
+<!-- 03 ABOUT (dark) -->
+<section id="about" data-screen-label="03 About" style="position:relative;overflow:hidden;background:#0C0C0B;color:#FFFFFF;">
+  <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794997679/pexels-wijs-wise-136435282-18663246.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,11,0.72) 0%,rgba(12,12,11,0.6) 45%,rgba(12,12,11,0.82) 100%);z-index:0;"></div>
+  <div style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#8C8C88;">{{ t.s03 }}</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(36px,4.4vw,64px);line-height:0.98;letter-spacing:-0.015em;max-width:620px;">{{ t.aboutH2 }}<br>{{ t.aboutH2b }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794225080/53814274_2312968365413280_5338401352563294208_n.jpg" alt="{{ t.studioPhoto }}" width="1200" height="800" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#2B2B29;padding:clamp(10px,1.2vw,18px);background-color:#F4F2EC;border:clamp(6px,0.7vw,10px) solid #2A1F17;box-shadow:0 30px 70px rgba(0,0,0,0.45),inset 0 0 0 1px rgba(0,0,0,0.12);box-sizing:border-box;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:13px;line-height:1.5;">
+        <p style="margin:0;color:#FFFFFF;font-weight:500;">{{ t.aboutP1 }}</p>
+        <p style="margin:0;color:#A6A6A2;">{{ t.aboutP2 }}</p>
       </div>
-      <div style="display:flex;align-items:center;gap:18px;">
-        <a href="#" style="color:inherit;">{{ t.gallery }} ↗</a>
-        <button type="button" aria-label="{{ ui.railBack }}" onClick="{{ railPrev }}" style="width:40px;height:40px;background:none;border:1px solid #201D18;color:#201D18;font-size:15px;cursor:pointer;" style-hover="background:#201D18;color:#F7F5F0;">←</button>
-        <button type="button" aria-label="{{ ui.railFwd }}" onClick="{{ railNext }}" style="width:40px;height:40px;background:none;border:1px solid #201D18;color:#201D18;font-size:15px;cursor:pointer;" style-hover="background:#201D18;color:#F7F5F0;">→</button>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ bioFacts }}" as="b" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid #2E2E2C;font-size:13px;line-height:1.45;">
+            <span style="font-weight:500;color:#FFFFFF;">{{ b.y }}</span>
+            <span style="color:#A6A6A2;">{{ b.t }}<sc-if value="{{ b.href }}" hint-placeholder-val="{{ false }}"><a href="{{ b.href }}" target="_blank" rel="noopener noreferrer" style="color:#FFFFFF;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6E6E6A;" style-hover="color:#FF4F2B;text-decoration-color:#FF4F2B;">{{ b.link }} ↗</a>{{ b.post }}</sc-if></span>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ bioOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px;padding-top:4px;font-size:14px;line-height:1.6;color:#C9C9C5;max-width:620px;">
+          <sc-for list="{{ bioText }}" as="p" hint-placeholder-count="5"><p style="margin:0;text-wrap:pretty;">{{ p.t }}</p></sc-for>
+        </div>
+      </sc-if>
+      <button type="button" onClick="{{ bioToggle }}" aria-expanded="{{ bioOpen }}" style="align-self:flex-start;background:#FFFFFF;color:#111110;border:none;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;cursor:pointer;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ bioLabel }} <span>{{ bioIcon }}</span></button>
+    </div>
+  </div>
+</section>
+ 
+<main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
+ 
+<!-- 01 INTRO -->
+<section data-screen-label="01 Intro" style="padding:clamp(64px,8vw,120px) 0 clamp(48px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);align-items:end;">
+  <div style="display:flex;flex-direction:column;gap:22px;max-width:540px;">
+    <p style="margin:0;font-family:'Literata',serif;font-style:italic;font-weight:400;font-size:clamp(21px,1.8vw,29px);line-height:1.25;text-wrap:pretty;">{{ t.quote }}</p>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;">{{ t.heroBio }} {{ t.heroLead }}</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <a href="#works" style="background:#111110;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.viewWorks }} <span>↗</span></a>
+      <a href="#about" style="background:#C6C6C2;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;" style-hover="background:#111110;color:#FFFFFF;">{{ t.aboutBtn }} <span>↗</span></a>
+    </div>
+  </div>
+  <div ref="{{ statsRef }}" style="font-variant-numeric:tabular-nums;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:24px;">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:2px;"><span style="font-size:clamp(24px,2.2vw,32px);font-weight:500;letter-spacing:-0.01em;">{{ s.v }}</span><span style="font-size:12px;font-weight:500;">{{ s.l }}</span></div>
+    </sc-for>
+  </div>
+</section>
+ 
+<!-- 02 WORKS -->
+<section id="works" data-screen-label="02 Works" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:48px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:32px clamp(24px,4vw,64px);align-items:end;">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s02 }}</span>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <h2 style="margin:0;font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.015em;"><span style="color:#8C8C88;">{{ t.worksH2a }}</span> {{ t.worksH2b }}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(18px,1.6vw,22px);letter-spacing:-0.005em;">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+          <span style="display:flex;gap:6px;"><button onClick="{{ f.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ f.fg }};">{{ f.label }}</button><span style="color:#AFAFAB;">{{ f.sep }}</span></span>
+        </sc-for>
       </div>
     </div>
-    <div ref="{{ railRef }}" style="display:flex;align-items:center;gap:clamp(40px,6vw,96px);overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding:12px 0 24px;">
-      <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
-        <a href="#" onClick="{{ w.open }}" style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:26px;cursor:zoom-in;scroll-snap-align:start;color:#201D18;" style-hover="color:#201D18;">
-          <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;transform:perspective(900px);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),box-shadow 0.5s;">
-            <img src="{{ w.img }}" alt="{{ w.alt }}" loading="lazy" decoding="async" style="display:block;height:{{ w.ih }};width:auto;max-width:80vw;">
-            <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;right:10px;bottom:10px;background:#F7F5F0;color:#201D18;padding:3px 8px;font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;font-size:10px;">{{ t.sold }}</span></sc-if>
+  </div>
+  <div style="position:relative;width:100vw;margin-left:calc(50% - 50vw);">
+    <div ref="{{ railRef }}" onPointerDown="{{ railDown }}" onPointerMove="{{ railMove }}" onPointerUp="{{ railUp }}" onPointerLeave="{{ railUp }}" onClickCapture="{{ railClick }}" style="display:flex;align-items:center;gap:clamp(36px,4.5vw,88px);overflow-x:auto;padding:24px max(clamp(16px,3vw,32px), calc(50vw - 720px + clamp(16px,3vw,32px))) 36px;scrollbar-width:thin;scrollbar-color:#8C8C88 transparent;cursor:grab;user-select:none;-webkit-user-select:none;">
+      <sc-for list="{{ works }}" as="w" hint-placeholder-count="0">
+        <a href="#" onClick="{{ w.open }}" draggable="false" style="flex:0 0 {{ w.wcss }};display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2vw,32px);cursor:zoom-in;" style-hover="color:#111110;">
+          <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;width:100%;background:#C6C6C2;transform:perspective(900px);transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),box-shadow 0.5s;will-change:transform;">
+            <img src="{{ w.img }}" alt="{{ w.alt }}" width="800" height="1000" loading="lazy" decoding="async" draggable="false" style="display:block;width:100%;height:auto;">
+            <sc-if value="{{ w.sold }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;right:10px;bottom:10px;background:#FFFFFF;color:#111110;padding:2px 6px;font-size:10px;font-weight:500;">{{ t.sold }}</span></sc-if>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;max-width:360px;">
-            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(19px,1.6vw,23px);font-weight:500;letter-spacing:0.07em;text-transform:uppercase;line-height:1.15;">{{ w.title }}</span>
-            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(18px,1.4vw,21px);color:#4F493F;">{{ w.meta }}</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-family:'Literata',serif;">
+            <span style="font-size:clamp(14px,1.1vw,18px);font-weight:400;letter-spacing:0.1em;text-transform:uppercase;line-height:1.15;">{{ w.title }}</span>
+            <span style="font-size:clamp(15px,1.1vw,18px);font-style:italic;color:#4A4A47;">{{ w.sub }}</span>
           </div>
         </a>
       </sc-for>
     </div>
   </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+  <a href="#" style="background:#111110;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.gallery }} <span>↗</span></a>
+    <div style="display:flex;gap:8px;">
+      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ railPrev }}" style="width:44px;height:44px;background:none;border:1px solid #111110;color:#111110;font-size:16px;cursor:pointer;" style-hover="background:#111110;color:#FFFFFF;">←</button>
+      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ railNext }}" style="width:44px;height:44px;background:none;border:1px solid #111110;color:#111110;font-size:16px;cursor:pointer;" style-hover="background:#111110;color:#FFFFFF;">→</button>
+    </div>
+  </div>
 </section>
-
+</main>
+ 
 <sc-if value="{{ lb }}" hint-placeholder-val="{{ false }}">
-  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(32,29,24,0.96);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,32px);gap:12px;color:#EEEAE2;cursor:zoom-out;">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;">
-      <span style="color:#A39B8C;">{{ lb.counter }}</span>
-      <button onClick="{{ lbClose }}" style="background:#EEEAE2;color:#201D18;border:none;padding:6px 11px;font-size:12px;text-transform:lowercase;cursor:pointer;">{{ lb.closeLabel }} ✕</button>
+  <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(12,12,11,0.94);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,32px);gap:12px;color:#FFFFFF;cursor:zoom-out;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;font-weight:500;">
+      <span style="color:#A6A6A2;">{{ lb.counter }}</span>
+      <button onClick="{{ lbClose }}" style="background:#FFFFFF;color:#111110;border:none;padding:5px 9px;font-size:12px;font-weight:500;cursor:pointer;">{{ lb.closeLabel }} ✕</button>
     </div>
     <div style="flex:1;min-height:0;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;grid-template-rows:minmax(0,1fr);align-items:center;gap:8px;">
-      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ lbPrev }}" style="height:48px;background:none;border:1px solid #4F493F;color:#EEEAE2;font-size:18px;cursor:pointer;">←</button>
+      <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ lbPrev }}" style="height:48px;background:none;border:1px solid #4A4A47;color:#FFFFFF;font-size:18px;cursor:pointer;">←</button>
       {{ lbImg }}
-      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ lbNext }}" style="height:48px;background:none;border:1px solid #4F493F;color:#EEEAE2;font-size:18px;cursor:pointer;">→</button>
+      <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ lbNext }}" style="height:48px;background:none;border:1px solid #4A4A47;color:#FFFFFF;font-size:18px;cursor:pointer;">→</button>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:13px;">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;">{{ lb.title }}, {{ lb.year }}</span>
-      <span style="color:#A39B8C;">{{ lb.tech }}, {{ lb.size }}</span>
+    <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;">
+      <span style="font-weight:500;">{{ lb.title }}, {{ lb.year }}</span>
+      <span style="color:#A6A6A2;">{{ lb.tech }} · {{ lb.size }}</span>
     </div>
   </div>
 </sc-if>
-
-<!-- 03 ABOUT (dark) -->
-<section id="about" data-screen-label="03 About" style="background:#24201B;color:#EEEAE2;">
-  <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
-    <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
-      <span style="font-size:12px;color:#A39B8C;">{{ t.s03 }}</span>
-      <h2 style="margin:0;font-weight:400;font-size:clamp(42px,5vw,76px);line-height:0.98;letter-spacing:-0.015em;max-width:640px;">{{ t.aboutH2 }}<br><em style="font-style:italic;color:#A39B8C;">{{ t.aboutH2b }}</em></h2>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:28px;">
-      <img src="https://res.cloudinary.com/qk9xhhqc/image/upload/v1794225080/53814274_2312968365413280_5338401352563294208_n.jpg" alt="{{ t.studioPhoto }}" width="1200" height="800" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:#3B362F;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:13px;line-height:1.55;">
-        <p style="margin:0;color:#EEEAE2;font-weight:500;">{{ t.aboutP1 }}</p>
-        <p style="margin:0;color:#A39B8C;">{{ t.aboutP2 }}</p>
-      </div>
-      <div style="display:flex;flex-direction:column;">
-        <sc-for list="{{ bioFacts }}" as="b" hint-placeholder-count="5">
-          <div style="display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid #3B362F;font-size:13px;line-height:1.5;">
-            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#EEEAE2;">{{ b.y }}</span>
-            <span style="color:#A39B8C;">{{ b.t }}<sc-if value="{{ b.href }}" hint-placeholder-val="{{ false }}"><a href="{{ b.href }}" target="_blank" rel="noopener noreferrer" style="color:#EEEAE2;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#6D655A;" style-hover="color:#C98F78;text-decoration-color:#C98F78;">{{ b.link }} ↗</a>{{ b.post }}</sc-if></span>
-          </div>
-        </sc-for>
-      </div>
-      <sc-if value="{{ bioOpen }}" hint-placeholder-val="{{ false }}">
-        <div style="display:flex;flex-direction:column;gap:16px;padding-top:4px;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.5;color:#D3CBBC;max-width:640px;">
-          <sc-for list="{{ bioText }}" as="p" hint-placeholder-count="5"><p style="margin:0;text-wrap:pretty;">{{ p.t }}</p></sc-for>
-        </div>
-      </sc-if>
-      <button type="button" onClick="{{ bioToggle }}" aria-expanded="{{ bioOpen }}" style="align-self:flex-start;background:#EEEAE2;color:#201D18;border:none;padding:9px 14px;font-size:13px;text-transform:lowercase;display:flex;gap:8px;cursor:pointer;" style-hover="background:#7E3420;color:#EEEAE2;">{{ bioLabel }} <span>{{ bioIcon }}</span></button>
-    </div>
-  </div>
-</section>
-
+ 
+ 
 <main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
-
+ 
 <!-- 04 SERIES -->
 <section id="series" data-screen-label="04 Series" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:flex;flex-direction:column;gap:20px;">
-    <span style="font-size:12px;color:#6D655A;">{{ t.s04 }}</span>
-    <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,{{ activeSeries.a }} 0 1px,{{ activeSeries.b }} 1px 10px);display:flex;align-items:flex-end;padding:10px;font-size:11px;color:#EEEAE2;margin-top:auto;">{{ t.seriesCover }}</div>
-    <p style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:20px;line-height:1.35;color:#6D655A;max-width:420px;">{{ activeSeries.text }}</p>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s04 }}</span>
+    <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,{{ activeSeries.a }} 0 1px,{{ activeSeries.b }} 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;margin-top:auto;">{{ t.seriesCover }}</div>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:400px;">{{ activeSeries.text }}</p>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:flex-end;">
     <sc-for list="{{ series }}" as="s" hint-placeholder-count="4">
-      <a href="#" onMouseEnter="{{ s.onEnter }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:18px 0;border-top:1px solid #D2CABB;" style-hover="color:#201D18;">
-        <span style="font-size:12px;color:#8C8477;">{{ s.n }}</span>
-        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,3.4vw,52px);font-weight:400;letter-spacing:-0.01em;line-height:1.02;color:{{ s.color }};">{{ s.title }}</span>
-        <span style="font-size:12px;color:#6D655A;">{{ s.count }}</span>
+      <a href="#" onMouseEnter="{{ s.onEnter }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:16px 0;border-top:1px solid #BDBDB9;" style-hover="color:#111110;">
+        <span style="font-size:12px;font-weight:500;color:#8C8C88;">{{ s.n }}</span>
+        <span style="font-size:clamp(26px,2.8vw,40px);font-weight:500;letter-spacing:-0.015em;line-height:1.05;color:{{ s.color }};">{{ s.title }}</span>
+        <span style="font-size:12px;color:#6E6E6A;">{{ s.count }}</span>
       </a>
     </sc-for>
   </div>
 </section>
-
+ 
 <!-- NOW -->
 <section data-screen-label="Now" style="padding-bottom:clamp(64px,8vw,120px);">
-  <a href="#" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#24201B;color:#EEEAE2;" style-hover="color:#EEEAE2;">
-    <div style="padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:300px;">
-      <span style="font-size:12px;color:#A39B8C;">{{ t.nowLabel }}</span>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(36px,4vw,60px);font-weight:400;letter-spacing:-0.01em;line-height:1;">{{ t.nowTitle }}</span>
-        <span style="font-size:13px;line-height:1.55;color:#A39B8C;max-width:380px;">{{ t.nowText }}</span>
-        <span style="align-self:flex-start;background:#EEEAE2;color:#201D18;padding:6px 11px;font-size:12px;text-transform:lowercase;">{{ t.more }}</span>
+  <a href="#" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#0C0C0B;color:#FFFFFF;" style-hover="color:#FFFFFF;">
+    <div style="padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:280px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#8C8C88;">{{ t.nowLabel }}</span>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:clamp(30px,3.4vw,48px);font-weight:500;letter-spacing:-0.015em;line-height:1;">{{ t.nowTitle }}</span>
+        <span style="font-size:13px;line-height:1.5;color:#A6A6A2;max-width:380px;">{{ t.nowText }}</span>
+        <span style="align-self:flex-start;background:#FFFFFF;color:#111110;padding:5px 9px;font-size:12px;font-weight:500;">{{ t.more }}</span>
       </div>
     </div>
-    <div style="min-height:300px;background:repeating-linear-gradient(135deg,#4F6A80 0 1px,#587389 1px 10px);display:flex;align-items:flex-end;padding:10px;font-size:11px;">{{ t.nowFrag }}</div>
+    <div style="min-height:280px;background:repeating-linear-gradient(135deg,#3E63C9 0 1px,#4A6ED2 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;">{{ t.nowFrag }}</div>
   </a>
 </section>
-
+ 
 <!-- STORY -->
-<section data-screen-label="Story" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #D2CABB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+<section data-screen-label="Story" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:8px;align-items:end;">
-    <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#A9844C 0 1px,#B48E56 1px 10px);display:flex;align-items:flex-end;padding:10px;font-size:11px;color:#EEEAE2;">{{ t.phPainting }}</div>
+    <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#C98A2E 0 1px,#D49638 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;">{{ t.phPainting }}</div>
     <div style="display:flex;flex-direction:column;gap:8px;">
-      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#D2CABB 0 1px,#DDD6C9 1px 9px);display:flex;align-items:flex-end;padding:8px;font-size:10px;color:#4F493F;">{{ t.phSketch }}</div>
-      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#6F7F58 0 1px,#788961 1px 9px);display:flex;align-items:flex-end;padding:8px;font-size:10px;color:#EEEAE2;">{{ t.phDetail }}</div>
+      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#B9B9B5 0 1px,#C6C6C2 1px 9px);display:flex;align-items:flex-end;padding:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4A4A47;">{{ t.phSketch }}</div>
+      <div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#6F8A5B 0 1px,#7B9666 1px 9px);display:flex;align-items:flex-end;padding:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FFFFFF;">{{ t.phDetail }}</div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
-    <span style="font-size:12px;color:#6D655A;">{{ t.storyLabel }}</span>
-    <div style="display:flex;flex-direction:column;gap:24px;">
-      <h2 style="margin:0;font-weight:400;font-size:clamp(36px,4vw,60px);line-height:1.02;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.storyH2a }}</span> {{ t.storyH2b }}</h2>
-      <p style="margin:0;font-size:13px;line-height:1.55;color:#6D655A;max-width:420px;">{{ t.storyP }}</p>
-      <a href="#" style="align-self:flex-start;background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.readStory }}</a>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.storyLabel }}</span>
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <h2 style="margin:0;font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.015em;"><span style="color:#8C8C88;">{{ t.storyH2a }}</span> {{ t.storyH2b }}</h2>
+      <p style="margin:0;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:420px;">{{ t.storyP }}</p>
+      <a href="#" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.readStory }}</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- 05 EXHIBITIONS -->
-<section id="exhibitions" data-screen-label="05 Exhibitions" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #D2CABB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
+<section id="exhibitions" data-screen-label="05 Exhibitions" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);border-top:1px solid #BDBDB9;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
-    <span style="font-size:12px;color:#6D655A;">{{ t.s05 }}</span>
-    <div style="display:flex;flex-direction:column;gap:24px;">
-      <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.exH2a }}</span> {{ t.exH2b }}</h2>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s05 }}</span>
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <h2 style="margin:0;font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.015em;"><span style="color:#8C8C88;">{{ t.exH2a }}</span> {{ t.exH2b }}</h2>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="#" style="background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.cv }}</a>
-        <a href="#" style="border:1px solid #201D18;padding:8px 13px;font-size:13px;text-transform:lowercase;" style-hover="background:#201D18;color:#EEEAE2;">{{ t.pdf }}</a>
+        <a href="#" style="background:#111110;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.cv }}</a>
+        <a href="#" style="background:#C6C6C2;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;" style-hover="background:#111110;color:#FFFFFF;">{{ t.pdf }}</a>
       </div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:24px;min-width:0;">
-    <div style="display:flex;flex-wrap:wrap;gap:4px 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(19px,1.6vw,24px);">
+    <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(16px,1.4vw,20px);letter-spacing:-0.005em;">
       <sc-for list="{{ exTabs }}" as="x" hint-placeholder-count="6">
-        <span style="display:flex;gap:8px;"><button type="button" onClick="{{ x.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;font-family:inherit;font-weight:500;color:{{ x.fg }};">{{ x.label }}<sup style="font-family:'Inter',sans-serif;font-size:10px;font-weight:400;margin-left:2px;">{{ x.count }}</sup></button><span style="color:#B3AB9D;">{{ x.sep }}</span></span>
+        <span style="display:flex;gap:6px;"><button type="button" onClick="{{ x.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ x.fg }};">{{ x.label }}<sup style="font-size:10px;font-weight:500;margin-left:2px;">{{ x.count }}</sup></button><span style="color:#AFAFAB;">{{ x.sep }}</span></span>
       </sc-for>
     </div>
     <div style="display:flex;flex-direction:column;">
       <sc-for list="{{ exhibitions }}" as="e" hint-placeholder-count="8">
-        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:13px 0;border-top:1px solid #D2CABB;font-size:13px;">
-          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;">{{ e.year }}</span>
-          <div style="display:flex;flex-direction:column;gap:2px;min-width:0;"><span style="font-weight:500;text-wrap:pretty;">{{ e.title }}</span><sc-if value="{{ e.place }}" hint-placeholder-val="{{ true }}"><span style="color:#6D655A;">{{ e.place }}</span></sc-if></div>
-          <span style="color:#6D655A;text-align:right;">{{ e.type }}</span>
+        <div style="display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:12px 0;border-top:1px solid #BDBDB9;font-size:13px;">
+          <span style="font-weight:500;">{{ e.year }}</span>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:0;"><span style="font-weight:500;text-wrap:pretty;">{{ e.title }}</span><sc-if value="{{ e.place }}" hint-placeholder-val="{{ true }}"><span style="color:#6E6E6A;">{{ e.place }}</span></sc-if></div>
+          <span style="color:#6E6E6A;text-align:right;">{{ e.type }}</span>
         </div>
       </sc-for>
       <sc-if value="{{ exHasMore }}" hint-placeholder-val="{{ true }}">
-        <button type="button" onClick="{{ exToggle }}" style="display:flex;justify-content:space-between;align-items:center;background:none;border:none;border-top:1px solid #201D18;padding:14px 0 0;cursor:pointer;font-size:13px;text-transform:lowercase;color:#201D18;text-align:left;">{{ exMoreLabel }}<span>{{ exMoreIcon }}</span></button>
+        <button type="button" onClick="{{ exToggle }}" style="display:flex;justify-content:space-between;align-items:center;background:none;border:none;border-top:1px solid #111110;padding:14px 0 0;cursor:pointer;font-size:13px;font-weight:500;color:#111110;text-align:left;">{{ exMoreLabel }}<span>{{ exMoreIcon }}</span></button>
       </sc-if>
     </div>
   </div>
 </section>
-
+ 
 <!-- 06 STUDIO -->
-<section id="studio" data-screen-label="06 Studio" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #D2CABB;display:flex;flex-direction:column;gap:40px;">
+<section id="studio" data-screen-label="06 Studio" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:40px;">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px clamp(24px,4vw,64px);align-items:end;">
-    <span style="font-size:12px;color:#6D655A;">{{ t.s06 }}</span>
-    <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;"><span style="font-style:italic;color:#8C8477;">{{ t.stH2a }}</span> {{ t.stH2b }}</h2>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s06 }}</span>
+    <h2 style="margin:0;font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.015em;"><span style="color:#8C8C88;">{{ t.stH2a }}</span> {{ t.stH2b }}</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px;">
     <sc-for list="{{ studio }}" as="s" hint-placeholder-count="4">
-      <figure style="margin:0;display:flex;flex-direction:column;gap:10px;">
-        <div style="position:relative;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,{{ s.a }} 0 1px,{{ s.b }} 1px 9px);display:flex;align-items:flex-end;padding:10px;font-size:11px;color:#EEEAE2;">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px;">
+        <div style="position:relative;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,{{ s.a }} 0 1px,{{ s.b }} 1px 9px);display:flex;align-items:flex-end;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;">
           {{ s.ph }}
-          <sc-if value="{{ s.video }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;background:#EEEAE2;color:#201D18;padding:3px 8px;font-family:'Inter',sans-serif;font-size:11px;">▶ 0:48</span></sc-if>
+          <sc-if value="{{ s.video }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:10px;background:#FFFFFF;color:#111110;padding:3px 7px;font-family:'Literata',serif;font-size:11px;font-weight:500;">▶ 0:48</span></sc-if>
         </div>
-        <figcaption style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:17px;">{{ s.cap }}</figcaption>
+        <figcaption style="font-size:12px;font-weight:500;">{{ s.cap }}</figcaption>
       </figure>
     </sc-for>
   </div>
 </section>
-
+ 
 <!-- 07 DIARY -->
-<section id="diary" data-screen-label="07 Diary" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #D2CABB;display:flex;flex-direction:column;gap:40px;">
+<section id="diary" data-screen-label="07 Diary" style="padding:clamp(64px,8vw,120px) 0;border-top:1px solid #BDBDB9;display:flex;flex-direction:column;gap:40px;">
   <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;">
-    <span style="font-size:12px;color:#6D655A;">{{ t.s07 }}</span>
-    <a href="#" style="font-size:12px;text-transform:lowercase;text-decoration:underline;text-underline-offset:3px;">{{ t.allPosts }}</a>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s07 }}</span>
+    <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.allPosts }}</a>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:48px 20px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 16px;">
     <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
-      <a href="{{ p.href }}" target="{{ p.target }}" rel="{{ p.rel }}" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#201D18;opacity:0.8;">
-        <div style="position:relative;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#EEEAE2;">
+      <a href="{{ p.href }}" target="{{ p.target }}" rel="{{ p.rel }}" style="display:flex;flex-direction:column;gap:12px;" style-hover="color:#111110;opacity:0.8;">
+        <div style="position:relative;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,{{ p.a }} 0 1px,{{ p.b }} 1px 9px);display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#FFFFFF;">
           <sc-if value="{{ p.journal }}" hint-placeholder-val="{{ false }}">
-            <span style="font-size:12px;color:#D3CBBC;">{{ p.journal }}</span>
-            <span style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;"><span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:26px;line-height:1;">{{ p.pages }}</span><span style="background:#EEEAE2;color:#201D18;padding:3px 8px;font-size:11px;">{{ p.badge }}</span></span>
+            <span style="font-size:12px;font-weight:500;color:#A6A6A2;">{{ p.journal }}</span>
+            <span style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;"><span style="font-size:22px;font-weight:500;letter-spacing:-0.01em;line-height:1;">{{ p.pages }}</span><span style="background:#FFFFFF;color:#111110;padding:3px 7px;font-size:11px;font-weight:500;">{{ p.badge }}</span></span>
           </sc-if>
         </div>
-        <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#6D655A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
-        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;line-height:1.1;text-wrap:pretty;">{{ p.title }}</span>
+        <div style="display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#6E6E6A;"><span>{{ p.rubric }}</span><span>{{ p.date }}</span></div>
+        <span style="font-size:22px;font-weight:500;letter-spacing:-0.01em;line-height:1.1;text-wrap:pretty;">{{ p.title }}</span>
       </a>
     </sc-for>
   </div>
 </section>
 </main>
-
-<!-- 08 BUY (light FAQ-style) -->
-<section id="buy" data-screen-label="08 Buy" style="background:#F7F4EE;">
+ 
+<!-- 08 BUY (white FAQ-style) -->
+<section id="buy" data-screen-label="08 Buy" style="background:#FFFFFF;">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
     <div style="display:flex;flex-direction:column;justify-content:space-between;gap:40px;">
-      <span style="font-size:12px;color:#6D655A;">{{ t.s08 }}</span>
-      <h2 style="margin:0;font-weight:400;font-size:clamp(38px,4.4vw,66px);line-height:1;letter-spacing:-0.015em;max-width:600px;">{{ t.buyH2 }}</h2>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s08 }}</span>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(32px,3.6vw,52px);line-height:1;letter-spacing:-0.015em;max-width:560px;">{{ t.buyH2 }}</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:24px;">
-      <div style="display:flex;flex-wrap:wrap;gap:4px 8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,1.9vw,28px);">
+      <div style="display:flex;flex-wrap:wrap;gap:4px 6px;font-size:clamp(18px,1.6vw,22px);letter-spacing:-0.005em;">
         <sc-for list="{{ faqTabs }}" as="t" hint-placeholder-count="4">
-          <span style="display:flex;gap:8px;"><button onClick="{{ t.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;font-family:inherit;font-weight:500;color:{{ t.fg }};">{{ t.label }}</button><span style="color:#D2CABB;">{{ t.sep }}</span></span>
+          <span style="display:flex;gap:6px;"><button onClick="{{ t.onClick }}" style="background:none;border:none;padding:0;cursor:pointer;font-size:inherit;letter-spacing:inherit;font-weight:500;color:{{ t.fg }};">{{ t.label }}</button><span style="color:#C6C6C2;">{{ t.sep }}</span></span>
         </sc-for>
       </div>
       <div style="display:flex;flex-direction:column;">
         <sc-for list="{{ faq }}" as="q" hint-placeholder-count="3">
-          <div style="display:flex;flex-direction:column;background:{{ q.bg }};border-top:1px solid #E2DCD0;">
-            <button onClick="{{ q.onClick }}" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;background:none;border:none;padding:16px 12px;cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;font-weight:500;line-height:1.2;text-align:left;color:#201D18;">{{ q.q }}<span style="font-family:'Inter',sans-serif;font-size:14px;color:#8C8477;">{{ q.icon }}</span></button>
-            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 12px 18px;font-size:13px;line-height:1.6;color:#6D655A;max-width:520px;">{{ q.a }}</p></sc-if>
+          <div style="display:flex;flex-direction:column;background:{{ q.bg }};border-top:1px solid #E4E4E1;">
+            <button onClick="{{ q.onClick }}" style="display:flex;justify-content:space-between;gap:16px;background:none;border:none;padding:14px 12px;cursor:pointer;font-size:14px;font-weight:500;text-align:left;color:#111110;">{{ q.q }}<span style="color:#8C8C88;">{{ q.icon }}</span></button>
+            <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 12px 16px;font-size:13px;line-height:1.5;color:#6E6E6A;max-width:520px;">{{ q.a }}</p></sc-if>
           </div>
         </sc-for>
       </div>
       <div style="display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:16px;align-items:end;padding-top:32px;">
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:500;line-height:1.15;">{{ t.commQ }}<br><em style="font-style:italic;font-weight:400;color:#8C8477;">{{ t.commA }}</em></span>
-          <a href="#contacts" style="align-self:flex-start;background:#201D18;color:#EEEAE2;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.commBtn }}</a>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <span style="font-size:15px;font-weight:500;line-height:1.3;">{{ t.commQ }}<br><span style="color:#8C8C88;">{{ t.commA }}</span></span>
+          <a href="#contacts" style="align-self:flex-start;background:#111110;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.commBtn }}</a>
         </div>
-        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#D2CABB 0 1px,#DDD6C9 1px 9px);display:flex;align-items:flex-end;padding:6px;font-size:10px;color:#4F493F;">{{ t.phPortrait }}</div>
+        <div style="aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#B9B9B5 0 1px,#C6C6C2 1px 9px);display:flex;align-items:flex-end;padding:6px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4A4A47;">{{ t.phPortrait }}</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- 09 COLLAB (dark) -->
-<section id="collab" data-screen-label="09 Collaboration" style="background:#24201B;color:#EEEAE2;">
+<section id="collab" data-screen-label="09 Collaboration" style="background:#0C0C0B;color:#FFFFFF;">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(96px,14vw,200px) clamp(16px,3vw,32px) clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
-    <span style="font-size:12px;color:#A39B8C;">{{ t.s09 }}</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#8C8C88;">{{ t.s09 }}</span>
     <div style="display:flex;flex-direction:column;gap:28px;">
-      <h2 style="margin:0;font-weight:400;font-size:clamp(42px,5vw,76px);line-height:0.98;letter-spacing:-0.015em;">{{ t.coH2a }} <em style="font-style:italic;color:#A39B8C;">{{ t.coH2b }}</em></h2>
-      <p style="margin:0;font-size:13px;line-height:1.55;color:#A39B8C;max-width:440px;">{{ t.coP }}</p>
-      <a href="#contacts" style="align-self:flex-start;background:#EEEAE2;color:#201D18;padding:9px 14px;font-size:13px;text-transform:lowercase;" style-hover="background:#7E3420;color:#EEEAE2;">{{ t.propose }}</a>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(36px,4.4vw,64px);line-height:0.98;letter-spacing:-0.015em;">{{ t.coH2a }} <span style="color:#6E6E6A;">{{ t.coH2b }}</span></h2>
+      <p style="margin:0;font-size:13px;line-height:1.5;color:#A6A6A2;max-width:440px;">{{ t.coP }}</p>
+      <a href="#contacts" style="align-self:flex-start;background:#FFFFFF;color:#111110;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;" style-hover="background:#FF4F2B;color:#FFFFFF;">{{ t.propose }}</a>
     </div>
   </div>
 </section>
-
+ 
 <main style="max-width:1440px;margin:0 auto;padding:0 clamp(16px,3vw,32px);">
 <!-- 10 CONTACTS -->
 <section id="contacts" data-screen-label="10 Contacts" style="padding:clamp(96px,14vw,200px) 0 clamp(64px,8vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px clamp(24px,4vw,64px);">
   <div style="display:flex;flex-direction:column;justify-content:space-between;gap:48px;">
-    <span style="font-size:12px;color:#6D655A;">{{ t.s10 }}</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s10 }}</span>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <a href="mailto:studio@petrovskyi.art" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(36px,4.6vw,72px);font-weight:400;letter-spacing:-0.01em;line-height:1;word-break:break-word;">studio@petrovskyi.art</a>
-      <div style="display:flex;gap:32px;flex-wrap:wrap;font-size:13px;"><!-- TODO: вставити реальні URL профілів --><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><span style="color:#6D655A;">{{ t.city }}</span></div>
-      <div style="display:flex;max-width:400px;border-bottom:1px solid #201D18;margin-top:16px;">
-        <input type="email" name="newsletter_email" autocomplete="email" aria-label="{{ t.newsPh }}" placeholder="{{ t.newsPh }}" style="flex:1;min-width:0;background:transparent;border:none;padding:10px 0;font-size:14px;outline:none;color:#201D18;">
-        <button onClick="{{ subscribe }}" style="background:none;border:none;font-size:13px;text-transform:lowercase;cursor:pointer;color:#201D18;">{{ subLabel }}</button>
+      <a href="mailto:studio@petrovskyi.art" style="font-size:clamp(32px,4vw,60px);font-weight:500;letter-spacing:-0.005em;line-height:1;word-break:break-word;">studio@petrovskyi.art</a>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;font-size:13px;font-weight:500;"><!-- TODO: вставити реальні URL профілів --><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><span style="color:#6E6E6A;">{{ t.city }}</span></div>
+      <div style="display:flex;max-width:400px;border-bottom:1px solid #111110;margin-top:16px;">
+        <input type="email" name="newsletter_email" autocomplete="email" aria-label="{{ t.newsPh }}" placeholder="{{ t.newsPh }}" style="flex:1;min-width:0;background:transparent;border:none;padding:10px 0;font-size:14px;outline:none;color:#111110;">
+        <button onClick="{{ subscribe }}" style="background:none;border:none;font-size:13px;font-weight:500;cursor:pointer;color:#111110;">{{ subLabel }}</button>
       </div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:20px;justify-content:flex-end;">
     <sc-for list="{{ fields }}" as="f" hint-placeholder-count="3">
-      <input type="{{ f.type }}" name="{{ f.name }}" autocomplete="{{ f.ac }}" aria-label="{{ f.ph }}" placeholder="{{ f.ph }}" style="background:transparent;border:none;border-bottom:1px solid #D2CABB;padding:12px 0;font-size:16px;outline:none;color:#201D18;" style-focus="border-bottom-color:#201D18;">
+      <input type="{{ f.type }}" name="{{ f.name }}" autocomplete="{{ f.ac }}" aria-label="{{ f.ph }}" placeholder="{{ f.ph }}" style="background:transparent;border:none;border-bottom:1px solid #BDBDB9;padding:12px 0;font-size:16px;outline:none;color:#111110;" style-focus="border-bottom-color:#111110;">
     </sc-for>
-    <textarea rows="3" name="message" aria-label="{{ t.msgPh }}" placeholder="{{ t.msgPh }}" style="background:transparent;border:none;border-bottom:1px solid #D2CABB;padding:12px 0;font-size:16px;outline:none;resize:none;color:#201D18;" style-focus="border-bottom-color:#201D18;"></textarea>
-    <button onClick="{{ send }}" style="align-self:flex-start;background:#201D18;color:#EEEAE2;border:none;padding:10px 16px;font-size:13px;text-transform:lowercase;cursor:pointer;" style-hover="background:#7E3420;">{{ sendLabel }}</button>
+    <textarea rows="3" name="message" aria-label="{{ t.msgPh }}" placeholder="{{ t.msgPh }}" style="background:transparent;border:none;border-bottom:1px solid #BDBDB9;padding:12px 0;font-size:16px;outline:none;resize:none;color:#111110;" style-focus="border-bottom-color:#111110;"></textarea>
+    <button onClick="{{ send }}" style="align-self:flex-start;background:#111110;color:#FFFFFF;border:none;padding:10px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;" style-hover="background:#FF4F2B;">{{ sendLabel }}</button>
   </div>
 </section>
-
-<footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;align-items:baseline;padding:18px 0 28px;border-top:1px solid #D2CABB;font-size:12px;">
-  <span style="display:flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:500;"><img src="./logo.svg" alt="" aria-hidden="true" width="32" height="22" style="display:block;width:32px;height:auto;">Petrovskyi <em style="font-weight:400;">Studio</em></span><span style="color:#6D655A;">{{ t.copy }}</span><span style="color:#6D655A;">{{ t.member }}</span><a href="#top" style="justify-self:end;text-transform:lowercase;">{{ t.top }}</a>
+ 
+<footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;padding:16px 0 28px;border-top:1px solid #BDBDB9;font-size:12px;font-weight:500;">
+  <span>Petrovskyi Studio</span><span style="color:#6E6E6A;">{{ t.copy }}</span><span style="color:#6E6E6A;">{{ t.member }}</span><a href="#top" style="justify-self:end;">{{ t.top }}</a>
 </footer>
 </main>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { lang: (typeof localStorage !== 'undefined' && localStorage.getItem('petrovskyi-lang')) || 'UA', filter: 'all', series: 0, faqTab: 0, faqOpen: 0, subbed: false, sent: false, slide: 0, solid: false };
+  state = { heroI: 0, heroIn: false, onHero: true, ar: {}, lang: (typeof localStorage !== 'undefined' && localStorage.getItem('petrovskyi-lang')) || 'UA', filter: 'all', series: 0, faqTab: 0, faqOpen: 0, subbed: false, sent: false };
   setLang(code) { try { localStorage.setItem('petrovskyi-lang', code); } catch (e) {} document.documentElement.lang = code === 'EN' ? 'en' : 'uk'; this.setState({ lang: code }); }
-  _statsRef = React.createRef();
-  _railRef = React.createRef();
-  _rail(d) { const el = this._railRef.current; if (el) el.scrollBy({ left: d * el.clientWidth * 0.8, behavior: 'smooth' }); }
-  _slideTo(i) { const n = this._slideCount || 1; this.setState({ slide: (i + n) % n }); }
+  _statsRef = React.createRef(); _nameRef = React.createRef(); _railRef = React.createRef();
+  _heroNext = () => this.setState(s => ({ heroI: ((s.heroI || 0) + 1) % (this._heroN || 6) }));
+  _heroMove = e => {
+    this._lastMove = Date.now();
+    const p = [e.clientX, e.clientY], q = this._mp || p; this._mp = p;
+    this._acc = (this._acc || 0) + Math.hypot(p[0] - q[0], p[1] - q[1]);
+    if (this._acc > 120) { this._acc = 0; this._heroNext(); }
+  };
+  _fit = () => {
+    const el = this._nameRef.current; if (!el) return;
+    el.style.fontSize = '12vw';
+    const w = el.getBoundingClientRect().width, target = el.parentElement.clientWidth * 0.965;
+    if (w > 0) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * target / w) + 'px';
+  };
+  _railDown = e => { if (e.pointerType !== 'mouse') return; const el = this._railRef.current; this._drag = { x: e.clientX, sl: el.scrollLeft }; this._dragged = false; };
+  _railMove = e => { const d = this._drag, el = this._railRef.current; if (!d || !el) return; const dx = e.clientX - d.x; if (Math.abs(dx) > 6) this._dragged = true; if (this._dragged) { el.scrollLeft = d.sl - dx; el.style.cursor = 'grabbing'; } };
+  _railUp = () => { if (!this._drag) return; this._drag = null; const el = this._railRef.current; if (el) el.style.cursor = 'grab'; };
+  _railClick = e => { if (this._dragged) { e.preventDefault(); e.stopPropagation(); this._dragged = false; } };
+  _railBy = dir => { const el = this._railRef.current; if (el) el.scrollBy({ left: dir * el.clientWidth * 0.6, behavior: 'smooth' }); };
+  componentDidUpdate() { if (this._lastLang !== this.state.lang) { this._lastLang = this.state.lang; this._fit(); } }
   _runCount() {
     if (this._counted) return; this._counted = true;
     const t0 = performance.now(), dur = 1600;
@@ -408,16 +455,19 @@ class Component extends DCLogic {
     if (cs.position === 'static') btn.style.position = 'relative';
     btn.style.overflow = 'hidden';
     const s = document.createElement('span');
-    s.style.cssText = `position:absolute;left:${e.clientX - r.left}px;top:${e.clientY - r.top}px;width:${size}px;height:${size}px;border-radius:50%;pointer-events:none;background:${lum > 0.6 ? 'rgba(32,29,24,0.22)' : 'rgba(238,234,226,0.4)'};animation:rip 0.6s ease-out forwards;`;
+    s.style.cssText = `position:absolute;left:${e.clientX - r.left}px;top:${e.clientY - r.top}px;width:${size}px;height:${size}px;border-radius:50%;pointer-events:none;background:${lum > 0.6 ? 'rgba(17,17,16,0.25)' : 'rgba(255,255,255,0.45)'};animation:rip 0.6s ease-out forwards;`;
     btn.appendChild(s);
     setTimeout(() => s.remove(), 650);
   };
   componentDidMount() {
-    this._onScroll = () => { const v = window.scrollY > window.innerHeight - 110; if (v !== this.state.solid) this.setState({ solid: v }); };
-    window.addEventListener('scroll', this._onScroll, { passive: true }); this._onScroll();
     document.addEventListener('pointerdown', this._ripple);
-    const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!still) this._timer = setInterval(() => { if (!this._paused && this.state.lbIdx == null && !document.hidden) this._slideTo(this.state.slide + 1); }, 5000);
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ heroIn: true })));
+    this._heroT = setInterval(() => { if (Date.now() - (this._lastMove || 0) > 1500) this._heroNext(); }, 3200);
+    this._onScroll = () => { const on = window.scrollY < window.innerHeight * 0.85; if (on !== this.state.onHero) this.setState({ onHero: on }); };
+    window.addEventListener('scroll', this._onScroll, { passive: true }); this._onScroll();
+    window.addEventListener('resize', this._fit); this._fit();
+    document.fonts && document.fonts.ready.then(() => this._fit());
+    (this._heroImgs || []).forEach(src => { const im = new Image(); im.onload = () => this.setState(s => ({ ar: { ...s.ar, [src]: im.naturalWidth / im.naturalHeight } })); im.src = src; });
     this.setState({ countP: 0 });
     const el = this._statsRef.current;
     if (el && 'IntersectionObserver' in window) {
@@ -431,18 +481,17 @@ class Component extends DCLogic {
       if (e.key === 'ArrowLeft') this._step(-1);
     };
     window.addEventListener('keydown', this._onKey); document.documentElement.lang = this.state.lang === 'EN' ? 'en' : 'uk'; }
-  componentWillUnmount() { clearInterval(this._timer); window.removeEventListener('scroll', this._onScroll); document.removeEventListener('pointerdown', this._ripple); cancelAnimationFrame(this._raf); this._io && this._io.disconnect(); window.removeEventListener('keydown', this._onKey); document.body.style.overflow = ''; }
+  componentWillUnmount() { clearInterval(this._heroT); window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._fit); document.removeEventListener('pointerdown', this._ripple); cancelAnimationFrame(this._raf); this._io && this._io.disconnect(); window.removeEventListener('keydown', this._onKey); document.body.style.overflow = ''; }
   _step(d) { const n = this._lbCount || 1; this.setState(s => ({ lbIdx: (s.lbIdx + d + n) % n })); }
   renderVals() {
     const s = this.state, EN = s.lang === 'EN', L = (u, e) => EN ? e : u;
-    const INK = '#201D18', MUTED = '#8C8477', SEP = '#B3AB9D';
-    const DICT = {"ua":{"tag1":"Живопис,","tag2":"Одеса — з 2009","heroBio":"Олександр Петровський — художник, педагог, член Національної спілки художників України.","heroH1b":"Олександр Петровський.","write":"Написати","viewWorks":"Дивитися роботи","aboutBtn":"Про художника","quote":"Я пишу не те, що бачу, а те, що лишається після погляду.","heroLead":"Людина, простір і памʼять — у тихих сценах повсякдення.","heroH1a":"Колір, світло, фактура.","keyCaption":"«Вечір на Ланжероні», 2025","heroAlt":"Картина Олександра Петровського «Вечір на Ланжероні», 2025","prevLabel":"Попередня робота","nextLabel":"Наступна робота","keyPainting":"ключова картина","s02":"(02) Вибрані роботи","worksH2a":"Олія, полотно, картон.","worksH2b":"Роботи останніх років.","photo":"фото картини","sold":"Продано","gallery":"Повна галерея","s03":"(03) Про художника","aboutH2":"Пишу людей, простір","aboutH2b":"і тишу між ними.","studioPhoto":"авторське фото в майстерні","aboutP1":"Олександр Михайлович Петровський — український живописець, викладач. Член Національної спілки художників України з 2024 року.","aboutP2":"Викладає на художньо-графічному факультеті Університету Ушинського. Твори зберігаються в приватних колекціях України, Швейцарії та Німеччини.","bio":"Повна біографія","s04":"(04) Творчі серії","seriesCover":"обкладинка серії","nowLabel":"Зараз у творчості","nowTitle":"«Сіль і світло»","nowText":"Дванадцять полотен про узбережжя пізньої осені. Персональна виставка — березень 2027.","more":"Детальніше ↗","nowFrag":"нова серія — фрагмент","phPainting":"картина","phSketch":"ескіз","phDetail":"фрагмент","storyLabel":"Історія однієї картини","storyH2a":"«Я писав її три роки, бо щоразу памʼятав інше світло.»","storyH2b":"Мамина кухня, 1987.","storyP":"Задум, ескізи та рішення, що змінювали картину від першого шару до лаку.","readStory":"Читати історію ↗","s05":"(05) Виставки та досягнення","exH2a":"37 виставок в Україні та Європі.","exH2b":"Шлях без поспіху.","cv":"Повне CV ↗","pdf":"Портфоліо для кураторів · PDF ↗","s06":"(06) У майстерні","stH2a":"Ескізи, палітра, відео.","stH2b":"Процес без глянцю.","s07":"(07) Мистецький щоденник","allPosts":"Усі записи ↗","s08":"(08) Картини та замовлення","buyH2":"Що варто знати, перш ніж придбати картину.","commQ":"Хочете роботу на замовлення?","commA":"Обговоримо ескіз.","commBtn":"Обговорити замовлення ↗","phPortrait":"портрет","s09":"(09) Співпраця та проєкти","coH2a":"Для галерей, кураторів, колекціонерів","coH2b":"та інституцій.","coP":"Групові й персональні виставки, кураторські проєкти, резиденції, лекції, майстер-класи та освітні програми.","propose":"Запропонувати проєкт ↗","s10":"(10) Контакти","city":"Одеса, Україна","newsPh":"Email — новини про виставки","msgPh":"Повідомлення","copy":"© 2026, Одеса","member":"Член НСХУ","top":"Вгору ↑"},"en":{"tag1":"Painting,","tag2":"Odesa — since 2009","heroBio":"Oleksandr Petrovskyi — painter, teacher, member of the National Union of Artists of Ukraine.","heroH1b":"Oleksandr Petrovskyi.","write":"Get in touch","viewWorks":"View works","aboutBtn":"About the artist","quote":"I paint not what I see, but what remains after the gaze.","heroLead":"People, space and memory — in quiet scenes of everyday life.","heroH1a":"Colour, light, texture.","keyCaption":"“Evening at Lanzheron”, 2025","heroAlt":"Painting by Oleksandr Petrovskyi, “Evening at Lanzheron”, 2025","prevLabel":"Previous work","nextLabel":"Next work","keyPainting":"key painting","s02":"(02) Selected works","worksH2a":"Oil, canvas, cardboard.","worksH2b":"Recent works.","photo":"painting photo","sold":"Sold","gallery":"Full gallery","s03":"(03) About the artist","aboutH2":"I paint people, space","aboutH2b":"and the silence between them.","studioPhoto":"portrait in the studio","aboutP1":"Oleksandr Mykhailovych Petrovskyi is a Ukrainian painter and teacher. Member of the National Union of Artists of Ukraine since 2024.","aboutP2":"Teaches at the Faculty of Fine Arts and Graphics, Ushynsky University. His works are held in private collections in Ukraine, Switzerland and Germany.","bio":"Full biography","s04":"(04) Series","seriesCover":"series cover","nowLabel":"Currently working on","nowTitle":"“Salt and Light”","nowText":"Twelve canvases about the late-autumn coast. Solo exhibition — March 2027.","more":"Learn more ↗","nowFrag":"new series — detail","phPainting":"painting","phSketch":"sketch","phDetail":"detail","storyLabel":"The story of one painting","storyH2a":"“It took me three years, because each time I remembered a different light.”","storyH2b":"Mother’s Kitchen, 1987.","storyP":"The idea, the sketches and the decisions that changed the painting from first layer to varnish.","readStory":"Read the story ↗","s05":"(05) Exhibitions & recognition","exH2a":"37 exhibitions in Ukraine and Europe.","exH2b":"A path without hurry.","cv":"Full CV ↗","pdf":"Portfolio for curators · PDF ↗","s06":"(06) In the studio","stH2a":"Sketches, palette, video.","stH2b":"The process, unpolished.","s07":"(07) Art journal","allPosts":"All entries ↗","s08":"(08) Buy & commission","buyH2":"What to know before you buy a painting.","commQ":"Want a commissioned piece?","commA":"Let’s discuss a sketch.","commBtn":"Discuss a commission ↗","phPortrait":"portrait","s09":"(09) Collaboration & projects","coH2a":"For galleries, curators, collectors","coH2b":"and institutions.","coP":"Group and solo exhibitions, curatorial projects, residencies, lectures, workshops and educational programmes.","propose":"Propose a project ↗","s10":"(10) Contacts","city":"Odesa, Ukraine","newsPh":"Email — exhibition news","msgPh":"Message","copy":"© 2026, Odesa","member":"Member of NUAU","top":"Back to top ↑"}};
+    const DICT = {"ua":{"tag1":"Живопис,","tag2":"Одеса — з 2009","heroBio":"Олександр Петровський — художник, педагог, член Національної спілки художників України.","heroH1b":"Олександр Петровський.","write":"Написати","viewWorks":"Дивитися роботи","aboutBtn":"Про художника","quote":"Я пишу не те, що бачу, а те, що лишається після погляду.","heroLead":"Людина, простір і памʼять — у тихих сценах повсякдення.","heroH1a":"Люди, світло, колір.","keyCaption":"«Вечір на Ланжероні», 2025","heroAlt":"Картина Олександра Петровського «Вечір на Ланжероні», 2025","prevLabel":"Попередня робота","nextLabel":"Наступна робота","keyPainting":"ключова картина","s02":"(03) Вибрані роботи","worksH2a":"Олія, полотно, картон.","worksH2b":"Роботи останніх років.","photo":"фото картини","sold":"Продано","gallery":"Повна галерея","s03":"(02) Про художника","aboutH2":"Пишу людей, простір","aboutH2b":"і тишу між ними.","studioPhoto":"авторське фото в майстерні","aboutP1":"Олександр Михайлович Петровський — український живописець, викладач. Член Національної спілки художників України з 2024 року.","aboutP2":"Викладає на художньо-графічному факультеті Університету Ушинського. Твори зберігаються в приватних колекціях України, Швейцарії та Німеччини.","bio":"Повна біографія","s04":"(04) Творчі серії","seriesCover":"обкладинка серії","nowLabel":"Зараз у творчості","nowTitle":"«Сіль і світло»","nowText":"Дванадцять полотен про узбережжя пізньої осені. Персональна виставка — березень 2027.","more":"Детальніше ↗","nowFrag":"нова серія — фрагмент","phPainting":"картина","phSketch":"ескіз","phDetail":"фрагмент","storyLabel":"Історія однієї картини","storyH2a":"«Я писав її три роки, бо щоразу памʼятав інше світло.»","storyH2b":"Мамина кухня, 1987.","storyP":"Задум, ескізи та рішення, що змінювали картину від першого шару до лаку.","readStory":"Читати історію ↗","s05":"(05) Виставки та досягнення","exH2a":"37 виставок в Україні та Європі.","exH2b":"Шлях без поспіху.","cv":"Повне CV ↗","pdf":"Портфоліо для кураторів · PDF ↗","s06":"(06) У майстерні","stH2a":"Ескізи, палітра, відео.","stH2b":"Процес без глянцю.","s07":"(07) Мистецький щоденник","allPosts":"Усі записи ↗","s08":"(08) Картини та замовлення","buyH2":"Що варто знати, перш ніж придбати картину.","commQ":"Хочете роботу на замовлення?","commA":"Обговоримо ескіз.","commBtn":"Обговорити замовлення ↗","phPortrait":"портрет","s09":"(09) Співпраця та проєкти","coH2a":"Для галерей, кураторів, колекціонерів","coH2b":"та інституцій.","coP":"Групові й персональні виставки, кураторські проєкти, резиденції, лекції, майстер-класи та освітні програми.","propose":"Запропонувати проєкт ↗","s10":"(10) Контакти","city":"Одеса, Україна","newsPh":"Email — новини про виставки","msgPh":"Повідомлення","copy":"© 2026, Одеса","member":"Член НСХУ","top":"Вгору ↑"},"en":{"tag1":"Painting,","tag2":"Odesa — since 2009","heroBio":"Oleksandr Petrovskyi — painter, teacher, member of the National Union of Artists of Ukraine.","heroH1b":"Oleksandr Petrovskyi.","write":"Get in touch","viewWorks":"View works","aboutBtn":"About the artist","quote":"I paint not what I see, but what remains after the gaze.","heroLead":"People, space and memory — in quiet scenes of everyday life.","heroH1a":"People, light, colour.","keyCaption":"“Evening at Lanzheron”, 2025","heroAlt":"Painting by Oleksandr Petrovskyi, “Evening at Lanzheron”, 2025","prevLabel":"Previous work","nextLabel":"Next work","keyPainting":"key painting","s02":"(03) Selected works","worksH2a":"Oil, canvas, cardboard.","worksH2b":"Recent works.","photo":"painting photo","sold":"Sold","gallery":"Full gallery","s03":"(02) About the artist","aboutH2":"I paint people, space","aboutH2b":"and the silence between them.","studioPhoto":"portrait in the studio","aboutP1":"Oleksandr Mykhailovych Petrovskyi is a Ukrainian painter and teacher. Member of the National Union of Artists of Ukraine since 2024.","aboutP2":"Teaches at the Faculty of Fine Arts and Graphics, Ushynsky University. His works are held in private collections in Ukraine, Switzerland and Germany.","bio":"Full biography","s04":"(04) Series","seriesCover":"series cover","nowLabel":"Currently working on","nowTitle":"“Salt and Light”","nowText":"Twelve canvases about the late-autumn coast. Solo exhibition — March 2027.","more":"Learn more ↗","nowFrag":"new series — detail","phPainting":"painting","phSketch":"sketch","phDetail":"detail","storyLabel":"The story of one painting","storyH2a":"“It took me three years, because each time I remembered a different light.”","storyH2b":"Mother’s Kitchen, 1987.","storyP":"The idea, the sketches and the decisions that changed the painting from first layer to varnish.","readStory":"Read the story ↗","s05":"(05) Exhibitions & recognition","exH2a":"37 exhibitions in Ukraine and Europe.","exH2b":"A path without hurry.","cv":"Full CV ↗","pdf":"Portfolio for curators · PDF ↗","s06":"(06) In the studio","stH2a":"Sketches, palette, video.","stH2b":"The process, unpolished.","s07":"(07) Art journal","allPosts":"All entries ↗","s08":"(08) Buy & commission","buyH2":"What to know before you buy a painting.","commQ":"Want a commissioned piece?","commA":"Let’s discuss a sketch.","commBtn":"Discuss a commission ↗","phPortrait":"portrait","s09":"(09) Collaboration & projects","coH2a":"For galleries, curators, collectors","coH2b":"and institutions.","coP":"Group and solo exhibitions, curatorial projects, residencies, lectures, workshops and educational programmes.","propose":"Propose a project ↗","s10":"(10) Contacts","city":"Odesa, Ukraine","newsPh":"Email — exhibition news","msgPh":"Message","copy":"© 2026, Odesa","member":"Member of NUAU","top":"Back to top ↑"}};
     const t = EN ? DICT.en : DICT.ua;
     const seriesData = [
-      { key: 'portrait', title: L('Людина і портрет', 'People & portrait'), short: L('Портрет', 'Portrait'), count: '14', a: '#9C4E36', b: '#A6583F', text: L('Портрети близьких і випадкових людей: погляд, руки, пауза перед словом.', 'Portraits of loved ones and strangers: a gaze, hands, the pause before a word.') },
-      { key: 'space', title: L('Простір і пейзаж', 'Space & landscape'), short: L('Простір', 'Landscape'), count: '22', a: '#4F6A80', b: '#587389', text: L('Одеські двори, узбережжя і степ — простір як стан, а не краєвид.', 'Odesa courtyards, the coast and the steppe — space as a state of mind, not a view.') },
-      { key: 'memory', title: L('Памʼять і повсякденність', 'Memory & the everyday'), short: L('Памʼять', 'Memory'), count: '11', a: '#A9844C', b: '#B48E56', text: L('Кухні, підвіконня, речі, що пережили своїх власників.', 'Kitchens, windowsills, objects that outlived their owners.') },
-      { key: 'mother', title: L('Материнство та дитинство', 'Motherhood & childhood'), short: L('Материнство', 'Motherhood'), count: '09', a: '#6F7F58', b: '#788961', text: L('Тиха серія про турботу, ранок і перші спогади.', 'A quiet series about care, mornings and first memories.') },
+      { key: 'portrait', title: L('Людина і портрет', 'People & portrait'), short: L('Портрет', 'Portrait'), count: '14', a: '#C9553A', b: '#D2603F', text: L('Портрети близьких і випадкових людей: погляд, руки, пауза перед словом.', 'Portraits of loved ones and strangers: a gaze, hands, the pause before a word.') },
+      { key: 'space', title: L('Простір і пейзаж', 'Space & landscape'), short: L('Простір', 'Landscape'), count: '22', a: '#3E63C9', b: '#4A6ED2', text: L('Одеські двори, узбережжя і степ — простір як стан, а не краєвид.', 'Odesa courtyards, the coast and the steppe — space as a state of mind, not a view.') },
+      { key: 'memory', title: L('Памʼять і повсякденність', 'Memory & the everyday'), short: L('Памʼять', 'Memory'), count: '11', a: '#C98A2E', b: '#D49638', text: L('Кухні, підвіконня, речі, що пережили своїх власників.', 'Kitchens, windowsills, objects that outlived their owners.') },
+      { key: 'mother', title: L('Материнство та дитинство', 'Motherhood & childhood'), short: L('Материнство', 'Motherhood'), count: '09', a: '#6F8A5B', b: '#7B9666', text: L('Тиха серія про турботу, ранок і перші спогади.', 'A quiet series about care, mornings and first memories.') },
     ];
     const tone = k => seriesData.find(x => x.key === k);
     const C = 'https://res.cloudinary.com/qk9xhhqc/image/upload/';
@@ -454,6 +503,8 @@ class Component extends DCLogic {
       C + 'v1794224617/%D0%9D%D0%B0%D1%88%D0%B0_%D0%BD%D0%B0%D0%B4%D1%96%D1%8F.webp',
       C + 'v1794224618/1047876_473419112741640_472816367_o.webp',
     ];
+    this._heroImgs = WORK_IMGS; this._heroN = WORK_IMGS.length;
+    const arOf = src => (s.ar && s.ar[src]) || 0.8;
     const oil = L('Полотно, олія', 'Oil on canvas');
     const allWorks = [
       [L('Вечір на Ланжероні', 'Evening at Lanzheron'), 2025, oil, '100×80', 'space', false],
@@ -462,9 +513,9 @@ class Component extends DCLogic {
       [L('Ранок', 'Morning'), 2024, oil, '90×120', 'mother', false],
       [L('Степ після дощу', 'Steppe After Rain'), 2022, oil, '60×100', 'space', false],
       [L('Дівчина в синьому', 'Girl in Blue'), 2025, L('Полотно, темпера', 'Tempera on canvas'), '80×60', 'portrait', false],
-    ].map(([title, year, tech, size, k, sold], i) => ({ title, year, tech, size, sold, k, img: WORK_IMGS[i], alt: L('Картина «', 'Painting “') + title + L('», ', '”, ') + tech.toLowerCase() + ', ' + year, meta: year + ', ' + tech.toLowerCase(), ratio: size.split('×').reverse().join('/'), ih: (h => `clamp(240px, ${(16 + h * 0.16).toFixed(1)}vw, ${Math.round(320 + h * 2.4)}px)`)(parseInt(size)) }));
+    ].map(([title, year, tech, size, k, sold], i) => ({ title, year, tech, size, sold, k, img: WORK_IMGS[i], alt: L('Картина «', 'Painting “') + title + L('», ', '”, ') + tech.toLowerCase() + ', ' + year }));
     const fList = [{ key: 'all', label: L('Усі', 'All') }, ...seriesData.map(x => ({ key: x.key, label: x.short }))];
-    const slash = (arr, activeIdx, onPick) => arr.map((label, i) => ({ label, sep: i < arr.length - 1 ? '/' : '', fg: i === activeIdx ? INK : SEP, onClick: () => onPick(i) }));
+    const slash = (arr, activeIdx, onPick) => arr.map((label, i) => ({ label, sep: i < arr.length - 1 ? '/' : '', fg: i === activeIdx ? '#111110' : '#AFAFAB', onClick: () => onPick(i) }));
     const faqData = EN ? [
       { tab: 'Buying', items: [['How do I find out the price?', 'Prices of available works are listed in the gallery. For others, write to me and I will send details, extra photos and the price.'], ['Is there a certificate of authenticity?', 'Yes, every work comes with a signed certificate stating title, year, technique and size.'], ['Can I see a work in person?', 'Yes, in the studio in Odesa by appointment.']] },
       { tab: 'Commissions', items: [['What can I commission?', 'A portrait, a memorable place or a scene from your story — in my own manner.'], ['How long does it take?', 'Usually 6–10 weeks, depending on size and complexity.'], ['How is the idea agreed?', 'First a conversation and a composition sketch, then a 30% deposit.']] },
@@ -479,16 +530,23 @@ class Component extends DCLogic {
     const tab = faqData[s.faqTab];
     return {
       t,
-      navL: [[L('Живопис', 'Paintings'), '#works'], [L('Про мене', 'About'), '#about'], [L('Виставки', 'Exhibitions'), '#exhibitions']].map(([label, href]) => ({ label, href })),
-      navR: [[L('Щоденник', 'Journal'), '#diary'], [L('Придбати', 'Buy'), '#buy']].map(([label, href]) => ({ label, href })),
-      hdr: s.solid ? { bg: '#EEEAE2', fg: '#201D18', line: '#D2CABB', logo: 'none' } : { bg: 'transparent', fg: '#FFFFFF', line: 'transparent', logo: 'invert(1)' },
-      langs: ['UA', 'EN'].map(code => ({ code, op: s.lang === code ? 1 : 0.55, fg: s.lang === code ? INK : MUTED, onClick: () => this.setLang(code) })),
+      nav: [[L('Живопис', 'Paintings'), '#works'], [L('Про мене', 'About'), '#about'], [L('Щоденник', 'Journal'), '#diary']].map(([label, href]) => ({ label, href })),
+      hd: s.onHero !== false ? { bg: 'transparent', fg: '#FFFFFF', btnBg: '#FFFFFF', btnFg: '#111110' } : { bg: '#DEDEDB', fg: '#111110', btnBg: '#111110', btnFg: '#FFFFFF' },
+      heroSlides: allWorks.map((w, i) => { const on = i === (s.heroI || 0); return { img: w.img, alt: w.alt, bg: allWorks[(i + 2) % allWorks.length].img, o: on ? 1 : 0, z: on ? 2 : 1, pe: on ? 'auto' : 'none', hidden: on ? 'false' : 'true', ar: arOf(w.img).toFixed(4), label: (i + 1) + '/' + allWorks.length + ' ' + w.title, bgScale: on && s.heroIn ? 2.3 : 2.7, origin: ['30% 40%', '70% 30%', '40% 70%', '60% 55%', '25% 60%', '75% 70%'][i % 6], y: s.heroIn ? '0' : '5%', prio: i === 0 ? 'high' : 'low' }; }),
+      heroR: { scale: s.heroIn ? 1.55 : 1.85, o: s.heroIn ? 1 : 0, y: s.heroIn ? '0' : '24px' },
+      heroMove: this._heroMove,
+      heroLink: L('дивитися роботи', 'view the works'),
+      nameRef: this._nameRef,
+      nameLetters: Array.from(L('ПЕТРОВСЬКИЙ', 'PETROVSKYI')).map((ch, i) => ({ ch, y: s.heroIn ? '0' : '112%', d: (0.2 + i * 0.055).toFixed(3) + 's' })),
+      railRef: this._railRef, railDown: this._railDown, railMove: this._railMove, railUp: this._railUp, railClick: this._railClick,
+      railPrev: () => this._railBy(-1), railNext: () => this._railBy(1),
+      langs: ['UA', 'EN'].map(code => ({ code, fg: s.onHero !== false ? (s.lang === code ? '#FFFFFF' : 'rgba(255,255,255,0.6)') : (s.lang === code ? '#111110' : '#8C8C88'), onClick: () => this.setLang(code) })),
       tiltMove: e => {
         const el = e.currentTarget, r = el.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
         el.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s';
         el.style.transform = `perspective(900px) rotateX(${-py * 10}deg) rotateY(${px * 12}deg) scale(1.02)`;
-        el.style.boxShadow = `${-px * 24}px ${24 - py * 12}px 48px rgba(32,29,24,0.2)`;
+        el.style.boxShadow = `${-px * 24}px ${24 - py * 12}px 48px rgba(17,17,16,0.22)`;
       },
       tiltLeave: e => {
         const el = e.currentTarget;
@@ -521,33 +579,6 @@ class Component extends DCLogic {
       bioIcon: s.bioOpen ? '−' : '+',
       bioToggle: () => this.setState({ bioOpen: !s.bioOpen }),
       statsRef: this._statsRef,
-      ui: {
-        heroCta: L('дивитися роботи', 'see the works'),
-        newH2: L('Нові роботи', 'New works'),
-        newLead: L('Картини останніх років — від узбережжя до тихих кухонь. Нові полотна зʼявляються тут першими.', 'Paintings of recent years — from the coast to quiet kitchens. New canvases appear here first.'),
-        railBack: L('Прокрутити назад', 'Scroll back'),
-        railFwd: L('Прокрутити вперед', 'Scroll forward'),
-      },
-      ...(() => {
-        const n = allWorks.length; this._slideCount = n;
-        const cur = s.slide % n;
-        const pad = x => (x < 10 ? '0' : '') + x;
-        return {
-          slides: allWorks.map((w, i) => ({ cap: (i + 1) + '/' + n + ' ' + w.title, hidden: i === cur ? 'false' : 'true', img: w.img, alt: w.alt, op: i === cur ? 1 : 0, hidden: i === cur ? 'false' : 'true', loading: i === 0 ? 'eager' : 'lazy', dot: i === cur ? INK : '#C9C1B3' })),
-          slideNum: pad(cur + 1) + ' / ' + pad(n),
-          slideTitle: allWorks[cur].title + ', ' + allWorks[cur].year,
-          slidePrev: () => this._slideTo(cur - 1),
-          slideNext: () => this._slideTo(cur + 1),
-          pauseSlides: () => { this._paused = true; },
-          resumeSlides: () => { this._paused = false; },
-          openSlide: e => { e.preventDefault(); this.setState({ filter: 'all', lbIdx: cur }); },
-        };
-      })(),
-      railRef: this._railRef,
-      heroBgL: 'https://res.cloudinary.com/qk9xhhqc/image/upload/v1794224259/Mask_group2.png',
-      heroBgR: WORK_IMGS[4],
-      railPrev: () => this._rail(-1),
-      railNext: () => this._rail(1),
       stats: [{ to: 15, suf: '+', l: L('Років практики', 'Years of practice') }, { to: 37, suf: '', l: L('Виставок', 'Exhibitions') }, { to: 120, suf: '+', l: L('Робіт у колекціях', 'Works in collections') }, { v: L('НСХУ', 'NUAU'), l: L('Член спілки', 'Union member') }]
         .map(x => x.to == null ? x : { ...x, v: Math.round(x.to * (s.countP ?? 0)) + x.suf }),
       filters: slash(fList.map(f => f.label), fList.findIndex(f => f.key === s.filter), i => this.setState({ filter: fList[i].key, lbIdx: null })),
@@ -557,7 +588,7 @@ class Component extends DCLogic {
         const cur = s.lbIdx != null ? list[s.lbIdx] : null;
         if (typeof document !== 'undefined') document.body.style.overflow = cur ? 'hidden' : '';
         return {
-          works: list.map((w, i) => ({ ...w, open: e => { e.preventDefault(); this.setState({ lbIdx: i }); } })),
+          works: list.map((w, i) => ({ ...w, wcss: arOf(w.img) < 1 ? 'clamp(220px,22vw,440px)' : 'clamp(280px,32vw,620px)', sub: w.year + ' · ' + w.tech + ' · ' + w.size, open: e => { e.preventDefault(); this.setState({ lbIdx: i }); } })),
           lb: cur ? { ...cur, counter: (s.lbIdx + 1) + ' / ' + list.length, closeLabel: L('Закрити', 'Close') } : null,
           lbImg: cur ? React.createElement('img', { src: cur.img, alt: cur.alt, decoding: 'async', onClick: e => e.stopPropagation(), style: { maxWidth: '100%', maxHeight: 'calc(100vh - 120px)', minHeight: 0, width: 'auto', height: 'auto', objectFit: 'contain', justifySelf: 'center', alignSelf: 'center', cursor: 'default', display: 'block' } }) : null,
           lbClose: () => this.setState({ lbIdx: null }),
@@ -566,7 +597,7 @@ class Component extends DCLogic {
           lbNext: e => { e.stopPropagation(); this._step(1); },
         };
       })(),
-      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), color: s.series === i ? INK : MUTED, onEnter: () => this.setState({ series: i }) })),
+      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), color: s.series === i ? '#111110' : '#8C8C88', onEnter: () => this.setState({ series: i }) })),
       activeSeries: seriesData[s.series],
       ...(() => {
         // [year, type, ua, en, uaNote, enNote]
@@ -618,7 +649,7 @@ class Component extends DCLogic {
         const list = EX.filter(e => cur === 'all' || e[1] === cur);
         const LIMIT = 8, open = !!s.exAll;
         return {
-          exTabs: TYPES.map(([key, label], i) => ({ label, count: key === 'all' ? EX.length : EX.filter(e => e[1] === key).length, sep: i < TYPES.length - 1 ? '/' : '', fg: key === cur ? INK : SEP, onClick: () => this.setState({ exType: key, exAll: false }) })),
+          exTabs: TYPES.map(([key, label], i) => ({ label, count: key === 'all' ? EX.length : EX.filter(e => e[1] === key).length, sep: i < TYPES.length - 1 ? '/' : '', fg: key === cur ? '#111110' : '#AFAFAB', onClick: () => this.setState({ exType: key, exAll: false }) })),
           exhibitions: (open ? list : list.slice(0, LIMIT)).map(e => ({ year: String(e[0]), type: typeName[e[1]], title: EN ? e[3] : e[2], place: EN ? e[5] : e[4] })),
           exHasMore: list.length > LIMIT,
           exMoreLabel: open ? L('Згорнути', 'Show less') : L('Показати всі', 'Show all') + ' (' + list.length + ')',
@@ -627,21 +658,21 @@ class Component extends DCLogic {
         };
       })(),
       studio: [
-        { ph: L('ескіз вугіллям', 'charcoal sketch'), cap: L('Ескіз', 'Sketch'), a: '#9D968A', b: '#A7A094', video: false },
-        { ph: L('палітра', 'palette'), cap: L('Палітра', 'Palette'), a: '#9C4E36', b: '#A6583F', video: false },
-        { ph: L('відео процесу', 'process video'), cap: L('Відео з майстерні', 'Studio video'), a: '#2A2620', b: '#332E27', video: true },
-        { ph: L('фрагмент полотна', 'canvas detail'), cap: L('Фрагмент', 'Detail'), a: '#4F6A80', b: '#587389', video: false },
+        { ph: L('ескіз вугіллям', 'charcoal sketch'), cap: L('Ескіз', 'Sketch'), a: '#9A9A96', b: '#A6A6A2', video: false },
+        { ph: L('палітра', 'palette'), cap: L('Палітра', 'Palette'), a: '#C9553A', b: '#D2603F', video: false },
+        { ph: L('відео процесу', 'process video'), cap: L('Відео з майстерні', 'Studio video'), a: '#1E1E1C', b: '#2A2A28', video: true },
+        { ph: L('фрагмент полотна', 'canvas detail'), cap: L('Фрагмент', 'Detail'), a: '#3E63C9', b: '#4A6ED2', video: false },
       ],
       posts: [
-        { rubric: L('Преса', 'Press'), date: '19.02.2026', title: L('Коли простір стає переживанням… — про персональну виставку «Місця мої»', 'When space becomes experience… — on the solo exhibition “My Places”'), journal: L('«Чорноморські новини», № 6 (22582)', '“Chornomorski Novyny”, No. 6 (22582)'), pages: L('Вероніка Стягайло', 'Veronika Stiahailo'), badge: L('Читати ↗', 'Read ↗'), href: 'https://chornomorka.com/archive/22582/a-171993.html', target: '_blank', rel: 'noopener noreferrer', a: '#7E3420', b: '#883C27' },
-        { rubric: L('Наукові публікації', 'Research papers'), date: '14.10.2025', title: L('Тематичні пленери в освітньому процесі: їх значення у формуванні художньо-проєктної компетентності майбутніх магістрів образотворчого мистецтва', 'Thematic plein airs in the educational process: their importance in the formation of artistic and project competence of future masters of fine arts'), journal: L('«Південноукраїнські мистецькі студії», № 3 (2025)', '“South Ukrainian Art Studies”, No. 3 (2025)'), pages: L('с. 82–90', 'pp. 82–90'), badge: 'PDF ↗', href: 'http://artstudies.pdpu.edu.ua/index.php/artstudies/article/view/204/190', target: '_blank', rel: 'noopener noreferrer', a: '#3E5468', b: '#465D72' },
-        { rubric: L('Наукові публікації', 'Research papers'), date: L('Мистецтво та освіта', 'Art and Education'), title: L('Художньо-проєктна підготовка у вищій мистецькій освіті Європи: розвиток класичних методик і сучасних підходів', 'Art and design project training in European higher art education: classical methods and modern approaches'), journal: L('Журнал «Мистецтво та освіта»', 'Journal “Art and Education”'), pages: L('с. 17–22', 'pp. 17–22'), badge: 'PDF ↗', href: 'https://artedu.com.ua/index.php/adm/article/view/318/316', target: '_blank', rel: 'noopener noreferrer', a: '#24201B', b: '#2E2923' },
-        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#A9844C', b: '#B48E56', href: '#', target: '_self', rel: '' },
-        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#4F6A80', b: '#587389', href: '#', target: '_self', rel: '' },
-        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F7F58', b: '#788961', href: '#', target: '_self', rel: '' },
+        { rubric: L('Преса', 'Press'), date: '19.02.2026', title: L('Коли простір стає переживанням… — про персональну виставку «Місця мої»', 'When space becomes experience… — on the solo exhibition “My Places”'), journal: L('«Чорноморські новини», № 6 (22582)', '“Chornomorski Novyny”, No. 6 (22582)'), pages: L('Вероніка Стягайло', 'Veronika Stiahailo'), badge: L('Читати ↗', 'Read ↗'), href: 'https://chornomorka.com/archive/22582/a-171993.html', target: '_blank', rel: 'noopener noreferrer', a: '#FF4F2B', b: '#FF5E3D' },
+        { rubric: L('Наукові публікації', 'Research papers'), date: '14.10.2025', title: L('Тематичні пленери в освітньому процесі: їх значення у формуванні художньо-проєктної компетентності майбутніх магістрів образотворчого мистецтва', 'Thematic plein airs in the educational process: their importance in the formation of artistic and project competence of future masters of fine arts'), journal: L('«Південноукраїнські мистецькі студії», № 3 (2025)', '“South Ukrainian Art Studies”, No. 3 (2025)'), pages: L('с. 82–90', 'pp. 82–90'), badge: 'PDF ↗', href: 'http://artstudies.pdpu.edu.ua/index.php/artstudies/article/view/204/190', target: '_blank', rel: 'noopener noreferrer', a: '#2F45FF', b: '#3A50FF' },
+        { rubric: L('Наукові публікації', 'Research papers'), date: L('Мистецтво та освіта', 'Art and Education'), title: L('Художньо-проєктна підготовка у вищій мистецькій освіті Європи: розвиток класичних методик і сучасних підходів', 'Art and design project training in European higher art education: classical methods and modern approaches'), journal: L('Журнал «Мистецтво та освіта»', 'Journal “Art and Education”'), pages: L('с. 17–22', 'pp. 17–22'), badge: 'PDF ↗', href: 'https://artedu.com.ua/index.php/adm/article/view/318/316', target: '_blank', rel: 'noopener noreferrer', a: '#111110', b: '#1C1C1A' },
+        { rubric: L('Нотатки художника', 'Artist’s notes'), date: '28.10.2026', title: L('Чому я повертаюсь до одного мотиву', 'Why I keep returning to one motif'), a: '#C98A2E', b: '#D49638', href: '#', target: '_self', rel: '' },
+        { rubric: L('Виставки та події', 'Exhibitions & events'), date: '14.10.2026', title: L('«Сіль і світло»: перші полотна', '“Salt and Light”: the first canvases'), a: '#3E63C9', b: '#4A6ED2', href: '#', target: '_self', rel: '' },
+        { rubric: L('Думки про живопис', 'Thoughts on painting'), date: '30.09.2026', title: L('Колір, що памʼятає', 'Colour that remembers'), a: '#6F8A5B', b: '#7B9666', href: '#', target: '_self', rel: '' },
       ],
       faqTabs: slash(faqData.map(f => f.tab), s.faqTab, i => this.setState({ faqTab: i, faqOpen: 0 })),
-      faq: tab.items.map(([q, a], i) => ({ q, a, open: s.faqOpen === i, icon: s.faqOpen === i ? '−' : '+', bg: s.faqOpen === i ? '#EEEAE2' : 'transparent', onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
+      faq: tab.items.map(([q, a], i) => ({ q, a, open: s.faqOpen === i, icon: s.faqOpen === i ? '−' : '+', bg: s.faqOpen === i ? '#F2F2F0' : 'transparent', onClick: () => this.setState({ faqOpen: s.faqOpen === i ? -1 : i }) })),
       fields: [{ ph: L('Імʼя', 'Name'), type: 'text', name: 'name', ac: 'name' }, { ph: 'Email', type: 'email', name: 'email', ac: 'email' }, { ph: L('Тема — придбання, замовлення, співпраця', 'Subject — purchase, commission, collaboration'), type: 'text', name: 'subject', ac: 'off' }],
       subLabel: s.subbed ? L('Готово ✓', 'Done ✓') : L('Підписатись ↗', 'Subscribe ↗'),
       subscribe: () => this.setState({ subbed: true }),
@@ -653,3 +684,4 @@ class Component extends DCLogic {
 </script>
 </body>
 </html>
+ 
