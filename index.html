@@ -188,7 +188,7 @@ input,textarea,button{font-family:inherit}
     </div>
   </div>
   <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
-  <a href="#" style="background:#22213A;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;" style-hover="background:#F1642E;color:#22213A;">{{ t.gallery }} <span>↗</span></a>
+  <a href="#gallery" onClick="{{ galOpen }}" style="background:#22213A;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;" style-hover="background:#F1642E;color:#22213A;">{{ t.gallery }} <span>↗</span></a>
     <div style="display:flex;gap:8px;">
       <button type="button" aria-label="{{ t.prevLabel }}" onClick="{{ railPrev }}" style="width:44px;height:44px;background:none;border:1px solid #22213A;color:#22213A;font-size:16px;cursor:pointer;" style-hover="background:#22213A;color:#FFFFFF;">←</button>
       <button type="button" aria-label="{{ t.nextLabel }}" onClick="{{ railNext }}" style="width:44px;height:44px;background:none;border:1px solid #22213A;color:#22213A;font-size:16px;cursor:pointer;" style-hover="background:#22213A;color:#FFFFFF;">→</button>
@@ -196,6 +196,29 @@ input,textarea,button{font-family:inherit}
   </div>
 </section>
 </main>
+
+<!-- ПОВНА ГАЛЕРЕЯ (відкривається кнопкою «Повна галерея») -->
+<sc-if value="{{ gal }}" hint-placeholder-val="{{ false }}">
+  <div id="gallery" role="dialog" aria-modal="true" aria-label="{{ galTitle }}" style="position:fixed;inset:0;z-index:90;background:#FFFFFF;color:#22213A;overflow-y:auto;">
+    <div style="position:sticky;top:0;z-index:1;background:#FFFFFF;border-bottom:1px solid #C4C3E3;">
+      <div style="max-width:1440px;margin:0 auto;padding:16px clamp(16px,3vw,32px);display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">
+        <span>{{ galTitle }} · {{ galCount }}</span>
+        <button type="button" onClick="{{ galClose }}" style="background:#22213A;color:#FFFFFF;border:none;padding:6px 10px;font-family:inherit;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;" style-hover="background:#F1642E;color:#22213A;">{{ galCloseLabel }} ✕</button>
+      </div>
+    </div>
+    <div style="max-width:1440px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(16px,3vw,32px) clamp(48px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:clamp(20px,2.4vw,36px) clamp(12px,1.6vw,24px);align-items:start;">
+      <sc-for list="{{ galWorks }}" as="w" hint-placeholder-count="0">
+        <a href="#" onClick="{{ w.open }}" style="display:flex;flex-direction:column;gap:10px;cursor:zoom-in;" style-hover="color:#B9481A;">
+          <div style="background:#C4C3E3;aspect-ratio:4/5;overflow:hidden;"><img src="{{ w.img }}" alt="{{ w.alt }}" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+          <span style="font-family:'Literata',serif;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;">{{ w.title }}</span>
+        </a>
+      </sc-for>
+      <sc-if value="{{ galEmpty }}" hint-placeholder-val="{{ false }}">
+        <p style="grid-column:1/-1;margin:0;padding:clamp(40px,8vw,120px) 0;text-align:center;font-family:'Literata',serif;font-style:italic;font-size:clamp(18px,1.6vw,24px);color:#625F8A;">{{ galEmptyText }}</p>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
 
 <sc-if value="{{ lb }}" hint-placeholder-val="{{ false }}">
   <div onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(34,33,58,0.96);display:flex;flex-direction:column;padding:16px clamp(16px,3vw,32px);gap:12px;color:#FFFFFF;cursor:zoom-out;">
@@ -224,10 +247,11 @@ input,textarea,button{font-family:inherit}
     <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;">{{ t.s04 }}</span>
     <div style="aspect-ratio:5/4;background:repeating-linear-gradient(135deg,{{ activeSeries.a }} 0 1px,{{ activeSeries.b }} 1px 10px);display:flex;align-items:flex-end;padding:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FFFFFF;margin-top:auto;">{{ t.seriesCover }}</div>
     <p style="margin:0;font-size:13px;line-height:1.5;color:#625F8A;max-width:400px;">{{ activeSeries.text }}</p>
+    <a href="#gallery" onClick="{{ activeSeries.onClick }}" style="align-self:flex-start;background:#22213A;color:#FFFFFF;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;display:flex;gap:8px;" style-hover="background:#F1642E;color:#22213A;">{{ seriesBtn }} <span>↗</span></a>
   </div>
   <div style="display:flex;flex-direction:column;justify-content:flex-end;">
     <sc-for list="{{ series }}" as="s" hint-placeholder-count="4">
-      <a href="#" onMouseEnter="{{ s.onEnter }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:16px 0;border-top:1px solid #C4C3E3;" style-hover="color:#22213A;">
+      <a href="#gallery" onMouseEnter="{{ s.onEnter }}" onFocus="{{ s.onEnter }}" onClick="{{ s.onClick }}" style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:16px 0;border-top:1px solid #C4C3E3;" style-hover="color:#22213A;">
         <span style="font-size:12px;font-weight:500;color:#625F8A;">{{ s.n }}</span>
         <span style="font-size:clamp(26px,2.8vw,40px);font-weight:500;letter-spacing:-0.015em;line-height:1.05;color:{{ s.color }};">{{ s.title }}</span>
         <span style="font-size:12px;color:#625F8A;">{{ s.count }}</span>
@@ -478,7 +502,7 @@ class Component extends DCLogic {
       this._io.observe(el);
     } else this._runCount();
     this._onKey = e => {
-      if (this.state.lbIdx == null) return;
+      if (this.state.lbIdx == null) { if (e.key === 'Escape' && this.state.galOpen) this.setState({ galOpen: false }); return; }
       if (e.key === 'Escape') this.setState({ lbIdx: null });
       if (e.key === 'ArrowRight') this._step(1);
       if (e.key === 'ArrowLeft') this._step(-1);
@@ -574,7 +598,7 @@ class Component extends DCLogic {
       },
       bioFacts: [
         { y: '1990', t: L('Народився 7 жовтня в селі ', 'Born on 7 October in the village of '), link: L('Чернове (Андрієво-Іванівка)', 'Chernove (Andriievo-Ivanivka)'), href: 'https://uk.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%B2%D0%B5_(%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)', post: L(', Березівський район, Одеська область', ', Berezivka district, Odesa region') },
-        { y: '2008–2013', t: '', link: L('Художньо-графічний факультет Університету Ушинського', 'Faculty of Fine Arts and Graphics, Ushynsky University'), href: 'https://pdpu.edu.ua/pro-khudozhno-grafichnij-fakultet/', post: L(', викладач образотворчого мистецтва', ' — qualified as a fine arts teacher') },
+        { y: '2008–2013', t: '', link: L('Художньо-графічний факультет Університету Ушинського', 'Faculty of Fine Arts and Graphics, Ushynsky University'), href: 'https://pdpu.edu.ua/pro-khudozhno-grafichnij-fakultet/', post: '' },
         { y: '2009', t: L('Перші виставки, ще за часів навчання', 'First exhibitions, while still a student') },
         { y: '2023', t: L('Викладає на рідному факультеті, навчається в аспірантурі', 'Teaching at his alma mater, postgraduate studies') },
         { y: '2024', t: L('Член Національної спілки художників України', 'Member of the National Union of Artists of Ukraine') },
@@ -597,30 +621,62 @@ class Component extends DCLogic {
       bioIcon: s.bioOpen ? '−' : '+',
       bioToggle: () => this.setState({ bioOpen: !s.bioOpen }),
       statsRef: this._statsRef,
-      stats: [{ to: 15, suf: '+', l: L('Років практики', 'Years of practice') }, { to: 37, suf: '', l: L('Виставок', 'Exhibitions') }, { to: 120, suf: '+', l: L('Робіт у колекціях', 'Works in collections') }, { v: L('НСХУ', 'NUAU'), l: L('Член спілки', 'Union member') }]
+      stats: [{ to: new Date().getFullYear() - 2008, suf: '+', l: L('Років практики', 'Years of practice') }, { to: 57, suf: '+', l: L('Виставок', 'Exhibitions') }, { to: 50, suf: '+', l: L('Робіт у колекціях', 'Works in collections') }, { v: L('НСХУ', 'NUAU'), l: L('Член спілки', 'Union member') }]
         .map(x => x.to == null ? x : { ...x, v: Math.round(x.to * (s.countP ?? 0)) + x.suf }),
       filters: slash(fList.map(f => f.label), fList.findIndex(f => f.key === s.filter), i => this.setState({ filter: fList[i].key, lbIdx: null })),
       ...(() => {
         // TODO: додати назви, рік, техніку, розмір і серію для кожної роботи
-        const list = railWorks;
+        const galSeries = s.galKey ? seriesData.find(x => x.key === s.galKey) : null;
+        const galList = galSeries ? railWorks.filter(w => w.k === s.galKey) : railWorks;
+        const list = s.galOpen ? galList : railWorks;
         this._lbCount = list.length;
         const cur = s.lbIdx != null ? list[s.lbIdx] : null;
-        if (typeof document !== 'undefined') document.body.style.overflow = cur ? 'hidden' : '';
+        if (typeof document !== 'undefined') document.body.style.overflow = (cur || s.galOpen) ? 'hidden' : '';
         return {
-          works: list.map((w, i) => ({ ...w, wcss: arOf(w.img) < 1 ? 'clamp(220px,22vw,440px)' : 'clamp(280px,32vw,620px)', sub: [w.year, w.tech, w.size].filter(Boolean).join(' · '), open: e => { e.preventDefault(); this.setState({ lbIdx: i }); } })),
+          galTitle: galSeries ? galSeries.title : t.gallery,
+          galEmpty: galList.length === 0,
+          galEmptyText: L('Роботи цієї серії зʼявляться тут незабаром.', 'Works from this series will appear here soon.'),
+          galWorks: galList.map((w, i) => ({ ...w, open: e => { e.preventDefault(); this.setState({ lbIdx: i }); } })),
+          works: railWorks.map((w, i) => ({ ...w, wcss: arOf(w.img) < 1 ? 'clamp(220px,22vw,440px)' : 'clamp(280px,32vw,620px)', sub: [w.year, w.tech, w.size].filter(Boolean).join(' · '), open: e => { e.preventDefault(); this.setState({ lbIdx: i }); } })),
           lb: cur ? { ...cur, line1: [cur.title, cur.year].filter(Boolean).join(', '), line2: [cur.tech, cur.size].filter(Boolean).join(' · '), counter: (s.lbIdx + 1) + ' / ' + list.length, closeLabel: L('Закрити', 'Close') } : null,
           lbImg: cur ? React.createElement('img', { src: cur.img, alt: cur.alt, decoding: 'async', onClick: e => e.stopPropagation(), style: { maxWidth: '100%', maxHeight: 'calc(100vh - 120px)', minHeight: 0, width: 'auto', height: 'auto', objectFit: 'contain', justifySelf: 'center', alignSelf: 'center', cursor: 'default', display: 'block' } }) : null,
           lbClose: () => this.setState({ lbIdx: null }),
+          gal: !!s.galOpen,
+          galCount: galList.length,
+          galCloseLabel: L('Закрити', 'Close'),
+          galOpen: e => { e.preventDefault(); this.setState({ galOpen: true, galKey: null, lbIdx: null }); },
+          galClose: () => this.setState({ galOpen: false }),
           lbStop: e => e.stopPropagation(),
           lbPrev: e => { e.stopPropagation(); this._step(-1); },
           lbNext: e => { e.stopPropagation(); this._step(1); },
         };
       })(),
-      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), color: s.series === i ? '#22213A' : '#625F8A', onEnter: () => this.setState({ series: i }) })),
-      activeSeries: seriesData[s.series],
+      series: seriesData.map((x, i) => ({ ...x, n: '0' + (i + 1), count: String(railWorks.filter(w => w.k === x.key).length).padStart(2, '0'), color: s.series === i ? '#22213A' : '#625F8A', onEnter: () => this.setState({ series: i }), onClick: e => { e.preventDefault(); this.setState({ series: i, galOpen: true, galKey: x.key, lbIdx: null }); } })),
+      activeSeries: { ...seriesData[s.series], onClick: e => { e.preventDefault(); this.setState({ galOpen: true, galKey: seriesData[s.series].key, lbIdx: null }); } },
+      seriesBtn: L('Дивитися серію', 'View series'),
       ...(() => {
         // [year, type, ua, en, uaNote, enNote]
         const EX = [
+          [2026, "int", "Міжнародний фестиваль української культури", "International Festival of Ukrainian Culture", "24.10.2026 · Кастельон-де-ла-Плана, Іспанія · «Вірменська ратуша»", "24.10.2026 · Castellón de la Plana, Spain · “Armenian Town Hall”"],
+          [2026, "grp", "«Nu. Сучасна несучасність»", "“Nu. Contemporary Non-Contemporaneity”", "21.10.2026 · ХГФ, Одеса", "21.10.2026 · Faculty of Fine Arts and Graphics, Odesa"],
+          [2026, "reg", "Обласна художня виставка до Дня художника України", "Regional art exhibition for Ukrainian Artist’s Day", "09.10.2026 · вул. Торгова, 2, Одеса · «Green spaces»", "09.10.2026 · 2 Torhova St, Odesa · “Green Spaces”"],
+          [2026, "grp", "«Хто є хто? ХГФ»", "“Who Is Who? Faculty of Fine Arts”", "06.10.2026 · вул. Старопортофранківська, 36, Одеса", "06.10.2026 · 36 Staroportofrankivska St, Odesa"],
+          [2026, "reg", "Обласна художня виставка до Дня незалежності України", "Regional art exhibition for Ukrainian Independence Day", "21.08.2026", "21.08.2026"],
+          [2026, "grp", "Колективна мистецька виставка «Друзі музею»", "Group art exhibition “Friends of the Museum”", "01.08.2026 · Музей української книги, вул. Троїцька, 49/51, Одеса · «В надійних руках»", "01.08.2026 · Museum of the Ukrainian Book, 49/51 Troitska St, Odesa · “In Safe Hands”"],
+          [2026, "grp", "«У серці — Україна»", "“Ukraine in the Heart”", "25.06.2026 · Одеська міська художня галерея · «Вірменська ратуша»", "25.06.2026 · Odesa City Art Gallery · “Armenian Town Hall”"],
+          [2026, "reg", "Обласна художня виставка «Міський пейзаж. Прогулянка Одесою»", "Regional art exhibition “Cityscape. A Walk Through Odesa”", "19.06.2026 · вул. Торгова, 2, Одеса · «Зимовий пляж», 2025, 80×80", "19.06.2026 · 2 Torhova St, Odesa · “Winter Beach”, 2025, 80×80"],
+          [2026, "reg", "Обласна художня виставка до Дня матері", "Regional art exhibition for Mother’s Day", "07.05.2026 · вул. Торгова, 2, Одеса", "07.05.2026 · 2 Torhova St, Odesa"],
+          [2026, "grp", "Вернісаж «Від весни до весни»", "Vernissage “From Spring to Spring”", "07.03.2026 · Сади перемоги, Одеса · «Наша надія», «Латаття», «Іриси»", "07.03.2026 · Victory Gardens, Odesa · “Our Hope”, “Water Lilies”, “Irises”"],
+          [2026, "solo", "«Місця мої»", "“My Places”", "21.02.2026 · Музей української книги, вул. Троїцька, 49/51, Одеса", "21.02.2026 · Museum of the Ukrainian Book, 49/51 Troitska St, Odesa"],
+          [2025, "grp", "«Зимове диво»", "“Winter Wonder”", "03.12.2025 · Одеська міська художня галерея · «Парк перемоги»", "03.12.2025 · Odesa City Art Gallery · “Victory Park”"],
+          [2025, "grp", "«Одеса — місто натхнення»", "“Odesa — City of Inspiration”", "01.09.2025 · Одеська міська художня галерея · «Прогулянка біля санаторію»", "01.09.2025 · Odesa City Art Gallery · “A Walk by the Sanatorium”"],
+          [2025, "reg", "Обласна художня виставка до Дня незалежності України", "Regional art exhibition for Ukrainian Independence Day", "22.08.2025 · «Біля струмочка», 2025, 50×60", "22.08.2025 · “By the Stream”, 2025, 50×60"],
+          [2025, "reg", "Обласна художня виставка «Вшанування свята матері та української національної памʼяті»", "Regional art exhibition “Honouring Mother’s Day and Ukrainian National Memory”", "", ""],
+          [2025, "reg", "Обласна художня виставка «Автопортрет та портрет»", "Regional art exhibition “Self-Portrait and Portrait”", "вул. Грецька, 20, Одеса · «Явилася світу», 2025, 85×85, полотно, олія", "20 Hretska St, Odesa · “She Appeared to the World”, 2025, 85×85, oil on canvas"],
+          [2025, "reg", "Обласна художня виставка «Жіночий образ у мистецтві»", "Regional art exhibition “The Female Image in Art”", "11.03.2025 · вул. Грецька, 20, Одеса · «Портрет мами»", "11.03.2025 · 20 Hretska St, Odesa · “Portrait of My Mother”"],
+          [2024, "reg", "Обласна художня виставка «Кращий твір року»", "Regional art exhibition “Best Work of the Year”", "27.12.2024 · вул. Торгова, 2, Одеса · «В надійних руках», 2024", "27.12.2024 · 2 Torhova St, Odesa · “In Safe Hands”, 2024"],
+          [2024, "grp", "«Часопис» — до 60-річчя ХГФ", "“Chasopys” — for the 60th anniversary of the Faculty of Fine Arts", "10.12.2024 · ОННБ, вул. Пастера, 13, Одеса", "10.12.2024 · Odesa National Scientific Library, 13 Pastera St"],
+          [2024, "grp", "«Конкуренти разом»", "“Competitors Together”", "23.10.2024 · Міжнародний культурний центр UNION, Одеса · «Наша надія»", "23.10.2024 · UNION International Cultural Centre, Odesa · “Our Hope”"],
           [2024, 'nat', 'Всеукраїнський культурно-мистецький проєкт до Дня художника', 'All-Ukrainian art project for Artist’s Day', 'Робота «Renaissance»', 'Work: “Renaissance”'],
           [2024, 'nat', 'Всеукраїнська виставка «Барви Дніпра»', 'All-Ukrainian exhibition “Colours of the Dnipro”', 'Робота «Сколошканий комиш»', 'Work: “Tousled Reeds”'],
           [2024, 'nat', 'Всеукраїнський культурно-мистецький проєкт до Дня незалежності', 'All-Ukrainian art project for Independence Day', 'Робота «Наша надія»', 'Work: “Our Hope”'],
